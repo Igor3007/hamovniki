@@ -1,0 +1,51 @@
+mixin card-article(data)
+  .card-article
+    .card-article__img
+      a(href="#"): +bgimage(data.img)
+    .card-article__type= data.type
+    .card-article__title
+      a(href="#" title=""+data.title+"")= data.title
+    .card-article__props
+      .card-article__count-ans(class=""+(data.count.answer ? '':'not-answer')+"")
+        +icons('#ic_count', 15)
+        span= data.count.answer
+      .card-article__count-views
+        +icons('#ic_eye', 15)
+        span= data.count.views
+
+mixin card-video(data)
+  .card-video
+    .card-video__img
+      +bgimage(data.img)
+      a(href=""+data.video+"" data-fancybox="iframe")
+        +icons('#ic_play', 50)
+    .card-video__type= data.type
+    .card-video__title
+      a(href="#" title=""+data.title+"")= data.title
+    .card-video__props
+      .card-video__count-ans(class=""+(data.count.answer ? '':'not-answer')+"")
+        +icons('#ic_count', 15)
+        span= data.count.answer
+      .card-video__count-views
+        +icons('#ic_eye', 15)
+        span= data.count.views
+
+mixin card-qna(data)
+  .card-qna
+    .card-qna__head
+      .card-qna__auto
+        +bgimage(data.auto.logo)
+        span= data.auto.brand
+      .card-qna__count
+        +icons('#ic_count', 15)
+        span= data.count.answer
+    .card-qna__title
+      a(href="#" title=""+data.title+"")= data.title
+    .card-qna__footer
+      .card-qna__autor
+        a(href="#")= data.autor
+      .card-qna__date= data.date
+      .card-qna__views
+        +icons('#ic_eye', 15)
+        span= data.count.views
+

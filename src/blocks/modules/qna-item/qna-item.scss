@@ -1,0 +1,75 @@
+.qna-item {
+    padding: 15px;
+    background: $lightGray;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &:hover {
+        background: #eee;
+    }
+
+    &__auto {
+
+        display: flex;
+        align-items: center;
+
+        & .bgimage {
+            width: rem(35);
+            height: rem(35);
+
+            @include bgimage-contain;
+            margin-right: rem(10);
+        }
+
+        & span {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: #939393;
+        }
+    }
+
+    &__exist {
+
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+
+        & span {
+
+            display: flex;
+            align-items: center;
+            font-size: rem(14);
+
+            &::before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                background-color: #49A41F;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+
+        & .answer-exist {
+            color: #49A41F;
+        }
+    }
+
+    &__main {
+        & a {
+            font-weight: 500;
+            font-size: rem(18);
+            line-height: 150%;
+            color: #16162D;
+            padding: rem(20) 0;
+            display: block;
+        }
+    }
+}

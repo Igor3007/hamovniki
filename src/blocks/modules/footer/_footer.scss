@@ -1,0 +1,256 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(30) rem(30);
+    background-color: #f8f8f8;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+
+
+    @media screen and (max-width: $w760) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    @media screen and (max-width: $w480) {
+        padding: rem(30) rem(15);
+
+    }
+
+    &--red {
+        background-color: $red;
+        color: #fff;
+
+        & a,
+        & .link-store__desc,
+        & .footer__share-title {
+            color: #fff;
+        }
+
+        & .footer__share-list li a {
+            border-color: #fff !important;
+        }
+
+        & .link-store__icon svg,
+        & .footer__share-list li a svg {
+            fill: #fff;
+        }
+
+        & .link-store {
+
+            border-color: #fff;
+
+            &:hover {
+                border-color: #fff;
+            }
+        }
+    }
+
+    &__share {
+        @media screen and (max-width: $w760) {
+
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+
+    }
+
+
+    &__app {
+        display: flex;
+
+        &>div {
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__apple-store,
+    &__google-store {
+        margin-left: rem(15);
+        display: flex;
+        align-items: center;
+    }
+
+    &__share-title {
+        font-size: 12px;
+        line-height: 140%;
+        color: #9B9B9B;
+        margin-bottom: rem(10);
+
+        @media screen and (max-width: $w760) {
+            padding-top: rem(25);
+        }
+    }
+}
+
+.link-store {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid $mgray;
+    padding: rem(5) rem(20);
+
+    &:hover {
+        border-color: $red;
+    }
+
+    &__desc {
+        font-size: 12px;
+        line-height: 120%;
+        color: #929292;
+
+        @media screen and (max-width: $w480) {
+            font-size: 11px;
+        }
+    }
+
+    &__name {
+        font-size: rem(16);
+        font-weight: 600;
+
+        @media screen and (max-width: $w480) {
+            font-size: 13px;
+        }
+    }
+
+    &__icon {
+        margin-right: rem(15);
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $w480) {
+            margin-right: rem(10);
+        }
+    }
+
+    & svg {
+        fill: $red;
+        width: rem(21);
+        height: rem(21);
+    }
+}
+
+
+.footer__share-list {
+
+    & ul {
+        display: flex;
+    }
+
+    & li {
+
+        margin-right: rem(10);
+
+        &:last-child {
+            margin-right: rem(0);
+
+        }
+
+        &.share-fb {
+            & a {
+                border-color: #4968AF;
+            }
+
+            & svg {
+                fill: #4968AF;
+            }
+        }
+
+        &.share-vk {
+            & a {
+                border-color: #1378B6;
+            }
+
+            & svg {
+                fill: #1378B6;
+            }
+        }
+
+        &.share-tw {
+            & a {
+                border-color: #1378B6;
+            }
+
+            & svg {
+                fill: #1378B6;
+            }
+        }
+
+        &.share-ig {
+            & a {
+                border-color: #BC3A7C
+            }
+
+            & svg {
+                fill: #E52D45;
+            }
+        }
+
+        &.share-tg {
+            & a {
+                border-color: #009CCD;
+            }
+
+            & svg {
+                fill: #009CCD;
+            }
+        }
+
+        &.share-wa {
+            & a {
+                border-color: #00A711;
+            }
+
+            & svg {
+                fill: #00A711;
+            }
+        }
+
+        & a {
+            background-color: transparent;
+            display: flex;
+            width: rem(40);
+            height: rem(40);
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            border: 1px solid transparent;
+
+            & svg {
+                width: rem(16);
+                height: rem(16);
+            }
+        }
+    }
+}
+
+.footer-develop {
+    background-color: #383838;
+    padding: rem(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #5b5b5b;
+    }
+
+    & .bgimage {
+        width: rem(155);
+        height: rem(15);
+        display: inline-block;
+        @include bgimage-contain;
+        margin-left: rem(15);
+    }
+}

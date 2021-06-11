@@ -1,0 +1,129 @@
+.breadcrumb {
+
+    background-color: transparent;
+    padding: 0 0 rem(20) 0;
+
+    & ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    & li {
+
+        & a {
+            color: $gray;
+            font-size: 14px;
+            color: #c4c4c4;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &::after {
+            content: '→';
+            margin: 0 rem(10);
+            color: #c4c4c4;
+            display: inline-block;
+            border-radius: 50%;
+            position: relative;
+            top: -1px;
+            font-size: 14px;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+    }
+
+    &.breadcrumb--tab {
+
+
+
+        & li {
+
+            &::after {
+                display: none;
+            }
+
+            & a {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 116%;
+                text-align: center;
+                padding: rem(7) rem(15) rem(8) rem(15);
+                background: #2E2E2E;
+                border-radius: 5px;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: none;
+                margin-right: rem(10);
+                color: rgba(255, 255, 255, 0.4);
+
+                @media screen and (max-width: $w480) {
+                    background: transparent;
+                    padding-left: 0;
+
+                    &:hover,
+                    &.active {
+                        background-color: transparent;
+                        color: rgba(255, 255, 255, 0.4);
+                        text-decoration: none;
+                    }
+                }
+
+                &:hover,
+                &.active {
+                    background-color: $grayBlue;
+                    color: #151515;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $w480) {
+        & li {
+
+            display: none;
+
+            &:nth-last-child(2) {
+                display: block;
+            }
+
+            & a {
+                color: $gray;
+                font-size: 13px;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                padding: 0 rem(10);
+                background-image: url('/img/svg/ic_subcat-back.svg');
+                width: 11px;
+                height: 10px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.breadcrumb.breadcrumb--nopadding {
+    padding: 0;
+}

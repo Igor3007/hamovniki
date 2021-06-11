@@ -1,0 +1,110 @@
+include ../../blocks/components/headers/headers 
+include ../../blocks/components/select/select
+
+mixin icons(id, size)
+  if size
+    svg(width=''+size+'' height=''+size+'')
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+  else
+    svg(width="25" height="25")
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+
+mixin bgimage(url)
+  span.bgimage(style="background-image: url("+url+")")
+
+mixin checkbox(label, name,  check)
+  label.checkbox
+    if check
+      input(type="checkbox" name=""+name+"" checked="" )
+    else
+      input(type="checkbox" name=""+name+"" )
+    span.checkbox__elem
+    span.checkbox__text!= label
+
+mixin checkbox-card(label, count, name, check)
+  label.checkbox-card
+    if check
+      input(type="checkbox" name=""+name+"" checked="" )
+    else
+      input(type="checkbox" name=""+name+"" )
+    span.checkbox-card__text(data-count=""+label[1]+"")!= label[0]
+
+mixin radio(label, name, val, check)
+  label.radio
+    if check
+      input(type="radio" name=""+name+"" checked="" value=""+val+"")
+    else
+      input(type="radio" name=""+name+"" value=""+val+"")
+    span.radio__elem
+    span.radio__text= label
+
+mixin radio-desc(label, desc, name, val, check)
+  label.radio
+    if check
+      input(type="radio" name=""+name+"" checked="" value=""+val+"")
+    else
+      input(type="radio" name=""+name+"" value=""+val+"")
+    span.radio__elem
+    span.radio__text  
+      span.radio__title!= label
+      span.radio__desc!= desc
+
+mixin input-material(type, placeholder, tooltip, valid)
+  .input-material
+    input(type=''+type+'', data-valid-type=''+(valid ? valid : '')+'' )
+    span.bar
+    label= placeholder 
+    if tooltip
+      span.tooltip= tooltip
+
+mixin input(type, placeholder, valid, required)
+  .input-primary
+    if required
+      input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+''  required='')
+    else
+      input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+''  )
+    if type == 'password'
+      span.tooltip-showpass
+    else
+      span.tooltip
+
+mixin input-icon(type, placeholder, valid, icon)
+  .input-primary.input-icon
+    if icon
+      +icons(''+icon+'', 16)
+    input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+'' )
+    if type == 'password'
+      span.tooltip-showpass
+    else
+      span.tooltip
+
+mixin textarea(placeholder, tooltip, rows, cols)
+  .input-material
+    textarea(rows=''+rows+'', cols=''+cols+'')
+    span.bar
+    label= placeholder
+    if tooltip
+      span.tooltip= tooltip
+
+mixin toggle(textOn, textOff)
+  label.toggle
+    input(type='checkbox', name='' value='1')
+    div
+      span.toggle-slide
+      span.toggle-active= textOn
+      span.toggle-deactive= (textOff ? textOff : textOn)
+
+mixin attach(id, text)
+  .input-attach
+    label(for=""+id+"")
+      input(type='file',  name=''+id+'',  id=''+id+'' )
+      if text
+        span.file-name
+        span.file-btn= text
+
+
+
+
+
+
+

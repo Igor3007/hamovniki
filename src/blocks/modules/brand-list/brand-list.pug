@@ -1,0 +1,67 @@
+mixin brand-list(obj)
+  section.brand-list(class=""+(obj.modify ? obj.modify:'')+"")
+    .container
+
+      if(obj.viewAll)  
+        .section-title
+          +h2('Список марок')
+          a(href="#" data-brandList="toggle") показать все марки
+      else
+        if(obj.title)
+          .section-title
+            +h2(obj.title)
+
+      .brand-list__wrp
+        .popular-brands
+          ul.popular-brands__items
+            each item, index in obj.data
+              if obj.countElem
+                if index < obj.countElem
+                  li
+                    img(src=item.icon alt='')
+                    a(href='/select-oil-model.html')
+                      span= item.name
+                      if(obj.count)
+                        sup 45
+                else
+                  li.hide
+                    img(src=item.icon alt='')
+                    a(href='/select-oil-model.html')
+                      span= item.name
+                      if(obj.count)
+                        sup 45
+
+
+              else
+                li
+                  img(src=item.icon alt='')
+                  a(href='/select-oil-model.html')
+                    span= item.name
+                    if(obj.count)
+                      sup 45
+
+
+mixin model-list(obj)
+  section.brand-list(class=""+(obj.modify ? obj.modify:'')+"")
+    .container
+
+      if(obj.viewAll)  
+        .section-title
+          +h2('Список марок')
+          a(href="#") показать все марки
+      else
+        if(obj.title)
+          .section-title
+            +h2(obj.title)
+
+      .brand-list__wrp
+        .popular-brands
+          ul.popular-brands__items
+            each item in obj.data
+              li
+                a(href='/select-oil-details.html')
+                  span= item.name
+                  if(obj.count)
+                    sup 45
+
+

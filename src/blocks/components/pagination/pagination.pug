@@ -1,0 +1,11 @@
+mixin pagination(data)
+  .pagination
+    //- .pagination__all
+    //-   button.btn.btn-line-radius Показать все
+    .pagination__page
+      ul
+        li.active: a(href="#1") 1
+        li: a(href="#2") 2
+        li: a(href="#3") 3
+        li.next: a(href="#2")
+          +icons('#ic_arr-right', 12) 

@@ -1,0 +1,12 @@
+include ../box-tag/box-tag
+
+mixin video-item(data)
+  .video-item
+    .video-item__preview
+      .video-item__img: +bgimage('https://i1.ytimg.com/vi/'+data.img+'/hqdefault.jpg')
+      .video-item__play
+        a(href="https://www.youtube.com/watch?v=7LJIcrJKDI0" data-fancybox="iframe"): +icons('#ic_play')
+    .video-item__title
+      a(href="#")= data.title
+    .video-item__tags
+      +boxtag(data.tag)

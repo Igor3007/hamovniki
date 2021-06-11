@@ -1,0 +1,89 @@
+.brand-list {
+    background: $lightGray;
+    @include padd-top(55);
+    @include padd-bottom(45);
+}
+
+.brand-list--page {
+    @include padd-x(55);
+    background: transparent;
+}
+
+.brand-list--model,
+.brand-list--oil {
+    @include padd-x(55);
+    background: transparent;
+}
+
+.popular-brands {
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: rem(18);
+        line-height: 130%;
+        color: #010103;
+    }
+
+    &__items {
+        -webkit-column-count: 4;
+        column-count: 4;
+        display: block;
+
+        @media screen and (max-width: $w760) {
+            -webkit-column-count: 3;
+            column-count: 3;
+            display: block;
+        }
+
+        @media screen and (max-width: $w580) {
+            -webkit-column-count: 2;
+            column-count: 2;
+            display: block;
+        }
+
+        & li {
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            height: rem(58);
+
+            &.hide {
+                display: none;
+
+                &.visible {
+                    display: flex;
+                }
+            }
+
+            & span {
+                color: $gray;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: rem(13);
+                font-weight: 500;
+                letter-spacing: 0.05em;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+
+            }
+
+            & sup {
+                color: #c0c0c0;
+                margin-left: rem(3);
+            }
+        }
+
+        & img {
+            max-width: rem(45);
+            margin-right: rem(15);
+            width: 100%;
+            max-height: rem(35);
+            object-fit: contain;
+        }
+    }
+}

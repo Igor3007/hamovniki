@@ -1,0 +1,71 @@
+include ../../../views/helpers/mixins
+
+mixin card-product
+  .card-product
+    .card-product__wrp
+      .card-product__image
+        .product-image
+          .product-image__main
+            .product-image__id Дом ID 5613
+            .swiper-container.image-main
+              .swiper-wrapper
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+            .swiper-dots
+            .swiper-nav-card
+              .swiper-nav-card__prev: +icons('#ic_prev-swiper')
+              .swiper-nav-card__next: +icons('#ic_next-swiper')
+          .product-image__thumb
+            .swiper-container.image-thumb
+              .swiper-wrapper
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+                .swiper-slide: +bgimage('/img/catalog/1.jpg')
+                .swiper-slide: +bgimage('/img/catalog/2.jpg')
+                .swiper-slide: +bgimage('/img/catalog/3.jpg')
+                .swiper-slide: +bgimage('/img/catalog/4.jpg')
+        .product-order-mobile: span Заявка на просмотр
+      .card-product__main
+        .product-main
+          .product-main__left
+            .product-main__title Дом ID 5613 Ренессанс Парк
+            .product-main__price
+              .product-main__price-usd 1 0016 811 $
+              .product-main__price-rub 66 977 341 руб
+            .product-main__props
+              .product-main__props-list
+                ul
+                  li Отделка: <span>Без отделки</span>
+                  li Площадь: <span>775 м2</span>
+                  li Участок: <span>23 сот.</span>
+              .product-main__props-download
+                .props-download
+                  .props-download__image: a(href='#dl'): +bgimage('../../../img/common/laptop2.png')
+                  .props-download__link: a(href='#dl') Скачать презентацию <span>о проекте</span>
+
+          .product-main__right
+            .product-main__order: span Заявка на просмотр
+            .product-main__form
+              form
+                .form
+                  .form__item: .form__subitem: input(type="text", placeholder="Имя")
+                  .form__item: .form__subitem: input(type="tel", placeholder="+7 ___ ___ __ __")
+                  .form__item: .form__subitem
+                    button(type="submit").btn.btn-full Отправить
+                  .form__item: .form-text Укажите свои контакты и менеджер свяжится с вами 

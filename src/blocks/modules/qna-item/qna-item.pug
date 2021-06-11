@@ -1,0 +1,17 @@
+include ../box-tag/box-tag
+
+mixin qna-item(data)
+  .qna-item
+    .qna-item__head
+      .qna-item__auto
+        +bgimage(data.auto.img)
+        span= data.auto.name
+      .qna-item__exist
+        if(data.exist)
+          span.answer-exist Есть ответ
+        else
+          span.answer-noexist Без ответа
+    .qna-item__main
+      a(href="#")= data.title
+    .qna-item__tags
+      +boxtag(data.tags)

@@ -1,0 +1,550 @@
+.form {
+
+    & input:invalid {
+        box-shadow: none;
+    }
+
+
+
+    & label[for="attach-file"] {
+        & input {
+            display: none;
+        }
+
+        margin-bottom: 1.33333rem;
+        font-weight: 500;
+        font-size: rem(13);
+        line-height: 116%;
+        color: #86A5C1;
+        height: 100px;
+        border: 2px dashed #D8D8D8;
+        box-sizing: border-box;
+        border-radius: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            margin-right: rem(25);
+        }
+
+        & span {
+
+            cursor: pointer;
+            position: relative;
+            color: $gray;
+            font-size: rem(14);
+
+        }
+    }
+
+    & textarea {
+        min-height: rem(40);
+        max-width: 100%;
+        resize: vertical;
+        width: 100%;
+        border: 1px solid $mgray;
+        padding: rem(15) rem(25);
+        border-radius: rem(20);
+
+        &:focus {
+            outline: none !important;
+        }
+
+    }
+
+    &__item {
+
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $w480) {
+            flex-direction: column;
+        }
+
+
+        &.column {
+            flex-direction: column;
+
+            & .form__subitem {
+                margin-right: 0;
+            }
+        }
+
+        &.pull-right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__subitem {
+        flex-grow: 1;
+        margin-bottom: rem(10);
+        margin-right: rem(10);
+        width: 100%;
+
+        &.form__subitem--auto {
+            width: auto;
+            flex-grow: 0;
+            margin-right: 25px;
+        }
+
+        &>span {
+            color: $gray;
+            padding: rem(10) rem(5);
+            display: block;
+        }
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
+
+        & input {
+            width: 100%;
+        }
+
+        @media screen and (max-width: $w480) {
+            margin-right: 0;
+        }
+    }
+
+    & fieldset {
+        border: none;
+        padding: 0;
+        margin-top: rem(40);
+
+        @media screen and (max-width: $w760) {
+            margin-top: rem(30);
+        }
+
+        &:first-child {
+            margin-top: rem(0);
+        }
+    }
+
+    & legend {
+        margin-bottom: rem(30);
+
+        @media screen and (max-width: $w760) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    & .btn {
+        // height: rem(40)
+    }
+
+    &__label {
+        @include modal-gray;
+        margin-bottom: rem(10);
+        margin-top: rem(10);
+    }
+
+    &__select {
+
+        position: relative;
+        display: block;
+        cursor: pointer;
+        outline: none;
+        width: 100%;
+        background: #fff;
+        border: 1px solid $mgray;
+        border-radius: rem(40);
+
+
+        & .select {
+            width: 100%;
+        }
+
+        & select {
+            padding-right: 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-width: 0;
+            height: rem(40);
+            padding-left: 12px;
+            min-width: calc(100% - 50px);
+            cursor: pointer;
+            outline: none;
+            background: #fff;
+            border-radius: 5px;
+            width: 100%;
+            color: $gray;
+            border-radius: rem(40);
+
+            & option {
+                font-family: 'arial';
+                font-size: rem(13);
+            }
+
+            &::-ms-expand {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: "";
+            padding: 0 8px 0 8px;
+            font-size: 12px;
+            position: absolute;
+            right: 0;
+            /*! top: 4px; */
+            z-index: 1;
+            text-align: center;
+            width: 35px;
+            height: 100%;
+            pointer-events: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background: url(/img/svg/ic_arr-down.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            /*! margin-right: 8px; */
+            top: 0;
+            background-size: 10px;
+            /*! border-bottom: 1px solid #888796; */
+        }
+
+
+    }
+
+    /* 
+    ========================================================
+    material input text
+    ========================================================
+    */
+    & .input-material {
+        position: relative;
+        width: 100%;
+        margin-bottom: rem(20);
+        margin-top: rem(30);
+
+        @media screen and (max-width: $w580) {
+            margin-bottom: rem(20);
+            margin-top: rem(25);
+        }
+
+        & input {
+            font-size: rem(15);
+            padding: rem(10) 0;
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid $gray;
+            background: transparent;
+            color: #000;
+            font-weight: 500;
+
+            &:invalid {
+                box-shadow: none !important;
+            }
+        }
+
+        & textarea {
+            font-size: rem(15);
+            padding: rem(10) 0;
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid $gray;
+            background: transparent;
+            color: #000;
+            font-weight: 500;
+
+            &:invalid {
+                box-shadow: none !important;
+            }
+        }
+
+        & input:focus {
+            outline: none;
+        }
+
+        & label {
+            color: #000;
+            font-size: rem(15);
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            font-weight: bol;
+            top: 11px;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        & .tooltip {
+            position: absolute;
+            right: 0;
+            top: 11px;
+            font-size: rem(13);
+            color: #6A6A6A;
+
+            @media screen and (max-width: $w580) {
+                font-size: 0;
+
+                &::before {
+                    content: '*';
+                    font-size: 20px;
+                    color: $red;
+                }
+            }
+        }
+
+        /* active state */
+        & input:focus~label,
+        & input[area-valid]~label,
+        & textarea:focus~label,
+        & textarea[area-valid=true]~label,
+        & textarea[area-valid=false]~label {
+            top: -15px;
+            font-size: rem(13);
+            color: $gray;
+        }
+
+        & textarea[area-valid=false]~.bar,
+        & input[area-valid=false]~.bar {
+
+            &::before,
+            &::after {
+                background: $red;
+                width: 50%;
+            }
+        }
+
+        & textarea[area-valid=false]~.tooltip,
+        & input[area-valid=false]~.tooltip {
+
+            color: $red;
+        }
+
+        & textarea:focus[area-valid=false]~.bar,
+        & input:focus[area-valid=false]~.bar {
+
+            &::before,
+            &::after {
+                background: $grayBlue;
+                width: 50%;
+            }
+        }
+
+        & textarea:focus~.tooltip,
+        & input:focus~.tooltip {
+            display: none;
+        }
+
+        & textarea[area-valid=true]~.tooltip,
+        & input[area-valid=true]~.tooltip {
+            width: 13px;
+            height: 13px;
+            display: block;
+            background-image: url(/img/svg/ic_checked-green.svg);
+            font-size: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        /* BOTTOM BARS ================================= */
+        & .bar {
+            position: relative;
+            display: block;
+        }
+
+        & .bar:before,
+        & .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            position: absolute;
+            background: $grayBlue;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        & .bar:before {
+            left: 50%;
+        }
+
+        & .bar:after {
+            right: 50%;
+        }
+
+        /* active state */
+        & textarea:focus~.bar:before,
+        & input:focus~.bar:before,
+        & textarea:focus~.bar:after,
+        & input:focus~.bar:after {
+            width: 50%;
+        }
+
+    }
+
+    & .input-primary {
+        border: 1px solid $mgray;
+        width: 100%;
+        border-radius: rem(50);
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+
+        & input {
+            border: none;
+            width: 100%;
+            display: block;
+            height: rem(48);
+            background-color: transparent;
+            padding: 0 rem(25);
+        }
+
+        & .tooltip-showpass,
+        & .tooltip {
+            min-width: rem(20);
+            width: rem(20);
+            height: rem(20);
+            display: inline-block;
+            margin-right: rem(15);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+
+            @media screen and (max-width: $w580) {
+                min-width: rem(17);
+                width: rem(40);
+                height: rem(40);
+
+                background-size: 17px auto;
+                background-position: center right;
+
+            }
+        }
+
+        & textarea[area-valid=true]~.tooltip,
+        & input[area-valid=true]~.tooltip {
+            background-image: url(/img/svg/ic_input-valid.svg);
+            font-size: 0;
+            opacity: 1;
+            background-size: contain;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        & .tooltip-showpass {
+            opacity: 1;
+            background-image: url(/img/svg/ic_eye.svg);
+            cursor: pointer;
+        }
+
+        & textarea[area-valid=false]~.tooltip,
+        & input[area-valid=false]~.tooltip {
+            background-image: url(/img/svg/ic_input-invalid.svg);
+            font-size: 0;
+            opacity: 1;
+            background-size: contain;
+
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &.input-icon svg {
+            margin-left: rem(15);
+            min-width: rem(16);
+            width: rem(16);
+        }
+
+        &.input-icon input {
+            padding-left: rem(15);
+            width: calc(100% - 30px);
+        }
+    }
+
+
+
+}
+
+.upload-files {
+
+    & li {
+        list-style-type: none;
+        font-size: rem(13);
+        padding-top: 15px;
+        display: flex;
+        line-height: 25px;
+
+
+        &::before {
+            width: 25px;
+            height: 25px;
+            background: #212121;
+            content: '';
+            display: block;
+            margin-right: 10px;
+            border-radius: 50%;
+
+            background-image: url(/img/svg/ic_checked-green.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+.input-attach {
+    width: 100%;
+
+    & span.file-btn {
+        border: 1px solid #d8d8d8;
+        font-weight: 500;
+        font-size: rem(13);
+        line-height: rem(14);
+        text-transform: uppercase;
+        color: #818181;
+        border-radius: rem(50);
+        margin-left: auto;
+        display: inline-block;
+        padding: rem(7) rem(17);
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+            border: 1px solid $red;
+            background: $red;
+            color: #fff;
+        }
+    }
+
+    & span.file-name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: rem(30);
+        padding-left: rem(15);
+        color: $gray;
+    }
+
+    & label {
+        border: 1px solid #d8d8d8;
+        width: 100%;
+        border-radius: rem(50);
+        display: block;
+        text-align: right;
+        padding: rem(4);
+        display: flex;
+    }
+
+    & input {
+        display: none
+    }
+
+}

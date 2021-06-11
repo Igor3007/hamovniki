@@ -1,0 +1,10 @@
+mixin video (data)
+  .video(data-id=""+data.link+"")
+    .video__preview
+      +bgimage(""+data.preview+"")
+    .video__action
+      if data.title
+        .video__title= data.title
+      .video__button
+        +icons('#ic_play', 70)
+        span Смотреть видео 
