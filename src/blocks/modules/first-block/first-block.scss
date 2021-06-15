@@ -1,0 +1,152 @@
+.first-block {
+
+    position: relative;
+
+    & .container {
+        max-width: rem(1270);
+    }
+
+    &__bg {
+
+        position: relative;
+
+
+        & .bgimage {
+            display: block;
+            padding-top: 50%;
+            @include bgimage-cover;
+
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: $w940) {
+            @include layer(1);
+            padding-top: 0%;
+        }
+
+
+    }
+
+    &__bgimage1 {
+        @include layer(2);
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+
+
+        & .bgimage {
+            padding-top: 35%;
+            @include bgimage-contain;
+            background-repeat: repeat-x;
+            width: 100%;
+            opacity: 0.9;
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+    }
+
+    &__bgimage2 {
+        position: relative;
+        z-index: 1;
+
+
+    }
+
+    &__content {
+        padding-top: 60px;
+        @include layer(3);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (max-width: $w940) {
+            position: relative;
+            z-index: 2;
+
+        }
+
+    }
+
+    &__desc {
+
+        & strong {
+            font-weight: 800;
+        }
+
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        max-width: rem(760);
+        margin-right: auto;
+    }
+
+    &__title {
+        font-family: Muller;
+        font-style: normal;
+        font-weight: 800;
+        font-size: rem(182);
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-align: center;
+
+        padding-top: rem(50);
+
+    }
+
+    &__wrp {
+        max-width: rem(1290);
+        margin: 0 auto;
+
+
+
+    }
+
+    &__btn {
+        max-width: rem(400);
+        margin: 0 auto;
+        padding-top: rem(50);
+
+    }
+
+    &__play {
+        position: absolute;
+        right: -8vw;
+        top: rem(-153);
+
+        & a {
+            width: 48vw;
+            padding-top: 100%;
+            display: block;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid #A3D39C;
+            box-sizing: border-box;
+
+
+            & svg {
+                width: 39%;
+                height: 39%;
+                margin: auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+
+
+}

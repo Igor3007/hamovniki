@@ -2028,6 +2028,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./import/jquery.fancybox.min */ "./src/js/import/jquery.fancybox.min.js");
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2036,7 +2038,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2___default()();
-jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {});
+swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_3__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_3__["Navigation"]]);
+jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
+  var _Swiper;
+
+  // .swiper-container
+  var region = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="region"]', (_Swiper = {
+    slidesPerView: 4,
+    spaceBetween: 27,
+    observer: true,
+    loop: true,
+    centeredSlides: 'auto'
+  }, _defineProperty(_Swiper, "loop", true), _defineProperty(_Swiper, "observeParents", true), _defineProperty(_Swiper, "navigation", {
+    nextEl: '.slider-slider-nav__next',
+    prevEl: '.slider-slider-nav__prev'
+  }), _defineProperty(_Swiper, "breakpoints", {
+    0: {
+      spaceBetween: 5,
+      slidesPerView: 1
+    },
+    480: {
+      spaceBetween: 5
+    },
+    580: {
+      spaceBetween: 15
+    },
+    767: {
+      spaceBetween: 15
+    },
+    1024: {
+      spaceBetween: 15
+    },
+    1280: {
+      spaceBetween: 27
+    }
+  }), _Swiper));
+});
 
 /***/ })
 

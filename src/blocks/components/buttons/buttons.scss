@@ -1,10 +1,9 @@
 .btn {
 
-    color: #fff;
     border: none;
     padding: 0.9em 2.6em;
     color: #fff;
-    background: $red;
+    background: #ccc;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -13,11 +12,11 @@
     text-transform: uppercase;
     border-radius: 60px;
     min-width: rem(130);
-    height: rem(40);
+    height: rem(70);
 
-    font-style: normal;
-    font-weight: bold;
-    font-size: rem(13);
+    font-weight: 400;
+    font-size: rem(22);
+
     white-space: nowrap;
 
     @media screen and (max-width: $w580) {
@@ -42,6 +41,14 @@
     }
 
 
+
+    &.btn-green {
+        color: #343434;
+        background: #A3D39C;
+        text-transform: none;
+        font-weight: 350;
+
+    }
 
     &.btn-red {
         color: #fff;

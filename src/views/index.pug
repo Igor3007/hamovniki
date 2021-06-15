@@ -1,6 +1,7 @@
 extends layouts/index
-include ../blocks/components/video/video
-include ../blocks/components/faq/faq.pug
+include ../blocks/modules/first-block/first-block
+include ../blocks/modules/slider-region/slider-region
+include ../blocks/modules/mapcustom/mapcustom
 
 block variables
   include ../data/data.pug
@@ -8,7 +9,9 @@ block variables
 
 
 block content
-  div cdcdc
+  +first-block()
+  +slider-region(slider_region)
+  +mapcustom()
 
 
 block scripts

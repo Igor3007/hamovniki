@@ -1,0 +1,85 @@
+.mapcustom {
+
+    &__maps {
+        @include layer(1);
+    }
+
+    &__badges {
+        @include layer(2);
+
+        & .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-right {
+            width: 9.3vw;
+            min-width: rem(130);
+
+            & .bgimage {
+                padding-top: 220%;
+                @include bgimage-contain;
+                background-position-y: top;
+            }
+        }
+
+        &-left {
+            padding-top: 4vw;
+            width: 13.5vw;
+            min-width: rem(180);
+
+            & .bgimage {
+                padding-top: 100%;
+                @include bgimage-contain;
+            }
+        }
+    }
+
+    &__container {
+        padding-top: 63%;
+        background-color: #eee;
+        position: relative;
+    }
+
+    &__desc {
+        padding: 90px 0;
+        background: #BCCEBA;
+        position: relative;
+
+
+        & .container {
+            display: flex;
+            max-width: 1440px;
+        }
+    }
+
+
+
+    &__text {
+        max-width: 50%;
+        width: 50%;
+        font-size: rem(24);
+        line-height: 164%;
+    }
+
+    &__image {
+        max-width: 50%;
+        width: 50%;
+
+
+        & .bgimage {
+            width: 100%;
+            @include bgimage-contain;
+            padding-top: 50vw;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 50vw;
+            max-width: 850px;
+            background-position-y: bottom;
+            z-index: 3;
+        }
+    }
+
+
+}

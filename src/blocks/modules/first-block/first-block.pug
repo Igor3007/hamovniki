@@ -1,4 +1,15 @@
 mixin first-block
   section.section-first-block
     .first-block
-      .first-block__lau
+      .first-block__layers
+        .first-block__bg
+          .first-block__bgimage1:  +bgimage('/img/common/first-bg-1.png')
+          .first-block__bgimage2:  +bgimage('/img/common/first-bg-2.jpg')
+        .first-block__content
+          .first-block__wrp
+            .first-block__desc <strong>Маркетплейс</strong> «хамовники» — предложения, новинки, лоты в закрытых продажах самого престижного района столицы
+            .first-block__title Хамовники
+            .first-block__btn
+              butto.btn.btn-green Подобрать предложения
+            .first-block__play
+              a(href='#'): +icons('#ic_play-first')

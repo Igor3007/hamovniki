@@ -1,0 +1,18 @@
+mixin item-slide(data)
+  .slider-region-item
+    .slider-region-item__image: a(href='#'): +bgimage(data.image)
+    .slider-region-item__text: a(href='#')= data.title
+
+mixin slider-region(slider_region)
+  section.section-slider-region
+    .slider-region
+      .slider-region__wrp
+        .swiper-container(data-swiper="region")
+          .swiper-wrapper
+            each item in slider_region
+              .swiper-slide:  +item-slide(item)
+        .container
+          .slider-slider-nav
+            .slider-slider-nav__prev: +icons('#ic_swiper-arrow-left')
+            .slider-slider-nav__next: +icons('#ic_swiper-arrow-right')
+

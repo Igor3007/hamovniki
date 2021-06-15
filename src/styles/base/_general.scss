@@ -79,10 +79,11 @@ section {
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 1275px;
     width: 100%;
     margin: 0 auto;
     padding: 0 rem(30);
+    box-sizing: content-box;
 
     @media screen and (max-width: $w1280) {
         padding: 0 rem(35);
