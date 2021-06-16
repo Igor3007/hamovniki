@@ -1,0 +1,27 @@
+include ../../catalog/minicard/minicard.pug
+include ../../catalog/catalog-filter/catalog-filter.pug
+
+mixin catalog(catalog)
+  section.section-catalog
+    .catalog
+      .catalog__wrp
+        .catalog__filter: +catalog-filter()
+        .catalog__maps
+        .catalog__list
+        .container
+          .catalog-list
+            .catalog-list__sort
+              .catalog-list__sort-count 35 предложений
+              .catalog-list__sort-select
+                span По умолчанию 
+                +icons('#ic_sort')
+            .catalog-list__filter
+              ul
+                each item in ['Акция','Частный сад','Дом сдан','От 12 000 $/м2','Террасы']
+                  li
+                    label
+                      input(type="checkbox" value="1")
+                      span= item
+            .catalog-list__wrp
+              each item in [1,2,3,45,6,6,8,5,45]
+                .catalog-list__items: +minicard('1') 

@@ -1,0 +1,222 @@
+.catalog-filter {
+    padding: rem(30) 0;
+    font-weight: 350;
+
+    &__wrp {
+        &>div {
+            background-color: #323232;
+            margin-bottom: rem(15);
+
+
+            & .container {
+
+                display: flex;
+                align-items: center;
+                padding: rem(15) 0;
+
+                & ul {
+                    display: flex;
+                    align-items: center;
+
+                    & li {
+                        margin-right: rem(10);
+
+                        &:last-child {
+                            margin-right: rem(0);
+                        }
+
+                        & input[type=text] {
+                            background: transparent;
+                            border: 1px solid #535353;
+                            color: #fff;
+                            height: rem(50);
+                            padding: 0 rem(15);
+                            max-width: rem(190);
+
+                            &:focus {
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        margin-right: rem(20);
+        font-size: rem(18);
+        text-transform: uppercase;
+        min-width: rem(120);
+    }
+
+    &__col {
+
+        display: flex;
+        align-items: center;
+        margin-right: rem(25);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    &__state {
+        display: flex;
+        align-items: center;
+
+
+        &-finishing {
+            display: flex;
+            align-items: center;
+            margin-left: rem(40);
+
+            & ul {
+
+                & li {
+                    margin-left: rem(35);
+                    line-height: 100%;
+                }
+            }
+        }
+    }
+
+    &__more {
+        & .catalog-filter__title {
+            max-width: rem(240);
+        }
+    }
+
+    &__badroom {
+        & .catalog-filter__title {
+            min-width: auto;
+        }
+
+        & input[type=text] {
+            max-width: rem(100) !important;
+        }
+    }
+
+    &__badroom,
+    &__area {
+        margin-left: auto;
+    }
+
+    & .cf-radio {
+
+        cursor: pointer;
+
+        & input {
+
+            display: none;
+
+            &:checked~span {
+                border: 1px solid #fff;
+                background-color: #404040;
+            }
+
+
+        }
+
+        & span {
+            border: 1px solid #535353;
+            height: rem(30);
+            padding: 0 rem(25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: rem(50);
+            font-size: rem(18);
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            &:hover {
+                border: 1px solid #777;
+            }
+        }
+
+
+    }
+
+    & .cf-checkbox-custom {
+
+        cursor: pointer;
+
+        & input {
+
+            display: none;
+
+            &:checked~span {
+
+                font-weight: 600;
+
+                &::before {
+                    border: 1px solid #fff;
+                    background-color: #404040;
+                }
+            }
+
+
+        }
+
+        & span {
+
+            font-size: rem(18);
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                width: rem(18);
+                min-width: rem(18);
+                height: rem(18);
+                background-color: transparent;
+                display: block;
+                border: 1px solid #535353;
+                margin-right: rem(10);
+            }
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+
+    }
+
+
+
+    & .select-area,
+    & .select-rooms {
+        & input[type=text] {
+            max-width: rem(100) !important;
+        }
+    }
+
+    & .select-complex {
+        border: 1px solid #535353;
+        height: rem(30);
+        padding: 0 rem(25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: rem(50);
+        font-size: rem(18);
+        margin-left: rem(10);
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid #777;
+        }
+
+    }
+}
