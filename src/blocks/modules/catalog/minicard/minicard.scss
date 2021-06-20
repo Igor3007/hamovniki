@@ -93,6 +93,7 @@
         display: flex;
         align-items: flex-start;
         flex-grow: 1;
+        flex-direction: column;
 
         @media screen and (max-width: $w580) {
             max-width: 460px;
@@ -101,9 +102,28 @@
         }
     }
 
+    &__title {
+        & a {
+            font-weight: bold;
+            font-size: rem(24);
+            line-height: 90%;
+            color: #FFFFFF;
+        }
+
+    }
+
+    &__subtitle {
+        font-size: rem(18);
+        line-height: 100%;
+        color: #FFFFFF;
+        padding-top: rem(8);
+
+    }
+
     &__props {
         flex-grow: 1;
         font-size: 14px;
+        padding-top: rem(18);
 
         @media screen and (max-width: $w1280) {
             font-size: 13px;
@@ -128,8 +148,9 @@
         & li {
             padding-bottom: rem(5);
             font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
+            font-size: rem(16);
+            text-transform: capitalize;
+            color: #C4C4C4;
 
 
             & span {
@@ -199,19 +220,23 @@
 
     }
 
-    &__rub {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 20px;
+    &__price {
         display: flex;
         align-items: center;
-        text-align: right;
-        color: $main;
-        text-align: right;
         justify-content: flex-end;
+        width: 100%;
+    }
+
+    &__rub {
+        font-weight: 600;
+        color: $main;
         white-space: nowrap;
         text-transform: uppercase;
+        font-size: rem(22);
+        line-height: rem(32);
+        text-align: right;
+        color: #A3D39C;
+        margin-top: -32px;
 
 
         @media screen and (max-width: $w1024) {

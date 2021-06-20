@@ -1,4 +1,4 @@
-//- include ../../../data/carFooter
+include ../../modules/quiz/quiz.pug
 
 
 .footer(style="background-image: url('/img/common/footer-bg.jpg');") 
@@ -10,6 +10,9 @@
       .footer__callback
         button.btn.btn-green  Заказать звонок
     .footer__logo: a(href='/'): +bgimage('/img/common/logo.svg')
+
+
++quiz(quizarr)
 
 
 

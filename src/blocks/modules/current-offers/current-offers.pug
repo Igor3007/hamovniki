@@ -2,13 +2,13 @@ mixin slide-current-offer(data)
   .item-offer
     .item-offer__wrp
       .item-offer__images
-        .item-offer__images-thumb
+        .item-offer__images-thumb(data-gallery="current-thumb")
           ul
             li.active: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+            li: a(href='/img/catalog/r2.jpg'): +bgimage('/img/catalog/r2.jpg')
+            li: a(href='/img/catalog/r3.jpg'): +bgimage('/img/catalog/r3.jpg')
             li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
-            li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
-            li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
-        .item-offer__images-full
+        .item-offer__images-full(data-gallery="current-full")
           a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
 
 

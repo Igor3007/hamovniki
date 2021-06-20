@@ -1,0 +1,33 @@
+mixin quiz-slide(data)
+  .quiz-slide
+    .quiz-slide__title= data.title
+    .quiz-slide__answer
+      ul
+        each item in data.answer
+          li
+            label
+              input(type="checkbox" value=""+item+"")
+              span= item
+
+mixin quiz(quizarr)
+  .quiz
+    .quiz__wrp  
+      .quiz__close x
+      .quiz__list
+        each item in quizarr
+          .quiz__slide: +quiz-slide(item)
+      .quiz__action
+        .quiz__nav
+          .quiz__nav-prev
+          .quiz__nav-next: button.btn.btn-green Следующий вопрос
+        .quiz__dots
+          .quiz__page
+            span 01
+            |/
+            span 05
+          .quiz__mark
+            span
+            span
+            span
+            span
+            span

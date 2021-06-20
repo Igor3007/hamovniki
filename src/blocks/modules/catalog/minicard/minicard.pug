@@ -9,15 +9,18 @@ mixin minicard(data)
       +bgimage('/img/catalog/'+data+'.jpg')
 
     .minicard__desc
+      .minicard__title
+        a(href='#') 2 комн. кв, 120 м2
+        span.add-favorite
+      .minicard__subtitle Резиденция на Всеволожском
       .minicard__props
         ul
-          li Отделка: <span>Без отделки</span>
+          li Всеволожский переулок, 5 <span></span>
+          li Комнат: <span>2</span>
           li Площадь: <span>775 м2</span>
-          li Участок: <span>23 сот.</span>
-          li Участок: <span>23 сот.</span>
-          li Участок: <span>23 сот.</span>
+          li Этаж: <span>3/20</span>
       .minicard__price
-        .minicard__usd 1 0016 811 $
-        .minicard__rub  66 977 341 руб
+        .minicard__rub  250 000 000 ₽
 
     .minicard__btn: button.btn.btn-green(data-fancybox="catalog" data-type="ajax" data-src="_popup-card.html") Подробнее
+

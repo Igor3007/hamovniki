@@ -160,6 +160,51 @@ var specialist = new Swiper('[data-swiper="specialists"]', {
 //event
 
  
+/* ======================================================
+======================================================*/
+
+$(document).on('click', '[data-gallery="current-thumb"] li a', function(event){
+  
+  event.preventDefault()
+
+  $(this).parents('ul').find('li').removeClass('active')
+  $(this).parent().addClass('active')
+
+  let link = $(this).attr('href')
+
+  $(this).parents('.item-offer').find('[data-gallery="current-full"] .bgimage').css({
+    'background-image': 'url('+link+')',
+  })
+  
+})
+
+$(document).on('click', '[data-gallery="current-full"] a', function(event){
+
+  event.preventDefault()
+  
+  const images = $(this).parents('.item-offer').find('[data-gallery="current-thumb"] li');
+  const imagesArr = [];
+
+  images.each(function(){
+
+    imagesArr.push({
+      src  : $(this).find('a').attr('href'),
+      type : 'image' 
+    })
+
+  })
+
+  $.fancybox.open(imagesArr, {
+    loop : false,
+    animationEffect: "zoom",
+  });
+
+  const activeSlide = $(this).parents('.item-offer').find('[data-gallery="current-thumb"] li.active').index()
+
+
+  $.fancybox.getInstance().jumpTo(activeSlide);
+  
+})
   
 
-});
+}); //ready
