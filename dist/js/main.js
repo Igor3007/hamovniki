@@ -201,6 +201,184 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/mapcustom/mapcustom.js":
+/*!***************************************************!*\
+  !*** ./src/blocks/modules/mapcustom/mapcustom.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  function customMap() {
+    this.container = $('.mapcustom__placemark'), this.params = [{
+      'title': 'hamovniki',
+      'point': '617, 515'
+    }, {
+      'title': 'hamovniki',
+      'point': '494, 545'
+    }, {
+      'title': 'hamovniki',
+      'point': '574, 640'
+    }, {
+      'title': 'hamovniki',
+      'point': '486, 640'
+    }, {
+      'title': 'hamovniki',
+      'point': '738, 644'
+    }, {
+      'title': 'hamovniki',
+      'point': '782, 662'
+    }, {
+      'title': 'hamovniki',
+      'point': '748, 727'
+    }, {
+      'title': 'hamovniki',
+      'point': '867, 750'
+    }, {
+      'title': 'hamovniki',
+      'point': '706, 844'
+    }, {
+      'title': 'hamovniki',
+      'point': '652, 911'
+    }, {
+      'title': 'hamovniki',
+      'point': '590, 786'
+    }, {
+      'title': 'hamovniki',
+      'point': '547, 871'
+    }, {
+      'title': 'hamovniki',
+      'point': '531, 950'
+    }, {
+      'title': 'hamovniki',
+      'point': '468, 778 '
+    }, {
+      'title': 'hamovniki',
+      'point': '467, 927'
+    }, {
+      'title': 'hamovniki',
+      'point': '500, 1044'
+    }, {
+      'title': 'hamovniki',
+      'point': '416, 1023'
+    }, {
+      'title': 'hamovniki',
+      'point': '419, 986'
+    }, {
+      'title': 'hamovniki',
+      'point': '362, 951'
+    }, {
+      'title': 'hamovniki',
+      'point': '467, 779'
+    }, {
+      'title': 'hamovniki',
+      'point': '365, 769'
+    }, {
+      'title': 'hamovniki',
+      'point': '350, 643'
+    }, {
+      'title': 'hamovniki',
+      'point': '311, 833'
+    }, {
+      'title': 'hamovniki',
+      'point': '361, 1046'
+    }, {
+      'title': 'hamovniki',
+      'point': '331, 1059'
+    }, {
+      'title': 'hamovniki',
+      'point': '324, 1153'
+    }, {
+      'title': 'hamovniki',
+      'point': '288, 1136'
+    }, {
+      'title': 'hamovniki',
+      'point': '279, 1082'
+    }, {
+      'title': 'hamovniki',
+      'point': '294, 1010'
+    }, {
+      'title': 'hamovniki',
+      'point': '271, 974'
+    }, {
+      'title': 'hamovniki',
+      'point': '242, 892'
+    }, {
+      'title': 'hamovniki',
+      'point': '200, 826'
+    }, {
+      'title': 'hamovniki',
+      'point': '181, 764'
+    }, {
+      'title': 'hamovniki',
+      'point': '144, 975'
+    }, {
+      'title': 'hamovniki',
+      'point': '174, 1065'
+    }, {
+      'title': 'hamovniki',
+      'point': '204, 1036'
+    }, {
+      'title': 'hamovniki',
+      'point': '87, 1076'
+    }, {
+      'title': 'hamovniki',
+      'point': '86, 1172'
+    }, {
+      'title': 'hamovniki',
+      'point': '142, 1133'
+    }, {
+      'title': 'hamovniki',
+      'point': '216, 1134'
+    }, {
+      'title': 'hamovniki',
+      'point': '188, 1207'
+    }, {
+      'title': 'hamovniki',
+      'point': '156, 1206'
+    }, {
+      'title': 'hamovniki',
+      'point': '97, 1244'
+    }];
+    this.init = function () {
+      this.addPlacemark(this.params);
+    }, this.addPlacemark = function (pointsArray) {
+      var _this = this;
+
+      pointsArray.forEach(function (item, index) {
+        var html = _this.templatePlacemark(item);
+
+        _this.container.append(html);
+      });
+    }, this.templatePlacemark = function (data) {
+      var arrPoint = data.point.split(',');
+      var offset = {
+        offsetX: 12,
+        offsetY: 12
+      };
+      var pointY = arrPoint[0] - offset.offsetY;
+      var pointX = arrPoint[1] - offset.offsetX;
+      var template = '<div class="placemark-item" style="top: ' + pointY + 'px; left: ' + pointX + 'px;" title="' + data.title + '" ></div>';
+      return template;
+    };
+  }
+
+  var cm = new customMap();
+  cm.init();
+  $(document).on('click', '.placemark-item', function () {
+    var pointY = $(this).position().top;
+    var pointX = $(this).position().left; //console.log(pointY+', '+pointX, 'placemark')
+  });
+  $(document).on('mousedown', '.mapcustom__placemark', function (e) {
+    var pointY = e.originalEvent.pageY - $(this).offset().top;
+    var pointX = e.originalEvent.pageX - $(this).offset().left;
+    console.log(pointY.toFixed(0) + ', ' + pointX.toFixed(0));
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js":
 /*!*********************************************************************!*\
   !*** ./src/blocks/modules/mobile-menu-button/mobile-menu-button.js ***!
@@ -1974,6 +2152,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
 /* harmony import */ var _modules_mobile_menu_button_mobile_menu_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/mobile-menu-button/mobile-menu-button */ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js");
+/* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/mapcustom/mapcustom.js */ "./src/blocks/modules/mapcustom/mapcustom.js");
+/* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__);
 
  // import "%modules%/video/video";
 // import "%modules%/menu/menu";
@@ -2005,6 +2185,8 @@ __webpack_require__.r(__webpack_exports__);
 /* basket */
 // import "%modules%/basket/basket-aside/basket-aside";
 
+
+
 /***/ }),
 
 /***/ "./src/js/index.js":
@@ -2028,8 +2210,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./import/jquery.fancybox.min */ "./src/js/import/jquery.fancybox.min.js");
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -2040,39 +2220,117 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2___default()();
 swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_3__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_3__["Navigation"]]);
 jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
-  var _Swiper;
-
   // .swiper-container
-  var region = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="region"]', (_Swiper = {
+  var region = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="region"]', {
     slidesPerView: 4,
     spaceBetween: 27,
     observer: true,
+    centeredSlides: 'auto',
     loop: true,
-    centeredSlides: 'auto'
-  }, _defineProperty(_Swiper, "loop", true), _defineProperty(_Swiper, "observeParents", true), _defineProperty(_Swiper, "navigation", {
-    nextEl: '.slider-slider-nav__next',
-    prevEl: '.slider-slider-nav__prev'
-  }), _defineProperty(_Swiper, "breakpoints", {
-    0: {
-      spaceBetween: 5,
-      slidesPerView: 1
+    observeParents: true,
+    navigation: {
+      nextEl: '.slider-slider-nav__next',
+      prevEl: '.slider-slider-nav__prev'
     },
-    480: {
-      spaceBetween: 5
-    },
-    580: {
-      spaceBetween: 15
-    },
-    767: {
-      spaceBetween: 15
-    },
-    1024: {
-      spaceBetween: 15
-    },
-    1280: {
-      spaceBetween: 27
+    breakpoints: {
+      0: {
+        spaceBetween: 5,
+        slidesPerView: 1
+      },
+      480: {
+        spaceBetween: 5
+      },
+      580: {
+        spaceBetween: 15
+      },
+      767: {
+        spaceBetween: 15
+      },
+      1024: {
+        spaceBetween: 15
+      },
+      1280: {
+        spaceBetween: 27
+      }
     }
-  }), _Swiper));
+  }); // .swiper-container current-offers
+
+  var curroff = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="current-offers"]', {
+    slidesPerView: 1.48,
+    spaceBetween: 43,
+    //observer: true,
+    loop: true,
+    centeredSlides: 'auto',
+    //observeParents: true,
+    navigation: {
+      nextEl: '[data-swiper-next="current-offers"]',
+      prevEl: '[data-swiper-prev="current-offers"]'
+    },
+    breakpoints: {
+      0: {
+        spaceBetween: 5,
+        slidesPerView: 1
+      },
+      480: {
+        spaceBetween: 5
+      },
+      580: {
+        spaceBetween: 15
+      },
+      767: {
+        spaceBetween: 15
+      },
+      1024: {
+        spaceBetween: 15
+      },
+      1280: {
+        spaceBetween: 27
+      }
+    },
+    on: {
+      afterInit: function afterInit() {
+        var curroff = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="current-offers-item"]', {
+          slidesPerView: 4,
+          spaceBetween: 0,
+          direction: "vertical"
+        });
+      }
+    }
+  }); // .swiper-container specialists
+
+  var specialist = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="specialists"]', {
+    slidesPerView: 1.2,
+    spaceBetween: 40,
+    //observer: true,
+    loop: true,
+    centeredSlides: 'auto',
+    //observeParents: true,
+    navigation: {
+      nextEl: '[data-swiper-next="specialists"]',
+      prevEl: '[data-swiper-prev="specialists"]'
+    },
+    breakpoints: {
+      0: {
+        spaceBetween: 5,
+        slidesPerView: 1
+      },
+      480: {
+        spaceBetween: 5
+      },
+      580: {
+        spaceBetween: 15
+      },
+      767: {
+        spaceBetween: 15
+      },
+      1024: {
+        spaceBetween: 15
+      },
+      1280: {
+        spaceBetween: 27
+      }
+    }
+  }); //event
 });
 
 /***/ })

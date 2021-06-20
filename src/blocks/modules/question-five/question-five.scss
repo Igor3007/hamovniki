@@ -1,0 +1,33 @@
+.section-question-five {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+
+    background-size: cover;
+
+    & .container {
+        max-width: 1440px
+    }
+}
+
+.question-five {
+    &__wrp {
+        @include row-flex;
+        align-content: center;
+
+        &>div {
+            @include col();
+            @include size(6);
+        }
+    }
+
+    &__text {
+        font-size: rem(32);
+        line-height: 112%;
+        color: #000000;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+    }
+}

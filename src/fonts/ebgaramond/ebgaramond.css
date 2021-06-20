@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Regular'), local('EBGaramond-Regular'), url('Ebgaramondregular.woff2') format('woff2'), url('Ebgaramondregular.woff') format('woff'), url('Ebgaramondregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond SemiBold'), local('EBGaramond-SemiBold'), url('Ebgaramondsemibold.woff2') format('woff2'), url('Ebgaramondsemibold.woff') format('woff'), url('Ebgaramondsemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Italic'), local('EBGaramond-Italic'), url('Ebgaramonditalic.woff2') format('woff2'), url('Ebgaramonditalic.woff') format('woff'), url('Ebgaramonditalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Medium Italic'), local('EBGaramond-MediumItalic'), url('Ebgaramondmediumitalic.woff2') format('woff2'), url('Ebgaramondmediumitalic.woff') format('woff'), url('Ebgaramondmediumitalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond ExtraBold Italic'), local('EBGaramond-ExtraBoldItalic'), url('Ebgaramondextrabolditalic.woff2') format('woff2'), url('Ebgaramondextrabolditalic.woff') format('woff'), url('Ebgaramondextrabolditalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond ExtraBold'), local('EBGaramond-ExtraBold'), url('Ebgaramondextrabold.woff2') format('woff2'), url('Ebgaramondextrabold.woff') format('woff'), url('Ebgaramondextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Medium'), local('EBGaramond-Medium'), url('Ebgaramondmedium.woff2') format('woff2'), url('Ebgaramondmedium.woff') format('woff'), url('Ebgaramondmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Bold Italic'), local('EBGaramond-BoldItalic'), url('Ebgaramondbolditalic.woff2') format('woff2'), url('Ebgaramondbolditalic.woff') format('woff'), url('Ebgaramondbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond SemiBold Italic'), local('EBGaramond-SemiBoldItalic'), url('Ebgaramondsemibolditalic.woff2') format('woff2'), url('Ebgaramondsemibolditalic.woff') format('woff'), url('Ebgaramondsemibolditalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    src: local('EB Garamond Bold'), local('EBGaramond-Bold'), url('Ebgaramondbold.woff2') format('woff2'), url('Ebgaramondbold.woff') format('woff'), url('Ebgaramondbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

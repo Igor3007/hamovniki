@@ -1,0 +1,46 @@
+mixin slide-current-offer(data)
+  .item-offer
+    .item-offer__wrp
+      .item-offer__images
+        .item-offer__images-thumb
+          ul
+            li.active: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+            li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+            li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+            li: a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+        .item-offer__images-full
+          a(href='/img/catalog/r1.jpg'): +bgimage('/img/catalog/r1.jpg')
+
+
+      .item-offer__main
+        .item-offer__id: span ID:2589
+        .item-offer__title Квартира shell&core
+        .item-offer__subtitle ЖК Дом у Пречистенских ворот
+        .item-offer__price 250 000 000 рублей
+        .item-offer__props
+          ul
+            li: <span>Площадь:</span> 209,8 м2
+            li: <span>Этаж:</span> 2
+            li: <span>Спальни: </span> 2
+            li: <span>Адрес:</span> ул. Остоженка, 6, стр. 1, Москва
+        .item-offer__action
+          .item-offer__link: a(href='#'):  button.btn.btn-green Подробнее
+          .item-offer__nav
+            .slider-slider-nav
+              .slider-slider-nav__prev(data-swiper-prev="current-offers"): +icons('#ic_swiper-arrow-left')
+              .slider-slider-nav__next(data-swiper-next="current-offers"): +icons('#ic_swiper-arrow-right')
+
+mixin current-offers()
+  section.section-current-offers
+    .current-offers
+      .current-offers__title
+        .container Изучите ТОП-5 актуальных предложений в хамовниках сегодня
+      .current-offers__list
+        .swiper-container(data-swiper="current-offers")
+          .swiper-wrapper
+            each item in [1,2,3,4]
+              .swiper-slide: +slide-current-offer(item)
+      .current-offers__quiz
+        .container
+          .current-offers__quiz-desc или ответьте на <span>5</span> коротких вопросов и мы сделаем вам индивидуальное предложение
+          .current-offers__quiz-btn: button.btn.btn-gold Подобрать предложение

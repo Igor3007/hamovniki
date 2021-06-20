@@ -4,12 +4,20 @@
         @include layer(1);
     }
 
+    &__placemark {
+        @include layer(2);
+    }
+
     &__badges {
         @include layer(2);
+
+        height: 0;
+        bottom: auto;
 
         & .container {
             display: flex;
             justify-content: space-between;
+            height: 0;
         }
 
         &-right {
@@ -82,4 +90,20 @@
     }
 
 
+}
+
+
+.placemark-item {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #CBA55F 11.85%, #96763C 84.6%);
+    //background-color: $red;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }

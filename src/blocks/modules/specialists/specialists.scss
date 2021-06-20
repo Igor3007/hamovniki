@@ -1,0 +1,140 @@
+.section-specialists {
+    background: #242424;
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    position: relative;
+    overflow: hidden;
+
+    &__dec {
+
+        &-left,
+        &-right {
+            width: 35vw;
+            top: 0;
+
+            & .bgimage {
+                @include bgimage-contain;
+                padding-top: 45%;
+                mix-blend-mode: multiply;
+                opacity: 0.6;
+            }
+        }
+
+        &-left {
+            position: absolute;
+            left: 0;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        &-right {
+            position: absolute;
+            right: 0;
+            transform: translateX(50%);
+            z-index: 1;
+        }
+    }
+}
+
+.specialists {
+    &__title {
+        @include section-title;
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    &__list {
+        padding-top: rem(80);
+        position: relative;
+        z-index: 2;
+    }
+
+
+}
+
+.item-specialists {
+
+
+    border: 1px solid #3F3F3F;
+
+    &__wrp {
+        padding: rem(50);
+        display: flex;
+        align-items: center;
+    }
+
+    &__props {
+
+        padding-top: rem(40);
+
+        & li {
+            color: #fff;
+            font-weight: 350;
+            font-size: rem(22);
+            line-height: 182%;
+        }
+    }
+
+    &__image {
+        @include col();
+        @include size(5);
+        position: relative;
+
+
+
+        &::before {
+            content: '';
+            padding-top: 100%;
+            background-color: transparent;
+            display: block;
+            z-index: 2;
+            position: relative;
+            border-radius: 50%;
+
+
+        }
+
+        & .bgimage {
+            padding-top: 100%;
+            @include bgimage-contain;
+            @include layer(2);
+            top: auto;
+            border-radius: 50% 0 50% 0;
+
+        }
+    }
+
+    &__main {
+        @include col();
+        @include size(7);
+    }
+
+    &__name {
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: bold;
+        font-size: rem(50);
+        line-height: 68%;
+        color: #fff;
+    }
+
+    &__post {
+        font-size: rem(19);
+        line-height: 147%;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+        padding-top: rem(40);
+    }
+
+    &__btn {
+        padding-top: rem(30);
+
+        & button {
+            width: 100%;
+            max-width: rem(400);
+        }
+    }
+
+}

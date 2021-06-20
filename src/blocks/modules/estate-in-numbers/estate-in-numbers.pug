@@ -1,0 +1,22 @@
+mixin item-digit(data)
+  .estate-in-numbers-item
+    .estate-in-numbers-item__left 
+      .estate-in-numbers-item__title= data.title
+      .estate-in-numbers-item__subtitle= data.subtitle
+    .estate-in-numbers-item__right
+      .estate-in-numbers-item__desc!= data.desc
+
+mixin estate-in-numbers(data)
+  section.section-estate-in-numbers
+    .container
+      .estate-in-numbers
+        .estate-in-numbers__wrp
+          .estate-in-numbers__img-branch: +bgimage('/img/common/digits.png')
+          .estate-in-numbers__img-column: +bgimage('/img/common/digits-title.png')
+          .estate-in-numbers__title Недвижимость Хамовников <br> — главное в цифрах
+          .estate-in-numbers__angles-top
+          .estate-in-numbers__list
+            each item in data
+              .estate-in-numbers__item: +item-digit(item)
+          .estate-in-numbers__angles-bottom
+

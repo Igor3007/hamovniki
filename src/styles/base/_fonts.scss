@@ -80,6 +80,8 @@ muller
 */
 
 
+
+
 /* muller */
 
 // @font-face {
@@ -321,3 +323,20 @@ muller
 // 	font-weight: 500;
 // 	font-style: italic;
 // }
+
+/* 
+====================================================
+EB Garamond
+====================================================
+*/
+
+@font-face {
+	font-family: 'EB Garamond';
+	src: local('EB Garamond Regular'),
+		local('EBGaramond-Regular'),
+		url('/fonts/ebgaramond/Ebgaramondregular.woff2') format('woff2'),
+		url('/fonts/ebgaramond/Ebgaramondregular.woff') format('woff'),
+		url('/fonts/ebgaramond/Ebgaramondregular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}

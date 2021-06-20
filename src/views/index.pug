@@ -1,7 +1,13 @@
 extends layouts/index
 include ../blocks/modules/first-block/first-block
 include ../blocks/modules/slider-region/slider-region
+include ../blocks/modules/estate-in-numbers/estate-in-numbers
+include ../blocks/modules/current-offers/current-offers
 include ../blocks/modules/mapcustom/mapcustom
+include ../blocks/modules/infrastructure/infrastructure
+include ../blocks/modules/specialists/specialists
+include ../blocks/modules/question-five/question-five
+include ../blocks/modules/history/history
 include ../blocks/modules/catalog/catalog/catalog
 
 block variables
@@ -14,6 +20,14 @@ block content
   +slider-region(slider_region)
   +mapcustom()
   +catalog()
+  +current-offers()
+  +estate-in-numbers(digits)
+
+  +infrastructure()
+  +specialists()
+  +question-five()
+  +history()
+  +slider-region(slider_region)
 
 
 block scripts

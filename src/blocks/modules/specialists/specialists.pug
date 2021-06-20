@@ -1,0 +1,34 @@
+mixin item-specialists()
+  .item-specialists
+    .item-specialists__wrp
+      .item-specialists__image: +bgimage('/img/common/spec.png')
+      .item-specialists__main
+        .item-specialists__name Сергей Иванов
+        .item-specialists__post Консультант элитной недвижимости
+        .item-specialists__props
+          ul
+            li Стаж в компании: 6 лет
+            li Закрытых сделок: 110
+            li Опыт: 16 лет
+        .item-specialists__btn
+          button.btn.btn-green Выбрать
+
+mixin specialists()
+  .section-specialists
+    .section-specialists__dec
+      .section-specialists__dec-left: +bgimage('/img/common/digits-title.png')
+      .section-specialists__dec-right: +bgimage('/img/common/digits-title.png')
+    .specialists
+      .specialists__wrp
+        .specialists__title
+          .container Выберите специалиста по домам Остоженки, он свяжется с вами в самое ближайшее время
+        .specialists__list
+          .swiper-container(data-swiper="specialists")
+            .swiper-wrapper
+              each item in [1,2,4,4]
+                .swiper-slide: +item-specialists()
+        .specialists__nav
+          .container
+            .slider-slider-nav
+              .slider-slider-nav__prev(data-swiper-prev="specialists"): +icons('#ic_swiper-arrow-left')
+              .slider-slider-nav__next(data-swiper-next="specialists"): +icons('#ic_swiper-arrow-right')
