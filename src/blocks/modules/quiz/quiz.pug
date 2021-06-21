@@ -1,33 +1,48 @@
 mixin quiz-slide(data)
   .quiz-slide
-    .quiz-slide__title= data.title
+    .quiz-slide__title!= data.title
     .quiz-slide__answer
       ul
         each item in data.answer
           li
-            label
+            label.qz-checkbox
               input(type="checkbox" value=""+item+"")
-              span= item
+              div: span= item
+
 
 mixin quiz(quizarr)
   .quiz
-    .quiz__wrp  
-      .quiz__close x
-      .quiz__list
-        each item in quizarr
-          .quiz__slide: +quiz-slide(item)
-      .quiz__action
-        .quiz__nav
-          .quiz__nav-prev
-          .quiz__nav-next: button.btn.btn-green Следующий вопрос
-        .quiz__dots
-          .quiz__page
-            span 01
-            |/
-            span 05
-          .quiz__mark
-            span
-            span
-            span
-            span
-            span
+    form(action='#' method='POST')
+      .quiz__wrp  
+        .quiz__close: +icons('#ic_close-quiz', 60)
+        .quiz__list
+          each item, index in quizarr
+            .quiz__slide(class=""+(index==0 ? 'active':'')+""): +quiz-slide(item)
+          .quiz__slide
+            .quiz-slide
+              .quiz-slide__title По вашим параметрам <br> найдено 5 объектов
+              .quiz-slide__subtitle зАПОЛНИТЕ ПОЛЯ НИЖЕ ДЛЯ ПОЛУЧЕНИЯ АКТУАЛЬНЫХ ОБЪЕКТОВ В ТЕЧЕНИЕ 15 МИНУТ
+              .quiz-slide__form 
+                .form
+                  .form__item
+                    .form__subitem: input(type="text" placeholder="Имя" class="required")
+                    .form__subitem: input(type="email" placeholder="e-mail" class="required")
+                    .form__subitem: input(type="tel" placeholder="Телефон" class="required")
+                  .form__item
+                    .form__subitem
+                      label
+                        input(type="checkbox" placeholder="rules" class="required")
+                        span.checkbox-elem 
+                        span.checkbox-text Я принимаю условия политики конфиденциальности и соглашения пользования 
+
+        .quiz__action
+          .quiz__nav
+            .quiz__nav-prev(data-quiz-nav="prev"): +icons('#ic_swiper-arrow-left')
+            .quiz__nav-next: button.btn.btn-green(data-quiz-nav="next") Следующий вопрос
+            .quiz__nav-next: button.btn.btn-green(data-quiz="send") Получить результаты
+          .quiz__dots
+            .quiz__page
+              span(data-quiz-count="current") 01
+              |/
+              span(data-quiz-count="total") 05
+            .quiz__mark

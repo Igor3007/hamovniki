@@ -42,6 +42,14 @@
     color: #838383;
 }
 
+@mixin line-clamp($number) {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 
 @mixin bgimage_cover-scale {
     position: relative;

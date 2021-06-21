@@ -33,3 +33,4 @@ import "%modules%/mobile-menu-button/mobile-menu-button";
 
 
 import "%modules%/mapcustom/mapcustom.js";
+import "%modules%/quiz/quiz.js";

@@ -205,6 +205,36 @@ $(document).on('click', '[data-gallery="current-full"] a', function(event){
   $.fancybox.getInstance().jumpTo(activeSlide);
   
 })
-  
+
+/* ================================================== */
+//mask
+/* ================================================== */
+
+function initInputMask(){
+  $("input[type=tel]").inputmask({
+      mask: '+7 (999) 999-99-99',
+      showMaskOnHover: false,
+      getemptymask: true,
+      clearIncomplete: true,
+
+      oncomplete: function(elem){
+          elem.target.setAttribute('area-valid', 'true')
+      },
+      onincomplete: function(elem){
+          if(elem.target.value)
+            elem.target.setAttribute('area-valid', 'false')
+      },
+      oncleared: function(elem){
+          elem.target.removeAttribute('area-valid')
+      },
+      onKeyValidation: function(elem){
+          console.log(elem)
+      }
+  });
+}
+
+initInputMask();
+
+
 
 }); //ready

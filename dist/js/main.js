@@ -416,6 +416,144 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 
 /***/ }),
 
+/***/ "./src/blocks/modules/quiz/quiz.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/modules/quiz/quiz.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $(document).on('click', '.quiz__close', function (event) {
+    $(this).parents('.quiz').removeClass('open');
+  }); //===========================
+
+  function historyMain() {
+    this.container = '.quiz__list';
+    this.item = '.quiz__slide';
+    this.dotsContainer = '.quiz__mark';
+    this.countSlide = $(this.item).length;
+    this.slideActive = 1;
+
+    this.init = function () {
+      this.changeStage();
+      this.nav();
+      this.renderDots(this.slideActive);
+    };
+
+    this.changeStage = function () {
+      $('[data-quiz-count="current"]').text(this.slideActive);
+      $('[data-quiz-count="total"]').text(this.countSlide);
+    };
+
+    this.cahngeSlide = function (index) {
+      $(this.item).removeClass('active');
+      $(this.item).eq(index - 1).addClass('active');
+      this.changeStage();
+      this.nav();
+      this.renderDots(this.slideActive);
+    };
+
+    this.nextSlide = function () {
+      if (this.slideActive < this.countSlide) {
+        this.slideActive = this.slideActive + 1;
+        this.cahngeSlide(this.slideActive);
+      }
+    };
+
+    this.prevSlide = function () {
+      if (this.slideActive > 1) {
+        this.slideActive = this.slideActive - 1;
+        this.cahngeSlide(this.slideActive);
+      }
+    };
+
+    this.renderDots = function (activeSlide) {
+      $(this.dotsContainer).empty();
+
+      for (var i = 1; i <= this.countSlide; i++) {
+        var active = i <= activeSlide ? 'active' : '';
+        $(this.dotsContainer).append('<span class="' + active + '"></span>');
+      }
+    };
+
+    this.nav = function () {
+      // говно какоето
+      if ($(window).width() > 580) {
+        if (this.slideActive == 1) {
+          $('[data-quiz-nav="prev"]').hide();
+        } else {
+          $('[data-quiz-nav="prev"]').show();
+        }
+
+        if (this.slideActive == this.countSlide) {
+          $('[data-quiz-nav="next"]').hide();
+          $('[data-quiz="send"]').show();
+        } else {
+          $('[data-quiz-nav="next"]').show();
+          $('[data-quiz="send"]').hide();
+        }
+      }
+    };
+  }
+
+  var hst = new historyMain();
+  hst.init();
+  $('[data-quiz-nav="prev"]').on('click', function (event) {
+    hst.prevSlide();
+  });
+  $('[data-quiz-nav="next"]').on('click', function (event) {
+    hst.nextSlide();
+  });
+  /* =========================================== */
+
+  /* =========================================== */
+
+  $(document).on('submit', '.quiz form', function (event) {
+    event.preventDefault();
+  });
+  /* =========================================== */
+
+  /* =========================================== */
+
+  $(document).on('click', '[data-quiz="send"]', function (event) {
+    $('.quiz form input').each(function (item) {
+      switch ($(this).attr('type')) {
+        case 'email':
+        case 'tel':
+        case 'text':
+          if ($(this).hasClass('required') && $(this).val() === '') {
+            $(this).attr('area-valid', 'false');
+          } else {
+            $(this).attr('area-valid', 'true');
+          }
+
+          break;
+
+        case 'radio':
+        case 'checkbox':
+          if ($(this).hasClass('required') && !$(this).prop('checked')) {
+            $(this).attr('area-valid', 'false');
+          } else {
+            $(this).attr('area-valid', 'true');
+          }
+
+          break;
+      }
+    });
+  });
+  /* =========================================== */
+
+  /* =========================================== */
+
+  $(document).on('click', '[data-quiz="open"]', function (event) {
+    $('.quiz').toggleClass('open');
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/js/import/components.js":
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
@@ -2154,6 +2292,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_menu_button_mobile_menu_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/mobile-menu-button/mobile-menu-button */ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js");
 /* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/mapcustom/mapcustom.js */ "./src/blocks/modules/mapcustom/mapcustom.js");
 /* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/quiz/quiz.js */ "./src/blocks/modules/quiz/quiz.js");
+/* harmony import */ var _modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3__);
 
  // import "%modules%/video/video";
 // import "%modules%/menu/menu";
@@ -2184,6 +2324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* basket */
 // import "%modules%/basket/basket-aside/basket-aside";
+
 
 
 
@@ -2361,6 +2502,33 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
     var activeSlide = jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).parents('.item-offer').find('[data-gallery="current-thumb"] li.active').index();
     jquery__WEBPACK_IMPORTED_MODULE_5___default.a.fancybox.getInstance().jumpTo(activeSlide);
   });
+  /* ================================================== */
+  //mask
+
+  /* ================================================== */
+
+  function initInputMask() {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()("input[type=tel]").inputmask({
+      mask: '+7 (999) 999-99-99',
+      showMaskOnHover: false,
+      getemptymask: true,
+      clearIncomplete: true,
+      oncomplete: function oncomplete(elem) {
+        elem.target.setAttribute('area-valid', 'true');
+      },
+      onincomplete: function onincomplete(elem) {
+        if (elem.target.value) elem.target.setAttribute('area-valid', 'false');
+      },
+      oncleared: function oncleared(elem) {
+        elem.target.removeAttribute('area-valid');
+      },
+      onKeyValidation: function onKeyValidation(elem) {
+        console.log(elem);
+      }
+    });
+  }
+
+  initInputMask();
 }); //ready
 
 /***/ })

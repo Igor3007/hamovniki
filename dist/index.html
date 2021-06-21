@@ -66,7 +66,7 @@
                 <div class="first-block__desc"><strong>Маркетплейс</strong> «хамовники» — предложения, новинки, лоты в закрытых продажах самого престижного района столицы</div>
                 <div class="first-block__title">Хамовники</div>
                 <div class="first-block__btn">
-                  <butto class="btn btn-green">Подобрать предложения</butto>
+                  <butto class="btn btn-green" data-quiz="open">Подобрать предложения</butto>
                 </div>
                 <div class="first-block__play"><a href="#">
                     <svg width="25" height="25">
@@ -884,7 +884,7 @@
             <div class="container">
               <div class="current-offers__quiz-desc">или ответьте на <span>5</span> коротких вопросов и мы сделаем вам индивидуальное предложение</div>
               <div class="current-offers__quiz-btn">
-                <button class="btn btn-gold">Подобрать предложение</button>
+                <button class="btn btn-gold" data-quiz="open">Подобрать предложение</button>
               </div>
             </div>
           </div>
@@ -1132,7 +1132,7 @@
             <div class="question-five__wrp">
               <div class="question-five__text">Ответьте на 5 коротких вопросов. Мы подберем предложения, максимально близко подходящие критериям запроса. С вами свяжется наш специалист, обладающей многолетней экспертизой в вопросе.</div>
               <div class="question-five__btn">
-                <button class="btn btn-gold btn-full">Подобрать предложение</button>
+                <button class="btn btn-gold btn-full" data-quiz="open">Подобрать предложение</button>
               </div>
             </div>
           </div>
@@ -1208,292 +1208,325 @@
         </div>
       </div>
             <div class="quiz">
-              <div class="quiz__wrp"> 
-                <div class="quiz__close">x</div>
-                <div class="quiz__list">
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">Какой тип объекта вас интересует?</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Квартира"><span>Квартира</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Резиденция"><span>Резиденция</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Апартаменты"><span>Апартаменты</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Особняк"><span>Особняк</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Пентхаус"><span>Пентхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
+              <form action="#" method="POST">
+                <div class="quiz__wrp"> 
+                  <div class="quiz__close">
+                    <svg width="60" height="60">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_close-quiz"></use>
+                    </svg>
+                  </div>
+                  <div class="quiz__list">
+                    <div class="quiz__slide active">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какой тип объекта вас <br> интересует?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Выберите тип и класс жилья, <br> Вашего будущего дома:</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Новостройки">
+                                      <div><span>Новостройки</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Вторичное жильё">
+                                      <div><span>Вторичное жильё</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Premium">
+                                      <div><span>Premium</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="De Luxe">
+                                      <div><span>De Luxe</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Elite">
+                                      <div><span>Elite</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Ultra Luxury">
+                                      <div><span>Ultra Luxury</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какие особенности должен <br> учитывать объект?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какую сумму вы планируете <br> инвестировать в недвижимость на Остоженке?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Укажите, когда Вы планируете <br> приобрести недвижимость?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                      <div class="quiz-slide">
+                        <div class="quiz-slide__title">По вашим параметрам <br> найдено 5 объектов</div>
+                        <div class="quiz-slide__subtitle">зАПОЛНИТЕ ПОЛЯ НИЖЕ ДЛЯ ПОЛУЧЕНИЯ АКТУАЛЬНЫХ ОБЪЕКТОВ В ТЕЧЕНИЕ 15 МИНУТ</div>
+                        <div class="quiz-slide__form"> 
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <input class="required" type="text" placeholder="Имя">
+                              </div>
+                              <div class="form__subitem">
+                                <input class="required" type="email" placeholder="e-mail">
+                              </div>
+                              <div class="form__subitem">
+                                <input class="required" type="tel" placeholder="Телефон">
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <label>
+                                  <input class="required" type="checkbox" placeholder="rules"><span class="checkbox-elem"> </span><span class="checkbox-text">Я принимаю условия политики конфиденциальности и соглашения пользования </span>
+                                </label>
+                              </div>
                             </div>
                           </div>
-                  </div>
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">Выберите тип и класс жилья, Вашего будущего дома:</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Новостройки"><span>Новостройки</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Вторичное жильё"><span>Вторичное жильё</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Premium"><span>Premium</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="De Luxe"><span>De Luxe</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Elite"><span>Elite</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Ultra Luxury"><span>Ultra Luxury</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                  </div>
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">Какие особенности должен учитывать объект?</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Квартира"><span>Квартира</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Резиденция"><span>Резиденция</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Апартаменты"><span>Апартаменты</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Особняк"><span>Особняк</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Пентхаус"><span>Пентхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                  </div>
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">Какую сумму вы планируете &lt;br&gt; инвестировать в недвижимость на Остоженке?</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Квартира"><span>Квартира</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Резиденция"><span>Резиденция</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Апартаменты"><span>Апартаменты</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Особняк"><span>Особняк</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Пентхаус"><span>Пентхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                  </div>
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">Укажите, когда Вы планируете &lt;br&gt; приобрести недвижимость?</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Квартира"><span>Квартира</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Резиденция"><span>Резиденция</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Апартаменты"><span>Апартаменты</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Особняк"><span>Особняк</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Пентхаус"><span>Пентхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                  </div>
-                  <div class="quiz__slide">
-                          <div class="quiz-slide">
-                            <div class="quiz-slide__title">По вашим параметрам найдено 5 объектов</div>
-                            <div class="quiz-slide__answer">
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Квартира"><span>Квартира</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Резиденция"><span>Резиденция</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Апартаменты"><span>Апартаменты</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Таунхаус"><span>Таунхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Особняк"><span>Особняк</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Пентхаус"><span>Пентхаус</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input type="checkbox" value="Рассмотрю все"><span>Рассмотрю все</span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                  </div>
-                </div>
-                <div class="quiz__action">
-                  <div class="quiz__nav">
-                    <div class="quiz__nav-prev"></div>
-                    <div class="quiz__nav-next">
-                      <button class="btn btn-green">Следующий вопрос</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="quiz__dots">
-                    <div class="quiz__page"><span>01</span>/<span>05</span></div>
-                    <div class="quiz__mark"><span></span><span></span><span></span><span></span><span></span></div>
+                  <div class="quiz__action">
+                    <div class="quiz__nav">
+                      <div class="quiz__nav-prev" data-quiz-nav="prev">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_swiper-arrow-left"></use>
+                        </svg>
+                      </div>
+                      <div class="quiz__nav-next">
+                        <button class="btn btn-green" data-quiz-nav="next">Следующий вопрос</button>
+                      </div>
+                      <div class="quiz__nav-next">
+                        <button class="btn btn-green" data-quiz="send">Получить результаты</button>
+                      </div>
+                    </div>
+                    <div class="quiz__dots">
+                      <div class="quiz__page"><span data-quiz-count="current">01</span>/<span data-quiz-count="total">05</span></div>
+                      <div class="quiz__mark"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
     </footer>
     <script src="js/main.js?v=1.52"></script>

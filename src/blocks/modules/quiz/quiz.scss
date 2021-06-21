@@ -1,0 +1,329 @@
+.quiz {
+    position: fixed;
+    z-index: 10;
+    background: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    display: none;
+
+    &.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    &__slide {
+        display: none;
+        animation: slide-up 0.3s ease 1 forwards;
+
+        &.active {
+            display: block;
+        }
+
+    }
+
+    & [data-quiz="send"] {
+        display: none;
+    }
+
+    & form {
+        width: 100%;
+    }
+
+    &__wrp {
+        max-width: 78.125rem;
+        margin: auto;
+        width: 100%;
+        padding: 30px;
+    }
+
+    &__close {
+        position: absolute;
+        right: rem(100);
+        top: rem(50);
+        cursor: pointer;
+    }
+
+    &__action {
+        display: flex;
+        justify-content: space-between;
+        padding-top: rem(45);
+    }
+
+    &__page {
+        font-family: Muller;
+        font-style: normal;
+        font-size: rem(40);
+        line-height: 120%;
+        text-transform: uppercase;
+        font-weight: 300;
+
+        & span {
+            width: rem(50);
+            display: inline-block;
+            text-align: center;
+        }
+
+        & [data-quiz-count="current"] {
+            font-weight: bold;
+        }
+
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+
+
+
+
+        &-prev {
+            width: rem(60);
+            height: rem(60);
+            border: 2px solid $green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            margin: 0 rem(40) 0 rem(0);
+            cursor: pointer;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            & svg {
+                width: 100%;
+            }
+        }
+
+        &-prev svg {
+            position: relative;
+            left: 20px;
+        }
+
+    }
+
+    &__mark {
+
+        display: flex;
+
+        & span {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #fff;
+            margin-right: 2px;
+
+            &.active {
+                background-color: $main;
+
+            }
+        }
+    }
+
+
+}
+
+.quiz-slide {
+    &__title {
+
+        padding-bottom: rem(90);
+
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: bold;
+        font-size: rem(40);
+        line-height: 120%;
+        text-align: center;
+        text-transform: uppercase;
+        min-height: rem(198);
+
+        color: #FFFFFF;
+
+        @media screen and (max-width: $w940) {
+            padding-bottom: rem(45);
+            min-height: rem(100);
+        }
+    }
+
+    &__subtitle {
+
+        font-family: Circe;
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(32);
+        line-height: 130%;
+        text-align: center;
+        text-transform: lowercase;
+        max-width: rem(700);
+        margin: 0 auto;
+
+        padding-bottom: rem(45);
+    }
+
+    &__form {
+        & input {
+            border: 1px solid #A3D39C;
+            box-sizing: border-box;
+            border-radius: 100px;
+            background: none;
+            color: #fff;
+            height: rem(70);
+            padding: 0 rem(25);
+            font-size: rem(18);
+
+            &:focus {
+                border: 1px solid #fff;
+            }
+
+            &[area-valid="false"] {
+                border: 1px solid $red;
+            }
+        }
+
+        & label {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: rem(30);
+
+            & input {
+                display: none;
+
+                &[area-valid="false"]~ {
+                    & .checkbox-text {
+                        color: #f00;
+                    }
+
+                    & .checkbox-elem {
+
+                        border: 2px solid $red;
+                    }
+                }
+
+                &:checked~.checkbox-elem {
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            & .checkbox-elem {
+                width: rem(30);
+                min-width: rem(30);
+                height: rem(30);
+                display: inline-block;
+                border: 2px solid $main;
+                border-radius: 50%;
+                position: relative;
+                margin-right: rem(25);
+
+                &::before {
+                    min-width: rem(12);
+                    width: rem(12);
+                    height: rem(6);
+                    border-left: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: rem(6);
+                    top: rem(6);
+                    transform: rotate(-45deg);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+
+
+    & .qz-checkbox {
+
+        cursor: pointer;
+
+        & input {
+
+            display: none;
+
+            &:checked~div {
+
+                font-weight: 600;
+
+                &::before {
+                    background: rgba(255, 255, 255, 0.8);
+                    border: 2px solid #fff;
+
+                }
+            }
+
+
+        }
+
+        & div {
+
+            font-size: rem(24);
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            font-weight: 300;
+            line-height: 120%;
+
+
+
+            &::before {
+                content: '';
+                width: rem(30);
+                min-width: rem(30);
+                height: rem(30);
+                background-color: transparent;
+                display: block;
+                border-radius: 50%;
+                margin-right: rem(10);
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                border: 2px solid #A3D39C;
+            }
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+
+    }
+
+    &__answer {
+        & ul {
+
+            @include row-flex();
+
+            & li {
+
+                @include col();
+                @include size-w940(3);
+                @include size(6);
+
+                min-height: rem(100);
+
+                & label span {
+                    @include line-clamp(2);
+                }
+
+
+            }
+        }
+    }
+}
