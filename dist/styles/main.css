@@ -5830,6 +5830,8 @@ header.open .header-top__phone {
   overflow-y: auto;
   height: 70vh;
   max-width: 85.625rem;
+  width: 100%;
+  padding: 1.5625rem;
 }
 
 .select-jk__list {
@@ -5886,7 +5888,7 @@ header.open .header-top__phone {
 .select-jk-item label {
   cursor: pointer;
   padding-bottom: 1.875rem;
-  display: inline-block;
+  display: block;
 }
 
 .select-jk-item label input {
@@ -5971,6 +5973,11 @@ header.open .header-top__phone {
 @media screen and (max-width: 1440px) {
   html {
     font-size: 15px;
+  }
+
+  .select-jk__list {
+    column-count: 3;
+    column-gap: 2.5rem;
   }
 }
 
@@ -6101,6 +6108,17 @@ header.open .header-top__phone {
 
   .main-menu {
     padding: 2.5rem 1.5625rem;
+  }
+
+  .select-jk__list {
+    column-count: 2;
+    column-gap: 1.875rem;
+  }
+
+  .select-jk-item label div::before {
+    width: 1.375rem;
+    min-width: 1.375rem;
+    height: 1.375rem;
   }
 }
 

@@ -23,12 +23,24 @@
         overflow-y: auto;
         height: 70vh;
         max-width: rem(1370);
+        width: 100%;
+        padding: rem(25);
     }
 
     &__list {
         column-count: 4;
         column-gap: 7%;
         margin: auto;
+
+        @media screen and (max-width: $w1440) {
+            column-count: 3;
+            column-gap: rem(40);
+        }
+
+        @media screen and (max-width: $w940) {
+            column-count: 2;
+            column-gap: rem(30);
+        }
     }
 
     &__item {
@@ -92,7 +104,7 @@
 
         cursor: pointer;
         padding-bottom: rem(30);
-        display: inline-block;
+        display: block;
 
         & input {
 
@@ -139,6 +151,12 @@
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
                 border: 2px solid #A3D39C;
+
+                @media screen and (max-width: $w940) {
+                    width: rem(22);
+                    min-width: rem(22);
+                    height: rem(22);
+                }
             }
 
             -webkit-touch-callout: none;
