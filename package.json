@@ -72,6 +72,7 @@
         "inputmask": "^5.0.5",
         "jquery": "^3.5.1",
         "jquery.inputmask": "^3.3.4",
+        "overlayscrollbars": "^1.13.1",
         "smart-grid": "^2.1.2",
         "svg4everybody": "^2.1.9",
         "swiper": "^6.4.10"

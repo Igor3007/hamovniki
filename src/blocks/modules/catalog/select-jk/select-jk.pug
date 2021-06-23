@@ -4,16 +4,17 @@ mixin checkbox-elem(text)
     div: span= text
 
 
-mixin select-jk()
+mixin select-jk(data)
   .select-jk
+    .select-jk__close(data-select-jk="close"): +icons('#ic_close-quiz', 60)
     .select-jk__wrp
-      .select-jk__close
       .select-jk__list
-        .select-jk__item
-          .select-jk-item
-            .select-jk-item__symbol 1
-            .select-jk-item__checkbox
-              each item in [1,2,3,4,5,7]
-                +checkbox-elem('1-й Зачатьевский переулок, 6с2')
-
-      .select-jk__select
+        each item in data
+          .select-jk__item
+            .select-jk-item
+              .select-jk-item__symbol= item.symbol
+              .select-jk-item__checkbox
+                each text in item.list
+                  +checkbox-elem(text)
+    .select-jk__btn
+      button.btn.btn-green(data-select-jk="select") Показать <span></span> объектов

@@ -11,6 +11,7 @@ import 'jquery.inputmask/dist/jquery.inputmask.bundle';
 
 import $ from 'jquery';
 import './import/jquery.fancybox.min';
+import 'overlayscrollbars/js/jquery.overlayScrollbars';
 
 svgPolyfill();
 Swiper.use([Pagination, Navigation]);
@@ -235,6 +236,32 @@ function initInputMask(){
 
 initInputMask();
 
+/* ================================== */
+/* ================================== */
 
+$('.select-complex').on('click', function(event){
+  
+  $('.select-jk').toggleClass('open')
+  $('html').toggleClass('hidden')
+  
+})
+
+$('.select-jk input').on('change', function(event){
+  
+  let count = $('.select-jk input:checked').length
+
+  $('[data-select-jk="select"] span').text(count)
+  
+})
+
+$('[data-select-jk="close"], [data-select-jk="select"]').on('click', function(event){
+  
+  $('.select-complex').trigger('click')
+  
+})
+
+$('.select-jk__wrp').overlayScrollbars({
+  className: 'jk-scrollbar os-theme-dark'
+});
 
 }); //ready

@@ -2340,6 +2340,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./import/jquery.fancybox.min */ "./src/js/import/jquery.fancybox.min.js");
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! overlayscrollbars/js/jquery.overlayScrollbars */ "./node_modules/overlayscrollbars/js/jquery.overlayScrollbars.js");
+/* harmony import */ var overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -2518,6 +2521,24 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
   }
 
   initInputMask();
+  /* ================================== */
+
+  /* ================================== */
+
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-complex').on('click', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-jk').toggleClass('open');
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('html').toggleClass('hidden');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-jk input').on('change', function (event) {
+    var count = jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-jk input:checked').length;
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-select-jk="select"] span').text(count);
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-select-jk="close"], [data-select-jk="select"]').on('click', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-complex').trigger('click');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-jk__wrp').overlayScrollbars({
+    className: 'jk-scrollbar os-theme-dark'
+  });
 }); //ready
 
 /***/ })
