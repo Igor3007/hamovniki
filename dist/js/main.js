@@ -159,45 +159,33 @@
 /*!*********************************************!*\
   !*** ./src/blocks/modules/header/header.js ***!
   \*********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $('.burger').on('click', function () {
+    $(this).toggleClass('open');
+    $('.main-menu').toggleClass('open');
+    $('header').toggleClass('open'); // var innerHeaderHeight = $('header').innerHeight()
+    // $('.mobile-menu').toggleClass('open').css({
+    //     'top': innerHeaderHeight+'px'
+    // })
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav__hamburger').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass('open');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-opacity').toggleClass('open');
-    var innerHeaderHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()('header').innerHeight();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.mobile-menu').toggleClass('open').css({
-      'top': innerHeaderHeight + 'px'
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').toggleClass('hidden');
+    $('html').toggleClass('hidden');
   }); //закрыть при клике вне
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e) {
-    var div = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".nav__hamburger, .mobile-menu"); //класс элемента вне которого клик
+  $(document).on('click', function (e) {
+    var div = $(".burger, .main-menu"); //класс элемента вне которого клик
 
     if (!div.is(e.target) && div.has(e.target).length === 0) {
       //закрыть popup
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav__hamburger').hasClass('open')) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.nav__hamburger').trigger('click');
+      if ($('.burger').hasClass('open')) {
+        $('.burger').trigger('click');
       }
     }
   });
-  /* search */
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__find').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.find-wrp').toggleClass('open');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.find-wrp input').focus();
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__find input').on('blur', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parents('.find-wrp').removeClass('open');
-  });
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -2289,6 +2277,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_mobile_menu_button_mobile_menu_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/mobile-menu-button/mobile-menu-button */ "./src/blocks/modules/mobile-menu-button/mobile-menu-button.js");
 /* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/mapcustom/mapcustom.js */ "./src/blocks/modules/mapcustom/mapcustom.js");
 /* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__);

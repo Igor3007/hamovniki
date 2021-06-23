@@ -1,4 +1,5 @@
 include ../../modules/quiz/quiz.pug
+include ../../modules/main-menu/main-menu.pug
 
 
 .footer(style="background-image: url('/img/common/footer-bg.jpg');") 
@@ -13,6 +14,18 @@ include ../../modules/quiz/quiz.pug
 
 
 +quiz(quizarr)
++main-menu([
+  'Карта с Жилыми Комплексами',
+  'Квартиры',
+  'О недвижимости в Хамовниках',
+  'Инфраструктура',
+  'Наши специалисты',
+  'История района Хамовники',
+])
+
++select-jk()
+
+
 
 
 

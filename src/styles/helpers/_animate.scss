@@ -48,6 +48,16 @@
     }
 }
 
+@keyframes slide-Y {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 @keyframes slide-up {
     from {
         transform: translateY(20px);
@@ -56,6 +66,16 @@
 
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
         opacity: 1;
     }
 }

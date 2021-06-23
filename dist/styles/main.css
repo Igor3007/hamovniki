@@ -1228,7 +1228,7 @@ body.compensate-for-scrollbar {
 /* Styling for Small-Screen Devices */
 
 /**
- * Swiper 6.7.0
+ * Swiper 6.4.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1236,7 +1236,7 @@ body.compensate-for-scrollbar {
  *
  * Released under the MIT License
  *
- * Released on: May 31, 2021
+ * Released on: February 18, 2021
  */
 
 @font-face {
@@ -1410,7 +1410,7 @@ body.compensate-for-scrollbar {
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -1552,6 +1552,7 @@ button.swiper-pagination-bullet {
   padding: 0;
   box-shadow: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -1851,6 +1852,7 @@ button.swiper-pagination-bullet {
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-filter: blur(50px);
   filter: blur(50px);
 }
 
@@ -2026,6 +2028,16 @@ EB Garamond
   }
 }
 
+@keyframes slide-Y {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 @keyframes slide-up {
   from {
     transform: translateY(20px);
@@ -2034,6 +2046,16 @@ EB Garamond
 
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
     opacity: 1;
   }
 }
@@ -3000,6 +3022,23 @@ header {
   width: 100%;
   z-index: 10;
   padding-left: 1.875rem;
+}
+
+header.open {
+  box-shadow: none;
+  background: transparent;
+}
+
+header.open .header-top__logo {
+  opacity: 0;
+}
+
+header.open .header-top__msgr {
+  opacity: 0;
+}
+
+header.open .header-top__phone {
+  opacity: 0;
 }
 
 .header-top {
@@ -4705,6 +4744,7 @@ header {
   bottom: 0;
   color: #fff;
   display: none;
+  animation: fade-in 0.9s ease forwards;
 }
 
 .quiz.open {
@@ -4981,6 +5021,85 @@ header {
   overflow: hidden;
 }
 
+.main-menu {
+  position: fixed;
+  z-index: 9;
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #242424;
+  display: none;
+  overflow-y: scroll;
+  padding: 5rem 1.5625rem;
+  animation: slide-Y 0.3s ease forwards;
+}
+
+.main-menu__wrp {
+  margin: auto;
+}
+
+.main-menu.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-menu__nav li {
+  padding-bottom: 3.125rem;
+  text-align: center;
+}
+
+.main-menu__nav li a {
+  font-weight: 350;
+  font-size: 1.625rem;
+  color: #242424;
+  text-align: center;
+}
+
+.main-menu__nav li a:hover {
+  text-decoration: underline;
+}
+
+.main-menu__address {
+  display: flex;
+  align-items: center;
+  padding-top: 10vh;
+}
+
+.main-menu__address address {
+  font-style: normal;
+  font-size: 1.4375rem;
+  line-height: 105.51%;
+  color: #242424;
+}
+
+.main-menu__address a {
+  font-weight: bold;
+  font-size: 1.4375rem;
+  line-height: 2.125rem;
+  color: #242424;
+  display: inline-flex;
+  align-items: center;
+}
+
+.main-menu__address a::before {
+  content: '';
+  width: 2px;
+  height: 44px;
+  display: inline-block;
+  background-color: #242424;
+  margin: 0 15px;
+  transform: rotate(15deg);
+}
+
+.main-menu__callback {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.8125rem;
+}
+
 /* page */
 
 @media screen and (min-width: 940px) {
@@ -5124,6 +5243,10 @@ header {
   .quiz-slide__title {
     padding-bottom: 2.8125rem;
     min-height: 6.25rem;
+  }
+
+  .main-menu {
+    padding: 2.5rem 1.5625rem;
   }
 }
 

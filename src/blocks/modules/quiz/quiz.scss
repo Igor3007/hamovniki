@@ -8,6 +8,7 @@
     bottom: 0;
     color: #fff;
     display: none;
+    animation: fade-in 0.9s ease forwards;
 
     &.open {
         display: flex;

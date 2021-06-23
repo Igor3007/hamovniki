@@ -12,6 +12,25 @@ header {
         padding-left: rem(20);
     }
 
+    &.open {
+
+        box-shadow: none;
+        background: transparent;
+
+        & .header-top__logo {
+            opacity: 0;
+        }
+
+        & .header-top__msgr {
+            opacity: 0;
+        }
+
+        & .header-top__phone {
+            opacity: 0;
+        }
+
+    }
+
 }
 
 .header-top {

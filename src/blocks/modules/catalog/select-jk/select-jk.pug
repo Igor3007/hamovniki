@@ -1,0 +1,19 @@
+mixin checkbox-elem(text)
+  label
+    input(type="checkbox")
+    div: span= text
+
+
+mixin select-jk()
+  .select-jk
+    .select-jk__wrp
+      .select-jk__close
+      .select-jk__list
+        .select-jk__item
+          .select-jk-item
+            .select-jk-item__symbol 1
+            .select-jk-item__checkbox
+              each item in [1,2,3,4,5,7]
+                +checkbox-elem('1-й Зачатьевский переулок, 6с2')
+
+      .select-jk__select
