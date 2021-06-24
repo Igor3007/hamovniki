@@ -1,0 +1,159 @@
+.jk-first-block {
+
+    position: relative;
+
+    & .container {
+        max-width: rem(1270);
+    }
+
+    &__bg {
+
+        position: relative;
+
+
+        & .bgimage {
+            display: block;
+            padding-top: 50%;
+            @include bgimage-cover;
+
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: $w940) {
+            @include layer(1);
+            padding-top: 0%;
+        }
+
+
+    }
+
+    &__bgimage1 {
+        @include layer(2);
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+
+
+        & .bgimage {
+            padding-top: 35%;
+            @include bgimage-contain;
+            background-repeat: repeat-x;
+            width: 100%;
+            opacity: 0.9;
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+    }
+
+
+
+    &__content {
+        padding-top: 60px;
+        @include layer(3);
+        background: linear-gradient(180deg, rgba(30, 30, 30, 0) 41.67%, #1E1E1E 100%);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (max-width: $w940) {
+            position: relative;
+            z-index: 2;
+
+        }
+
+    }
+
+    &__desc {
+        font-size: 22px;
+        line-height: 159%;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        max-width: rem(730);
+        padding-top: rem(40);
+
+        position: relative;
+        z-index: 4;
+    }
+
+    &__title {
+        font-family: Muller;
+        font-style: normal;
+        font-weight: 800;
+        font-size: rem(72);
+        line-height: 100%;
+
+        align-items: flex-end;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        position: relative;
+        z-index: 4;
+        max-width: rem(910);
+    }
+
+    &__wrp {
+        max-width: rem(1290);
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__btn {
+        max-width: rem(400);
+        margin: 0 auto;
+        padding-top: rem(50);
+
+    }
+
+    &__download {
+        position: absolute;
+        right: -4vw;
+        bottom: -100px;
+        z-index: 3;
+    }
+
+
+
+}
+
+.presentation-block {
+    border: 2px solid $main;
+    width: 48vw;
+    position: relative;
+    height: 48vw;
+    border-radius: 50%;
+
+    &__center {
+        @include layer(2);
+
+        background-color: rgba(163, 211, 156, 0.6);
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        border-radius: 50%;
+
+        & .bgimage {
+            width: 100%;
+            @include bgimage-contain;
+            padding-top: 100%;
+        }
+    }
+
+    &__dl {
+        position: absolute;
+        top: 70%;
+        left: -1%;
+        z-index: 3;
+
+        & button {
+            width: 130%;
+        }
+
+    }
+}

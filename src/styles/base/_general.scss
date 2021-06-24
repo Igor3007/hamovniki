@@ -119,4 +119,41 @@ section {
     color: #323232;
 }
 
+@mixin jk-padding {
+    padding-top: rem(100);
+    padding-bottom: rem(100);
+
+    @media screen and (max-width: $w1440) {
+        padding-top: rem(70);
+        padding-bottom: rem(70);
+    }
+
+    @media screen and (max-width: $w760) {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+    }
+}
+
+@mixin jk-column-img {
+    &-column {
+        width: 30vw;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        max-width: rem(640);
+        margin: 0 auto;
+        z-index: 1;
+
+        & .bgimage {
+
+            padding-top: 70%;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+    }
+}
+
 /* ================== */

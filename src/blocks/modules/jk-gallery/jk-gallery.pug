@@ -1,0 +1,16 @@
+mixin jk-gallery()
+  section.section-jk-gallery
+    .jk-gallery
+      .jk-gallery__img-column: +bgimage('/img/common/digits-title.png')
+      .jk-gallery__wrp
+        .jk-gallery__title Галлерея
+        .jk-gallery__slider
+          .swiper-container(data-swiper="gallery")
+            .swiper-wrapper
+              .swiper-slide: a( data-fancybox="" href='/img/common/gallery-1.jpg'): +bgimage('/img/common/gallery-1.jpg')
+              .swiper-slide: a( data-fancybox="" href='/img/common/jk-backgroung-firstbloc.jpg'): +bgimage('/img/common/jk-backgroung-firstbloc.jpg')
+              .swiper-slide: a( data-fancybox="" href='/img/common/gallery-1.jpg'): +bgimage('/img/common/gallery-1.jpg')
+              .swiper-slide: a( data-fancybox="" href='/img/common/jk-backgroung-firstbloc.jpg'): +bgimage('/img/common/jk-backgroung-firstbloc.jpg')
+            .swiper-gallery-nav
+              .swiper-gallery-nav__prev(data-swiper-prev="gallery"): +icons('#ic_swiper-arrow-left')
+              .swiper-gallery-nav__next(data-swiper-next="gallery"): +icons('#ic_swiper-arrow-right')

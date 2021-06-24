@@ -1,0 +1,12 @@
+mixin presentation-block()
+  .presentation-block
+    .presentation-block__center: +bgimage('/img/common/present-img.png')
+    .presentation-block__form
+      form(action='#' method='POST')
+        .form(action='#' method='POST')
+
+mixin jk-presentation()
+  section.section-jk-presentation
+    .jk-presentation
+      .jk-presentation__wrp: +presentation-block()
+

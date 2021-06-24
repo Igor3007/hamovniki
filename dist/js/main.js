@@ -2463,6 +2463,46 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
         spaceBetween: 27
       }
     }
+  }); // .swiper-container gallery
+
+  var specialist = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="gallery"]', {
+    slidesPerView: 1.6,
+    spaceBetween: 40,
+    //observer: true,
+    loop: true,
+    centeredSlides: 'auto',
+    //observeParents: true,
+    resizeObserver: true,
+    navigation: {
+      nextEl: '[data-swiper-next="gallery"]',
+      prevEl: '[data-swiper-prev="gallery"]'
+    },
+    breakpoints: {
+      0: {
+        spaceBetween: 5,
+        slidesPerView: 1
+      },
+      480: {
+        spaceBetween: 5
+      },
+      580: {
+        spaceBetween: 15
+      },
+      767: {
+        spaceBetween: 15
+      },
+      1024: {
+        spaceBetween: 15
+      },
+      1280: {
+        spaceBetween: 27
+      }
+    },
+    on: {
+      resize: function resize(event) {
+        jquery__WEBPACK_IMPORTED_MODULE_5___default()('.swiper-gallery-nav').width(event.height / 0.65 + 220);
+      }
+    }
   }); //event
 
   /* ======================================================
