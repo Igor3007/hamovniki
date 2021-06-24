@@ -1,0 +1,15 @@
+extends ../layouts/index
+include ../../blocks/modules/search-result/search-result
+
+block variables
+  include ../../data/data.pug
+
+
+
+block content
+  +search-result(searchresult)
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")

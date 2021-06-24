@@ -1,0 +1,36 @@
+include ../../components/breadcrumb/breadcrumb.pug
+
+mixin sr-item(item)
+  .sr-item
+    .sr-item__wrp
+      .sr-item__image: +bgimage(item.image)
+      .sr-item__link
+        a(href='#'): +bgimage(item.logo)
+
+
+mixin sr-checkbox (state)
+  label.cf-radio
+    input(type="checkbox")
+    span= state
+
+mixin search-result(data)
+  .search-result(style="background-image: url(/img/common/search-result.jpg)")
+    .search-result__wrp
+      .search-result__breadcrumbs: +breadcrumb(['Главная', 'Все предложения'])
+      .search-result__filter
+        .container
+          .search-result-filter
+            .search-result-filter__find: button Поиск
+            .search-result-filter__item
+              +sr-checkbox('Новостройки')
+              +sr-checkbox('Вторичное жилье')
+            .search-result-filter__item
+              +sr-checkbox('Премиум')
+              +sr-checkbox('De Luxe')
+              +sr-checkbox('Luxury')
+
+      .search-result__list
+        each item in data
+          .search-result__item: +sr-item(item) 
+      .search-result__more
+        button.btn Показать еще 

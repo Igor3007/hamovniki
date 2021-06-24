@@ -1228,7 +1228,7 @@ body.compensate-for-scrollbar {
 /* Styling for Small-Screen Devices */
 
 /**
- * Swiper 6.7.0
+ * Swiper 6.4.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1236,7 +1236,7 @@ body.compensate-for-scrollbar {
  *
  * Released under the MIT License
  *
- * Released on: May 31, 2021
+ * Released on: February 18, 2021
  */
 
 @font-face {
@@ -1410,7 +1410,7 @@ body.compensate-for-scrollbar {
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -1552,6 +1552,7 @@ button.swiper-pagination-bullet {
   padding: 0;
   box-shadow: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -1851,6 +1852,7 @@ button.swiper-pagination-bullet {
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-filter: blur(50px);
   filter: blur(50px);
 }
 
@@ -3930,6 +3932,185 @@ header.open .header-top__phone {
   padding-left: 0.2em;
 }
 
+.search-result {
+  background-color: #242424;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  color: #fff;
+  background-repeat: repeat-x;
+  background-position: top left;
+}
+
+.search-result__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0.3125rem;
+  margin-right: 0.3125rem;
+}
+
+.search-result__item {
+  width: 25%;
+}
+
+.search-result__filter {
+  display: flex;
+  background-color: #323232;
+  padding: 0.9375rem 0;
+  margin-bottom: 3.125rem;
+}
+
+.search-result__filter label {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.625rem;
+}
+
+.search-result__filter label:last-child {
+  margin-right: 0;
+}
+
+.search-result__filter label input {
+  display: none;
+}
+
+.search-result__filter label input:checked ~ span {
+  border: 1px solid #fff;
+  background-color: #404040;
+}
+
+.search-result__filter label span {
+  border: 1px solid #535353;
+  height: 1.875rem;
+  padding: 0 1.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.125rem;
+  font-size: 1.125rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.search-result__filter label span:hover {
+  border: 1px solid #777;
+}
+
+.search-result__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+
+.search-result__more button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #888888;
+  box-sizing: border-box;
+  font-size: 1.125rem;
+  text-transform: none;
+  width: 100%;
+  max-width: 21.875rem;
+}
+
+.sr-item {
+  padding: 0.3125rem;
+  position: relative;
+}
+
+.sr-item:hover .sr-item__link {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sr-item:hover .sr-item__link a .bgimage {
+  transform: translateY(-5px);
+}
+
+.sr-item__image {
+  position: relative;
+  z-index: 1;
+}
+
+.sr-item__image .bgimage {
+  padding-top: 65%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  transition: 0.3s ease;
+  background-color: #757575;
+}
+
+.sr-item__link {
+  background: rgba(0, 0, 0, 0.5);
+  left: 0.3125rem;
+  top: 0.3125rem;
+  right: 0.3125rem;
+  bottom: 0.3125rem;
+  position: absolute;
+  z-index: 2;
+  transition: 0.3s ease-in;
+}
+
+.sr-item__link a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-item__link a .bgimage {
+  padding-top: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  background-position: center;
+  max-width: 60%;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.search-result-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-result-filter__find button {
+  border: 1px solid #535353;
+  height: 1.875rem;
+  padding: 0 1.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.125rem;
+  font-size: 1.125rem;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  min-width: 25rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.search-result-filter__find button:hover {
+  border: 1px solid #eee;
+}
+
+.search-result-filter__item {
+  margin-left: 3.125rem;
+  white-space: nowrap;
+}
+
 .section-estate-in-numbers {
   background-color: #A3D39C;
   padding: 5rem 0;
@@ -5817,6 +5998,8 @@ header.open .header-top__phone {
   display: none;
   animation: fade-in 0.5s ease forwards;
   flex-direction: column;
+  padding: 1.5625rem;
+  box-sizing: border-box;
 }
 
 .select-jk.open {
@@ -5831,7 +6014,6 @@ header.open .header-top__phone {
   height: 70vh;
   max-width: 85.625rem;
   width: 100%;
-  padding: 1.5625rem;
 }
 
 .select-jk__list {
@@ -5846,13 +6028,18 @@ header.open .header-top__phone {
   break-inside: avoid-column;
   margin-top: 11px;
   padding-right: 20px;
+  display: inline-block;
+  width: 100%;
 }
 
 .select-jk__close {
-  position: absolute;
-  right: 6.25rem;
-  top: 3.125rem;
+  top: 1.25rem;
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1700px;
+  position: relative;
 }
 
 .select-jk__btn {
@@ -5888,15 +6075,12 @@ header.open .header-top__phone {
 .select-jk-item label {
   cursor: pointer;
   padding-bottom: 1.875rem;
-  display: block;
+  display: inline-flex;
+  width: 100%;
 }
 
 .select-jk-item label input {
   display: none;
-}
-
-.select-jk-item label input:checked ~ div {
-  font-weight: 600;
 }
 
 .select-jk-item label input:checked ~ div::before {
@@ -5947,11 +6131,6 @@ header.open .header-top__phone {
   border-radius: 10px;
 }
 
-.jk-scrollbar .os-scrollbar-vertical {
-  bottom: 10px;
-  width: 14px;
-}
-
 /* page */
 
 @media screen and (min-width: 940px) {
@@ -5961,6 +6140,11 @@ header.open .header-top__phone {
 
   .select-jk__btn button {
     min-width: 25rem;
+  }
+
+  .jk-scrollbar .os-scrollbar-vertical {
+    bottom: 10px;
+    width: 14px;
   }
 }
 
@@ -5978,6 +6162,15 @@ header.open .header-top__phone {
   .select-jk__list {
     column-count: 3;
     column-gap: 2.5rem;
+  }
+
+  .select-jk__close {
+    top: 0.625rem;
+  }
+
+  .select-jk__close svg {
+    width: 3.125rem;
+    height: 3.1875rem;
   }
 }
 
@@ -6006,8 +6199,23 @@ header.open .header-top__phone {
     padding: 0 2.1875rem;
   }
 
+  .search-result {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+  }
+
+  .search-result-filter__item {
+    margin-left: 1.25rem;
+  }
+
   .minicard__props {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .search-result__item {
+    width: 33.33%;
   }
 }
 
@@ -6119,6 +6327,10 @@ header.open .header-top__phone {
     width: 1.375rem;
     min-width: 1.375rem;
     height: 1.375rem;
+  }
+
+  .jk-scrollbar .os-scrollbar.os-scrollbar-vertical {
+    background: #888;
   }
 }
 
@@ -6243,6 +6455,10 @@ header.open .header-top__phone {
     height: 1.125rem;
   }
 
+  .search-result__item {
+    width: 50%;
+  }
+
   .minicard__image span.bgimage {
     padding-top: 50%;
   }
@@ -6255,6 +6471,11 @@ header.open .header-top__phone {
 
   .minicard__rub {
     font-size: 13px;
+  }
+
+  .select-jk__list {
+    column-count: 1;
+    column-gap: 1.875rem;
   }
 }
 
@@ -6298,12 +6519,36 @@ header.open .header-top__phone {
     width: 3.75rem;
     height: 3.75rem;
   }
+
+  .search-result__list {
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+  }
+
+  .sr-item {
+    padding: 0.125rem;
+  }
+
+  .sr-item__link {
+    left: 0.125rem;
+    top: 0.125rem;
+    right: 0.125rem;
+    bottom: 0.125rem;
+  }
+
+  .select-jk {
+    padding: 0.9375rem;
+  }
 }
 
 @media screen and (max-width: 360px) {
   .faq-item__title {
     font-size: 0.9375rem;
     line-height: 130%;
+  }
+
+  .search-result__item {
+    width: 100%;
   }
 
   .minicard__props {

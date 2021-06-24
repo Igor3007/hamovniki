@@ -10,6 +10,12 @@
     display: none;
     animation: fade-in 0.5s ease forwards;
     flex-direction: column;
+    padding: rem(25);
+    box-sizing: border-box;
+
+    @media screen and (max-width: $w480) {
+        padding: rem(15);
+    }
 
 
     &.open {
@@ -24,7 +30,7 @@
         height: 70vh;
         max-width: rem(1370);
         width: 100%;
-        padding: rem(25);
+
     }
 
     &__list {
@@ -41,6 +47,11 @@
             column-count: 2;
             column-gap: rem(30);
         }
+
+        @media screen and (max-width: $w580) {
+            column-count: 1;
+            column-gap: rem(30);
+        }
     }
 
     &__item {
@@ -49,13 +60,29 @@
         break-inside: avoid-column;
         margin-top: 11px;
         padding-right: 20px;
+        display: inline-block;
+        width: 100%;
     }
 
     &__close {
-        position: absolute;
-        right: rem(100);
-        top: rem(50);
+        top: rem(20);
         cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        max-width: 1700px;
+        position: relative;
+
+        @media screen and (max-width: $w1440) {
+
+            top: rem(10);
+
+            & svg {
+                width: rem(50);
+                height: rem(51);
+            }
+
+        }
     }
 
     &__btn {
@@ -104,15 +131,14 @@
 
         cursor: pointer;
         padding-bottom: rem(30);
-        display: block;
+        display: inline-flex;
+        width: 100%;
 
         & input {
 
             display: none;
 
             &:checked~div {
-
-                font-weight: 600;
 
                 &::before {
                     background: rgba(163, 211, 156, 0.5);
@@ -175,10 +201,20 @@
     & .os-scrollbar.os-scrollbar-vertical {
         background: #c4c4c4;
         border-radius: 10px;
+
+        @media screen and (max-width: $w940) {
+            background: #888;
+        }
     }
 
     & .os-scrollbar-vertical {
-        bottom: 10px;
-        width: 14px;
+
+        @media screen and (min-width: $w940) {
+            bottom: 10px;
+            width: 14px;
+        }
+
     }
+
+
 }
