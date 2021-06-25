@@ -1,3 +1,21 @@
 mixin jk-map()
-  .jk-map  jk-map
+  .section-jk-map
+    script.
+      const mapsParams = {
+        params: {
+          center: [55.74481370529173, 37.67514980332959],
+          zoom: 12,
+          controls: ['zoomControl', 'fullscreenControl']
+        },
+        points: [
+        {
+          'pin': [55.74481370529173, 37.67514980332959],
+          'icon': '/img/svg/ic_pin-map-jk.svg',
+          'balloonContent': 'Allegoria Mosca',
+          'draggable': false,
+          'zoom': 13
+        }
+      ]
+      };
+    .jk-map__container(id="jk-map-container")  
 

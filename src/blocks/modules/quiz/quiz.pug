@@ -12,7 +12,7 @@ mixin quiz-slide(data)
 
 mixin quiz(quizarr)
   .quiz
-    form(action='#' method='POST')
+    form(action='/index.html' method='POST' data-type="ajax")
       .quiz__wrp  
         .quiz__close: +icons('#ic_close-quiz', 60)
         .quiz__list

@@ -1,0 +1,47 @@
+.section-jk-map {
+    padding-top: 33%;
+    min-height: rem(350);
+    position: relative;
+    background-color: #666;
+
+
+}
+
+.jk-map {
+    &__container {
+        @include layer(1);
+    }
+}
+
+.sh-balloon {
+    background: #000;
+    min-width: rem(100);
+    position: absolute;
+    border-radius: rem(60);
+    padding: rem(15) rem(25);
+    overflow: hidden;
+    color: #fff;
+
+    &__content {
+
+        font-weight: 350;
+        font-size: rem(22);
+        line-height: 25px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+
+    &__close {
+        display: none;
+    }
+
+    &__arrow {
+        display: none;
+    }
+}
+
+.ymaps-2-1-78-ground-pane {
+    filter: grayscale(1);
+}

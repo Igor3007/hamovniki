@@ -155,6 +155,293 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/components/form/form.js":
+/*!********************************************!*\
+  !*** ./src/blocks/components/form/form.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  /* ================================================== */
+  function initInputMask() {
+    $("input[type=tel]").inputmask({
+      mask: '+7 (999) 999-99-99',
+      showMaskOnHover: false,
+      getemptymask: true,
+      clearIncomplete: true,
+      oncomplete: function oncomplete(elem) {
+        elem.target.setAttribute('area-valid', 'true');
+      },
+      onincomplete: function onincomplete(elem) {
+        if (elem.target.value) elem.target.setAttribute('area-valid', 'false');
+      },
+      oncleared: function oncleared(elem) {
+        elem.target.removeAttribute('area-valid');
+      },
+      onKeyValidation: function onKeyValidation(elem) {
+        console.log(elem);
+      }
+    });
+  }
+
+  initInputMask();
+
+  function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  } //Латиница или цифры
+
+
+  function validatePasswordEnNum(pass) {
+    var regexp = '^[a-zA-Z0-9]+$';
+    return pass.match(regexp);
+  } //мининум 1 цифра
+
+
+  function validatePasswordOneNum(pass) {
+    var regexp = '/(\d{4})/';
+    return pass.match(regexp);
+  } //минимум 1 заглавная
+
+
+  function validatePasswordCap(pass) {
+    var regexp = '^[a-zA-Z0-9]+$';
+    return pass.match(regexp);
+  }
+
+  $(document).on('keyup', 'input[type=text], input[type=email], input[type=password], textarea', function () {
+    var value = $(this).val();
+    var elem = $(this);
+
+    switch ($(this).attr('type')) {
+      case 'email':
+        if (!validateEmail(value)) {
+          elem.attr('area-valid', 'false'); //elem.parent().find('.tooltip').text('Не корректный Email')
+        } else {
+          elem.attr('area-valid', 'true');
+        }
+
+        break;
+
+      case 'password':
+        var rulesArray = {
+          '0': validatePasswordEnNum(value),
+          '1': validatePasswordOneNum(value),
+          '2': validatePasswordCap(value)
+        };
+        var rulesList = $(this).parents('form').find('.valid-rules li');
+        rulesList.each(function (index, elem) {
+          if (Array.isArray(rulesArray[index])) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+
+        if (value.length < 6) {
+          elem.attr('area-valid', 'false');
+        } else {
+          elem.attr('area-valid', 'true');
+        }
+
+        break;
+
+      case 'text':
+        switch (elem.data('valid-type')) {
+          case 'min8':
+            if (value.length < 8) {
+              elem.attr('area-valid', 'false');
+            } else {
+              elem.attr('area-valid', 'true');
+            }
+
+            break;
+
+          default:
+            if (value.length < 1) {
+              elem.attr('area-valid', 'false');
+            } else {
+              elem.attr('area-valid', 'true');
+            }
+
+        }
+
+        break;
+
+      default:
+        if (value.length < 0) {
+          elem.attr('area-valid', 'false');
+        } else {
+          elem.attr('area-valid', 'true');
+        }
+
+    }
+
+    if (!value) {
+      elem.removeAttr('area-valid');
+    }
+  });
+  /* =========================================== */
+
+  /* =========================================== */
+
+  function SendAjax(_action, _data, url_handler, _callBack) {
+    _callBack = _callBack || function () {};
+
+    $.ajax({
+      url: url_handler,
+      dataType: 'json',
+      type: 'POST',
+      data: {
+        'action': _action,
+        'data': _data
+      },
+      error: function error(data) {
+        console.log(data);
+      }
+    }).done(function (data) {
+      _callBack(data);
+    });
+  }
+
+  function myValidateForm(form) {
+    var _items = form.find(".required");
+
+    form.find(".required").removeAttr('area-valid');
+    var _valid = true;
+    form.find('.required').each(function (index, el) {
+      /*проверка заполнения*/
+      var _input = $(el);
+
+      if (_input.val() == "") {
+        $(el).attr('area-valid', 'false');
+        _valid = false;
+      }
+
+      if (_input.attr("type") == "checkbox" && _input.prop("checked") == false) {
+        $(el).attr('area-valid', 'false');
+        _valid = false;
+      }
+
+      if (_input.attr("name") === "EMAIL" && _input.val() === "") {} else if (_input.attr("name") === "EMAIL" && !isValidEmailAddress(_input.val())) {
+        $(el).attr('area-valid', 'false');
+        _valid = false;
+      }
+
+      if (_input.attr("name") === "PASSWORD") {
+        var _has_password_error = false;
+
+        if (_input.val() === "") {} else if (_input.val().length < 6) {
+          _has_password_error = true;
+        }
+
+        if (_has_password_error) {
+          $(el).attr('area-valid', 'false');
+          _valid = false;
+        }
+      }
+
+      if (_input.attr("name") === "CONFIRM_PASSWORD") {
+        var _has_password_confirm_error = false;
+
+        var _password = form.find(".req[name=PASSWORD]");
+
+        if (_input.val() === "") {} else if (_input.val() !== _password.val()) {
+          _has_password_confirm_error = true;
+        }
+
+        if (_has_password_confirm_error) {
+          $(el).attr('area-valid', 'false');
+          _valid = false;
+        }
+      }
+    });
+    return _valid;
+  }
+
+  $.fn.serializeObject = function () {
+    var self = this,
+        json = {},
+        push_counters = {},
+        patterns = {
+      "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+      "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+      "push": /^$/,
+      "fixed": /^\d+$/,
+      "named": /^[a-zA-Z0-9_]+$/
+    };
+
+    this.build = function (base, key, value) {
+      base[key] = value;
+      return base;
+    };
+
+    this.push_counter = function (key) {
+      if (push_counters[key] === undefined) {
+        push_counters[key] = 0;
+      }
+
+      return push_counters[key]++;
+    };
+
+    $.each($(this).serializeArray(), function () {
+      // skip invalid keys
+      if (!patterns.validate.test(this.name)) {
+        return;
+      }
+
+      var k,
+          keys = this.name.match(patterns.key),
+          merge = this.value,
+          reverse_key = this.name;
+
+      while ((k = keys.pop()) !== undefined) {
+        // adjust reverse_key
+        reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), ''); // push
+
+        if (k.match(patterns.push)) {
+          merge = self.build([], self.push_counter(reverse_key), merge);
+        } // fixed
+        else if (k.match(patterns.fixed)) {
+            merge = self.build([], k, merge);
+          } // named
+          else if (k.match(patterns.named)) {
+              merge = self.build({}, k, merge);
+            }
+      }
+
+      json = $.extend(true, json, merge);
+    });
+    return json;
+  };
+
+  $('[data-type="ajax"]').on('submit', function (e) {
+    e.preventDefault();
+
+    var _form = $(this);
+
+    if (!myValidateForm(_form)) {
+      return false;
+    }
+
+    var _data = _form.serializeObject();
+
+    var _url = _form.attr('action');
+
+    SendAjax("SEND_FORM", _data, _url, function (data) {
+      _form.html(data.html).addClass('js-form-submit-success');
+
+      _form.parent().addClass('js-form-submit-wrp');
+
+      $.fancybox.close();
+    });
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/blocks/modules/header/header.js":
 /*!*********************************************!*\
   !*** ./src/blocks/modules/header/header.js ***!
@@ -184,6 +471,204 @@
       }
     }
   });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/blocks/modules/jk-map/jk-map.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/modules/jk-map/jk-map.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {ymaps.ready(function () {
+  try {
+    var icon = '/img/svg/ic_pin-map-jk.svg'; // Создание экземпляра карты и его привязка к созданному контейнеру.
+
+    var myMap = new ymaps.Map('jk-map-container', mapsParams.params, {
+      suppressMapOpenBlock: true
+    }),
+        // Создание макета балуна на основе Twitter Bootstrap.
+    MyBalloonLayout = ymaps.templateLayoutFactory.createClass('<div class="sh-balloon" >' + '<div class="sh-balloon__close" ></div>' + '<div class="sh-balloon__content" >$[[options.contentLayout observeSize class=sh-wrp minWidth=100 maxWidth=480 maxHeight=400]]</div>' + '<div class="sh-balloon__arrow" ></div>' + '</div>', {
+      /**
+       * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+       * @function
+       * @name build
+       */
+      build: function build() {
+        this.constructor.superclass.build.call(this);
+        this._$element = $('.sh-balloon', this.getParentElement());
+        this.applyElementOffset();
+
+        this._$element.find('.sh-balloon__close').on('click', $.proxy(this.onCloseClick, this));
+      },
+
+      /**
+       * Удаляет содержимое макета из DOM.
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#clear
+       * @function
+       * @name clear
+       */
+      clear: function clear() {
+        this._$element.find('.sh-balloon__close').off('click');
+
+        this.constructor.superclass.clear.call(this);
+      },
+
+      /**
+       * Метод будет вызван системой шаблонов АПИ при изменении размеров вложенного макета.
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+       * @function
+       * @name onSublayoutSizeChange
+       */
+      onSublayoutSizeChange: function onSublayoutSizeChange() {
+        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+        if (!this._isElement(this._$element)) {
+          return;
+        }
+
+        this.applyElementOffset();
+        this.events.fire('shapechange');
+      },
+
+      /**
+       * Сдвигаем балун, чтобы "хвостик" указывал на точку привязки.
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+       * @function
+       * @name applyElementOffset
+       */
+      applyElementOffset: function applyElementOffset() {
+        var positionDefault = {
+          left: -this._$element[0].offsetWidth,
+          top: -this._$element[0].offsetHeight
+        };
+
+        if ($(window).width() <= 580) {
+          var positionDefault = {
+            left: 0,
+            right: 0,
+            bottom: 0
+          };
+        }
+
+        this._$element.css(positionDefault);
+      },
+
+      /**
+       * Закрывает балун при клике на крестик, кидая событие "userclose" на макете.
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+       * @function
+       * @name onCloseClick
+       */
+      onCloseClick: function onCloseClick(e) {
+        e.preventDefault();
+        this.events.fire('userclose');
+      },
+
+      /**
+       * Используется для автопозиционирования (balloonAutoPan).
+       * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+       * @function
+       * @name getClientBounds
+       * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+       */
+      getShape: function getShape() {
+        if (!this._isElement(this._$element)) {
+          return MyBalloonLayout.superclass.getShape.call(this);
+        }
+
+        var position = this._$element.position();
+
+        pos1 = [position.left, position.top];
+        pos2 = [position.left + this._$element[0].offsetWidth, position.top + this._$element[0].offsetHeight + this._$element.find('.sh-balloon__arrow')[0].offsetHeight];
+
+        if ($(window).width() <= 580) {
+          var heightElem = this._$element.height() + 55;
+          var widthElem = this._$element.width() / 2 - 25;
+          pos1 = [0, 0];
+          pos2 = [widthElem, heightElem];
+        }
+
+        return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([pos1, pos2]));
+      },
+
+      /**
+       * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+       * @function
+       * @private
+       * @name _isElement
+       * @param {jQuery} [element] Элемент.
+       * @returns {Boolean} Флаг наличия.
+       */
+      _isElement: function _isElement(element) {
+        return element && element[0] && element.find('.sh-balloon__arrow')[0];
+      }
+    }); // Создание вложенного макета содержимого балуна.
+
+    MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass('<div class="bln-scroll-offset" >$[properties.balloonContent]</div>');
+    var PlacemarkArr = [];
+
+    if ($(window).width() <= 580) {
+      var showBaloonMode = false;
+      var ballonPane = 'balloon';
+      var ballonMapArea = 'Infinity';
+    } else {
+      var showBaloonMode = false;
+      var ballonPane = 'placemark';
+      var ballonMapArea = 0;
+    }
+
+    var _loop = function _loop(i) {
+      // Создание метки с пользовательским макетом балуна.
+      PlacemarkArr[i] = window.myPlacemark = new ymaps.Placemark(mapsParams.points[i].pin, {
+        balloonContent: ''
+      }, {
+        balloonShadow: false,
+        balloonLayout: MyBalloonLayout,
+        balloonContentLayout: MyBalloonContentLayout,
+        balloonPanelLayout: MyBalloonLayout,
+        //balloonPanelContentLayout: MyBalloonContentLayout,
+        balloonPanelMaxMapArea: ballonMapArea,
+        // Не скрываем иконку при открытом балуне.
+        hideIconOnBalloonOpen: showBaloonMode,
+        // И дополнительно смещаем балун, для открытия над иконкой.
+        balloonOffset: [-15, 6],
+        // balloonContentLayout: LayoutActivatePoint,
+        iconLayout: 'default#image',
+        iconImageHref: mapsParams.points[i].icon,
+        iconImageSize: [35, 35],
+        pane: 'balloon',
+        draggable: mapsParams.points[i].draggable ? true : false
+      });
+      PlacemarkArr[i].events.add('balloonopen', function (e) {
+        PlacemarkArr[i].properties.set('balloonContent', mapsParams.points[i].balloonContent);
+      });
+      PlacemarkArr[i].events.add('balloonclose', function (e) {
+        $('.maps-home-button__bottom-bar').fadeIn(300);
+        $('.maps-home-button__top-bar').fadeIn(300);
+      });
+      myMap.geoObjects.add(PlacemarkArr[i]); //autoscale
+
+      if (mapsParams.points.length > 1) {
+        myMap.setBounds(myMap.geoObjects.getBounds(), {
+          checkZoomRange: true,
+          zoomMargin: 15
+        });
+      }
+
+      PlacemarkArr[0].balloon.open();
+    };
+
+    for (var i = 0; i < mapsParams.points.length; i++) {
+      _loop(i);
+    }
+  } catch (_unused) {
+    console.log('error: maps-container');
+  }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -497,38 +982,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 
   /* =========================================== */
 
-  $(document).on('submit', '.quiz form', function (event) {
+  $(document).on('click', '[data-quiz-nav="next"], [data-quiz-nav="prev"]', function (event) {
     event.preventDefault();
-  });
-  /* =========================================== */
-
-  /* =========================================== */
-
-  $(document).on('click', '[data-quiz="send"]', function (event) {
-    $('.quiz form input').each(function (item) {
-      switch ($(this).attr('type')) {
-        case 'email':
-        case 'tel':
-        case 'text':
-          if ($(this).hasClass('required') && $(this).val() === '') {
-            $(this).attr('area-valid', 'false');
-          } else {
-            $(this).attr('area-valid', 'true');
-          }
-
-          break;
-
-        case 'radio':
-        case 'checkbox':
-          if ($(this).hasClass('required') && !$(this).prop('checked')) {
-            $(this).attr('area-valid', 'false');
-          } else {
-            $(this).attr('area-valid', 'true');
-          }
-
-          break;
-      }
-    });
   });
   /* =========================================== */
 
@@ -546,12 +1001,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_form_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %components%/form/form */ "./src/blocks/components/form/form.js");
+/* harmony import */ var _components_form_form__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_form_form__WEBPACK_IMPORTED_MODULE_0__);
 //import "%components%/tabs/tabs";
-//import "%components%/form/form";
-//import "%components%/select/select";
+ //import "%components%/select/select";
 //// import "%components%/mobile-menu/mobile-menu"; 
 //import "%components%/video/video";
 
@@ -2283,6 +2741,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mapcustom_mapcustom_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/quiz/quiz.js */ "./src/blocks/modules/quiz/quiz.js");
 /* harmony import */ var _modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _modules_jk_map_jk_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/jk-map/jk-map.js */ "./src/blocks/modules/jk-map/jk-map.js");
+/* harmony import */ var _modules_jk_map_jk_map_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_jk_map_jk_map_js__WEBPACK_IMPORTED_MODULE_4__);
 
  // import "%modules%/video/video";
 // import "%modules%/menu/menu";
@@ -2317,6 +2777,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /***/ }),
 
 /***/ "./src/js/index.js":
@@ -2330,7 +2791,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
-/* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/svg4everybody/dist/svg4everybody.js */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
@@ -2472,7 +2932,7 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
     loop: true,
     centeredSlides: 'auto',
     //observeParents: true,
-    resizeObserver: true,
+    //resizeObserver: true,
     navigation: {
       nextEl: '[data-swiper-next="gallery"]',
       prevEl: '[data-swiper-prev="gallery"]'
@@ -2537,30 +2997,6 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
   /* ================================================== */
   //mask
 
-  /* ================================================== */
-
-  function initInputMask() {
-    jquery__WEBPACK_IMPORTED_MODULE_5___default()("input[type=tel]").inputmask({
-      mask: '+7 (999) 999-99-99',
-      showMaskOnHover: false,
-      getemptymask: true,
-      clearIncomplete: true,
-      oncomplete: function oncomplete(elem) {
-        elem.target.setAttribute('area-valid', 'true');
-      },
-      onincomplete: function onincomplete(elem) {
-        if (elem.target.value) elem.target.setAttribute('area-valid', 'false');
-      },
-      oncleared: function oncleared(elem) {
-        elem.target.removeAttribute('area-valid');
-      },
-      onKeyValidation: function onKeyValidation(elem) {
-        console.log(elem);
-      }
-    });
-  }
-
-  initInputMask();
   /* ================================== */
 
   /* ================================== */

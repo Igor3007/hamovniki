@@ -103,6 +103,25 @@
             width: 100%;
         }
 
+        & input {
+            border: 1px solid #A3D39C;
+            box-sizing: border-box;
+            border-radius: 100px;
+            background: none;
+            color: #fff;
+            height: rem(70);
+            padding: 0 rem(25);
+            font-size: rem(18);
+
+            &:focus {
+                border: 1px solid #fff;
+            }
+
+            &[area-valid="false"] {
+                border: 1px solid $red;
+            }
+        }
+
         @media screen and (max-width: $w480) {
             margin-right: 0;
         }

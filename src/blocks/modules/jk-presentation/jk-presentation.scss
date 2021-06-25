@@ -11,7 +11,7 @@
     &__wrp {
         position: absolute;
         left: -28%;
-        top: -66%;
+        top: -73%;
         bottom: -10%;
     }
 
@@ -27,5 +27,44 @@
 
     & .presentation-block__center .bgimage {
         left: -5%;
+    }
+
+    &__form {
+        position: absolute;
+        z-index: 4;
+        top: 50%;
+        right: 10vw;
+        width: 30%;
+        margin-top: auto;
+        margin-bottom: auto;
+        transform: translateY(-50%);
+
+        & .btn {
+            width: 100%;
+        }
+
+        & .form__item {
+            margin-bottom: rem(20);
+        }
+
+
+        & .form__title {
+            font-family: Muller;
+            font-style: normal;
+            font-weight: 500;
+            font-size: rem(30);
+            line-height: 120%;
+            text-transform: uppercase;
+            color: #E5E5E5;
+            padding-bottom: rem(30);
+        }
+
+        & .form__desc {
+            font-weight: 350;
+            font-size: rem(30);
+            line-height: 120%;
+            color: #E5E5E5;
+            padding-bottom: rem(40);
+        }
     }
 }

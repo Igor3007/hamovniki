@@ -1,0 +1,107 @@
+.section-jk-developer {
+    background-color: #fff;
+    @include jk-padding;
+    position: relative;
+
+
+    & .container {
+        max-width: rem(1440)
+    }
+}
+
+.jk-developer {
+
+
+    &__title {
+        @include section-title;
+        color: #242424;
+        text-align: center;
+        justify-content: center;
+
+        max-width: rem(1010);
+        margin: 0 auto;
+
+        padding-bottom: rem(100);
+
+        @media screen and (max-width: $w940) {
+            padding-bottom: rem(50);
+
+        }
+
+    }
+
+    &__list {
+        position: relative;
+        z-index: 1;
+
+
+    }
+
+    &__item {
+        @include row-flex();
+    }
+
+    &__logo {
+        @include col();
+        @include size(4);
+    }
+
+    &__text {
+        @include col();
+        @include size(8);
+    }
+
+    &__text {
+        font-weight: 350;
+        font-size: 24px;
+        line-height: 146%;
+
+        & p {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__img {
+        @include jk-column-img;
+    }
+
+    &__logo {
+        & .bgimage {
+            padding-top: 26%;
+            @include bgimage-contain;
+        }
+    }
+
+    &__digits {
+
+        @include row-flex();
+        padding-top: rem(80);
+
+        @media screen and (max-width: $w940) {
+            padding-top: rem(40);
+
+        }
+
+        &>div {
+            @include col();
+            @include size(3);
+        }
+
+        &-title {
+            font-family: Muller;
+            font-weight: 500;
+            font-size: rem(42);
+            line-height: 100%;
+            color: #1E1E1E;
+            text-align: center;
+        }
+
+        &-text {
+            font-size: 24px;
+            line-height: 100%;
+            text-align: center;
+            text-align: center;
+            padding-top: rem(10);
+        }
+    }
+}

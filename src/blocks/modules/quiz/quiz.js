@@ -98,63 +98,19 @@ $(document).ready(function () {
       var hst = new historyMain();
       hst.init()
   
-      $('[data-quiz-nav="prev"]').on('click', function(event){
-        
-        hst.prevSlide()
-        
-      })
-      $('[data-quiz-nav="next"]').on('click', function(event){
-        
-        hst.nextSlide()
-        
-      })
+      $('[data-quiz-nav="prev"]').on('click', function(event){ hst.prevSlide() })
+      $('[data-quiz-nav="next"]').on('click', function(event){ hst.nextSlide() })
+
+      
 
       /* =========================================== */
       /* =========================================== */
 
-      $(document).on('submit', '.quiz form',function(event){
-        
+      $(document).on('click', '[data-quiz-nav="next"], [data-quiz-nav="prev"]', function(event){
         event.preventDefault()
-        
       })
 
-      /* =========================================== */
-      /* =========================================== */
-
-      $(document).on('click', '[data-quiz="send"]', function(event){
-        
-         
-
-        $('.quiz form input').each(function(item){
-
-          switch($(this).attr('type')){
-            case 'email' :
-            case 'tel' :
-            case 'text' :
-
-              if($(this).hasClass('required') && $(this).val() === ''){
-                $(this).attr('area-valid', 'false')
-              }else{
-                $(this).attr('area-valid', 'true')
-              }
-
-            break;
-
-            case 'radio' :
-            case 'checkbox' :
-              if($(this).hasClass('required') && !$(this).prop('checked')){
-                $(this).attr('area-valid', 'false')
-              }else{
-                $(this).attr('area-valid', 'true')
-              }
-            break
-          }
-
-          
-
-        })
-        
-      })
+      
 
       
       /* =========================================== */

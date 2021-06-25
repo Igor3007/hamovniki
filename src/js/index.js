@@ -168,7 +168,7 @@ var specialist = new Swiper('[data-swiper="gallery"]', {
   loop: true,
   centeredSlides: 'auto',
   //observeParents: true,
-  resizeObserver: true,
+  //resizeObserver: true,
   navigation: {
     nextEl: '[data-swiper-next="gallery"]',
     prevEl: '[data-swiper-prev="gallery"]',
@@ -260,32 +260,7 @@ $(document).on('click', '[data-gallery="current-full"] a', function(event){
 
 /* ================================================== */
 //mask
-/* ================================================== */
 
-function initInputMask(){
-  $("input[type=tel]").inputmask({
-      mask: '+7 (999) 999-99-99',
-      showMaskOnHover: false,
-      getemptymask: true,
-      clearIncomplete: true,
-
-      oncomplete: function(elem){
-          elem.target.setAttribute('area-valid', 'true')
-      },
-      onincomplete: function(elem){
-          if(elem.target.value)
-            elem.target.setAttribute('area-valid', 'false')
-      },
-      oncleared: function(elem){
-          elem.target.removeAttribute('area-valid')
-      },
-      onKeyValidation: function(elem){
-          console.log(elem)
-      }
-  });
-}
-
-initInputMask();
 
 /* ================================== */
 /* ================================== */

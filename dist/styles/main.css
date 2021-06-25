@@ -1228,7 +1228,7 @@ body.compensate-for-scrollbar {
 /* Styling for Small-Screen Devices */
 
 /**
- * Swiper 6.7.0
+ * Swiper 6.4.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1236,7 +1236,7 @@ body.compensate-for-scrollbar {
  *
  * Released under the MIT License
  *
- * Released on: May 31, 2021
+ * Released on: February 18, 2021
  */
 
 @font-face {
@@ -1410,7 +1410,7 @@ body.compensate-for-scrollbar {
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -1552,6 +1552,7 @@ button.swiper-pagination-bullet {
   padding: 0;
   box-shadow: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -1851,6 +1852,7 @@ button.swiper-pagination-bullet {
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-filter: blur(50px);
   filter: blur(50px);
 }
 
@@ -3068,6 +3070,25 @@ section {
 
 .form__subitem input {
   width: 100%;
+}
+
+.form__subitem input {
+  border: 1px solid #A3D39C;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: none;
+  color: #fff;
+  height: 4.375rem;
+  padding: 0 1.5625rem;
+  font-size: 1.125rem;
+}
+
+.form__subitem input:focus {
+  border: 1px solid #fff;
+}
+
+.form__subitem input[area-valid="false"] {
+  border: 1px solid #e2243c;
 }
 
 .form fieldset {
@@ -6507,7 +6528,7 @@ header.open .header-top__phone {
 .jk-presentation__wrp {
   position: absolute;
   left: -28%;
-  top: -66%;
+  top: -73%;
   bottom: -10%;
 }
 
@@ -6523,6 +6544,44 @@ header.open .header-top__phone {
 
 .jk-presentation .presentation-block__center .bgimage {
   left: -5%;
+}
+
+.jk-presentation__form {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  right: 10vw;
+  width: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: translateY(-50%);
+}
+
+.jk-presentation__form .btn {
+  width: 100%;
+}
+
+.jk-presentation__form .form__item {
+  margin-bottom: 1.25rem;
+}
+
+.jk-presentation__form .form__title {
+  font-family: Muller;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #E5E5E5;
+  padding-bottom: 1.875rem;
+}
+
+.jk-presentation__form .form__desc {
+  font-weight: 350;
+  font-size: 1.875rem;
+  line-height: 120%;
+  color: #E5E5E5;
+  padding-bottom: 2.5rem;
 }
 
 .section-jk-advantages {
@@ -6683,6 +6742,181 @@ header.open .header-top__phone {
   text-decoration: underline;
 }
 
+.section-jk-developer {
+  background-color: #fff;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  position: relative;
+}
+
+.section-jk-developer .container {
+  max-width: 90rem;
+}
+
+.jk-developer__title {
+  /* Заголовок */
+  font-family: EB Garamond;
+  font-size: 2.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #323232;
+  color: #242424;
+  text-align: center;
+  justify-content: center;
+  max-width: 63.125rem;
+  margin: 0 auto;
+  padding-bottom: 6.25rem;
+}
+
+.jk-developer__list {
+  position: relative;
+  z-index: 1;
+}
+
+.jk-developer__item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.jk-developer__logo {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(33.33333% - 30px);
+}
+
+.jk-developer__text {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(66.66667% - 30px);
+}
+
+.jk-developer__text {
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 146%;
+}
+
+.jk-developer__text p {
+  margin-bottom: 1.875rem;
+}
+
+.jk-developer__img-column {
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.jk-developer__img-column .bgimage {
+  padding-top: 70%;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.jk-developer__logo .bgimage {
+  padding-top: 26%;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.jk-developer__digits {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 5rem;
+}
+
+.jk-developer__digits > div {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(25% - 30px);
+}
+
+.jk-developer__digits-title {
+  font-family: Muller;
+  font-weight: 500;
+  font-size: 2.625rem;
+  line-height: 100%;
+  color: #1E1E1E;
+  text-align: center;
+}
+
+.jk-developer__digits-text {
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+  text-align: center;
+  padding-top: 0.625rem;
+}
+
+.section-jk-map {
+  padding-top: 33%;
+  min-height: 21.875rem;
+  position: relative;
+  background-color: #666;
+}
+
+.jk-map__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sh-balloon {
+  background: #000;
+  min-width: 6.25rem;
+  position: absolute;
+  border-radius: 3.75rem;
+  padding: 0.9375rem 1.5625rem;
+  overflow: hidden;
+  color: #fff;
+}
+
+.sh-balloon__content {
+  font-weight: 350;
+  font-size: 1.375rem;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.sh-balloon__close {
+  display: none;
+}
+
+.sh-balloon__arrow {
+  display: none;
+}
+
+.ymaps-2-1-78-ground-pane {
+  filter: grayscale(1);
+}
+
 /* page */
 
 @media screen and (min-width: 940px) {
@@ -6736,6 +6970,11 @@ header.open .header-top__phone {
   }
 
   .section-jk-advantages {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+
+  .section-jk-developer {
     padding-top: 4.375rem;
     padding-bottom: 4.375rem;
   }
@@ -6934,6 +7173,14 @@ header.open .header-top__phone {
   .jk-advantages__title {
     padding-bottom: 3.125rem;
   }
+
+  .jk-developer__title {
+    padding-bottom: 3.125rem;
+  }
+
+  .jk-developer__digits {
+    padding-top: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -6985,6 +7232,11 @@ header.open .header-top__phone {
   }
 
   .section-jk-advantages {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .section-jk-developer {
     padding-top: 3.125rem;
     padding-bottom: 3.125rem;
   }

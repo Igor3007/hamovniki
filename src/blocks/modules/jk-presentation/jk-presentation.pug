@@ -1,12 +1,18 @@
 mixin presentation-block()
   .presentation-block
     .presentation-block__center: +bgimage('/img/common/present-img.png')
-    .presentation-block__form
-      form(action='#' method='POST')
-        .form(action='#' method='POST')
+
 
 mixin jk-presentation()
   section.section-jk-presentation
     .jk-presentation
       .jk-presentation__wrp: +presentation-block()
+      .jk-presentation__form
+        form(action='#' method='POST' data-type="ajax")
+          .form
+            .form__title Презентация жилого комплекса Allegoria Mosca
+            .form__desc Планировки, расположение, отзывы, ход строительства и цены на апартаменты в жилом комплексе Allegoria Mosca в нашей PDF презентации
+            .form__item: .form__subitem: input(class="required" type="text" placeholder="Имя")
+            .form__item: .form__subitem: input(class="required" type="tel" placeholder="Телефон")
+            .form__item: .form__subitem: button.btn.btn-green Скачать презентацию
 

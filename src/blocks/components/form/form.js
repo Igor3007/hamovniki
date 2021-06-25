@@ -1,18 +1,20 @@
-import $ from 'jquery';
-
 $(document).ready(function () {
 
-     /* init inputmask */
-    
-     function initInputMask(){
+     /* ================================================== */
+
+    function initInputMask(){
         $("input[type=tel]").inputmask({
-            mask: '+7(999) 999-99-99',
+            mask: '+7 (999) 999-99-99',
             showMaskOnHover: false,
+            getemptymask: true,
+            clearIncomplete: true,
+
             oncomplete: function(elem){
                 elem.target.setAttribute('area-valid', 'true')
             },
             onincomplete: function(elem){
-                elem.target.setAttribute('area-valid', 'false')
+                if(elem.target.value)
+                    elem.target.setAttribute('area-valid', 'false')
             },
             oncleared: function(elem){
                 elem.target.removeAttribute('area-valid')
@@ -54,8 +56,6 @@ $(document).ready(function () {
         let value = $(this).val();
         let elem = $(this);
 
-        
-
         switch($(this).attr('type')){
 
             case 'email': 
@@ -81,8 +81,6 @@ $(document).ready(function () {
 
             rulesList.each(function(index, elem){
 
-                // console.log(index)
-                // console.log(Array.isArray(rulesArray[index]))
 
                 if(Array.isArray(rulesArray[index])){
                     $(this).addClass('active')
@@ -91,11 +89,6 @@ $(document).ready(function () {
                 }
             })
 
-            // const rulesList = $($this).parents('form').find('.valid-rules li');
-
-            // if(validatePasswordEnNum(value)) {
-            //     rulesList.eq(0).addClass('active')
-            // }
 
             if(value.length < 6){
                 elem.attr('area-valid', 'false')
@@ -119,7 +112,7 @@ $(document).ready(function () {
 
                     default: 
 
-                        if(value.length < 0){
+                        if(value.length < 1){
                             elem.attr('area-valid', 'false')
                         }else{
                             elem.attr('area-valid', 'true')
@@ -145,86 +138,143 @@ $(document).ready(function () {
 
    
     
-        
-    $('.input-material input, .input-primary input').each(function(){
-        if($(this).val() != ''){
-            $(this).attr('area-valid', '')
-        }
-    })
+    /* =========================================== */
+      /* =========================================== */
 
-
-    //upload files
-     function sendFiles(files, callback) {
-        for (var i = 0; i < files.length; i++) {
-            var file = files.item(i);
-            if (file.size > 2200000) {
-                alert('Не больше 2 мб')
-                return false;
-            }
-            callback(file);
-        }
+      function SendAjax(_action, _data, url_handler, _callBack) {
+        _callBack = _callBack || function () {
+        };
+        $.ajax({
+            url: url_handler,
+            dataType: 'json',
+            type: 'POST',
+            data: {
+                'action': _action,
+                'data': _data
+            },
+            error: function (data) {
+                console.log(data);
+            },
+        }).done(function (data) {
+            _callBack(data);
+        });
     }
 
-
-    /* Прикрепить файл резюме */
-    $(document).on('change', '[for=attach-file] > input', function () {
-        let files = this.files;
-        let elem = $(this);
-
-        sendFiles(files, function (data) {
-            elem.parents('.form__subitem')
-                .find('.upload-files')
-                .append('<li>'+data.name+'</li>');
-        
-        });
-
-    });
-
-    /* input-attach */
-    $(document).on('change', '.input-attach input', function () {
-        let files = this.files;
-        let elem = $(this);
-
-        sendFiles(files, function (data) {
-            elem.parent()
-                .find('.file-name')
-                .text(data.name);
-        
-        });
-
-    });
-
-    /* input-photo */
-    $(document).on('change', '#upload-photo', function () {
-        let files = this.files;
-        let elem = $(this);
-
-        sendFiles(files, function (data) {
-
-            var reader = new FileReader();
-            reader.readAsDataURL(data);
-            reader.onload = function (e) {
-                elem.parent()
-                .find('.upload-image')
-                .css({
-                    'background-image': 'url('+e.target.result+')'
-                });
+    function myValidateForm(form) {
+        var _items = form.find(".required");
+        form.find(".required").removeAttr('area-valid')
+        var _valid = true;
+        form.find('.required').each(function (index, el) { /*проверка заполнения*/
+            var _input = $(el);
+            if (_input.val() == "") {
+                $(el).attr('area-valid', 'false');
+                _valid = false;
+            }
+            if (_input.attr("type") == "checkbox" && _input.prop("checked") == false) {
+                $(el).attr('area-valid', 'false');
+                _valid = false;
+            }
+            if (_input.attr("name") === "EMAIL" && _input.val() === "") {
+            } else if (_input.attr("name") === "EMAIL" && !isValidEmailAddress(_input.val())) {
+                $(el).attr('area-valid', 'false');
+                _valid = false;
+            }
+            if (_input.attr("name") === "PASSWORD") {
+                var _has_password_error = false;
+                if (_input.val() === "") {
+                } else if (_input.val().length < 6) {
+                    _has_password_error = true;
+                }
+                if (_has_password_error) {
+                    $(el).attr('area-valid', 'false');
+                    _valid = false;
+                }
+            }
+            if (_input.attr("name") === "CONFIRM_PASSWORD") {
+                var _has_password_confirm_error = false;
+                var _password = form.find(".req[name=PASSWORD]");
+                if (_input.val() === "") {
+                } else if (_input.val() !== _password.val()) {
+                    _has_password_confirm_error = true;
+                }
+                if (_has_password_confirm_error) {
+                    $(el).attr('area-valid', 'false');
+                    _valid = false;
+                }
             }
         });
+        return _valid;
+    }
 
-    });
+    $.fn.serializeObject = function () {
+        var self = this,
+            json = {},
+            push_counters = {},
+            patterns = {
+                "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+                "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+                "push": /^$/,
+                "fixed": /^\d+$/,
+                "named": /^[a-zA-Z0-9_]+$/
+            };
+        this.build = function (base, key, value) {
+            base[key] = value;
+            return base;
+        };
+        this.push_counter = function (key) {
+            if (push_counters[key] === undefined) {
+                push_counters[key] = 0;
+            }
+            return push_counters[key]++;
+        };
+        $.each($(this).serializeArray(), function () {
+            // skip invalid keys
+            if (!patterns.validate.test(this.name)) {
+                return;
+            }
+            var k,
+                keys = this.name.match(patterns.key),
+                merge = this.value,
+                reverse_key = this.name;
+            while ((k = keys.pop()) !== undefined) {
+                // adjust reverse_key
+                reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
+                // push
+                if (k.match(patterns.push)) {
+                    merge = self.build([], self.push_counter(reverse_key), merge);
+                }
+                // fixed
+                else if (k.match(patterns.fixed)) {
+                    merge = self.build([], k, merge);
+                }
+                // named
+                else if (k.match(patterns.named)) {
+                    merge = self.build({}, k, merge);
+                }
+            }
+            json = $.extend(true, json, merge);
+        });
+        return json;
+    };
 
-    //showpass
-    $(document).on('click', '.tooltip-showpass', function(event){
-        if($(this).parent().children('input').attr('type') == 'text'){
-            $(this).parent().children('input').attr('type', 'password')
-        }else {
-            $(this).parent().children('input').attr('type', 'text')
+     
+    $('[data-type="ajax"]').on('submit', function(e){
+        e.preventDefault();
+        var _form = $(this);
+        if (!myValidateForm(_form)) {
+            return false;
         }
-    })
+        var _data = _form.serializeObject();
+        var _url = _form.attr('action');
+        SendAjax("SEND_FORM", _data, _url, function (data) {
+            _form.html(data.html).addClass('js-form-submit-success')
+            _form.parent().addClass('js-form-submit-wrp');
+            $.fancybox.close()
+        });
+    });
+   
+    
+    
 
-    // $(document).on('mouseup', function(event){
-    //     $('.tooltip-showpass').parent().children('input').attr('type', 'password')
-        
-    // })
+    
 });
