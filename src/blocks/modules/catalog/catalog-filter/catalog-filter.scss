@@ -62,6 +62,48 @@
 
     }
 
+    &__clear {
+        background: transparent !important;
+
+        @include user-select-none;
+
+        & .container {
+            display: flex;
+            justify-content: flex-end !important;
+            width: 100%;
+        }
+
+        & .clear-filter {
+            display: flex;
+            color: $main;
+            font-size: rem(18);
+            color: #A3D39C;
+            align-items: center;
+
+            & svg {
+                margin-left: rem(15);
+            }
+        }
+
+        & .more-params {
+            border: 1px solid #535353;
+            height: rem(30);
+            padding: 0 rem(25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: rem(50);
+            font-size: rem(18);
+            cursor: pointer;
+            margin-right: auto;
+
+            &:hover {
+                border: 1px solid #777;
+            }
+
+        }
+    }
+
     &__state {
         display: flex;
         align-items: center;

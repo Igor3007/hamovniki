@@ -1,0 +1,101 @@
+.section-jk-signup {
+    // @include jk-padding;
+    position: relative;
+}
+
+.jk-signup {
+    &__bg {
+        & .bgimage {
+            padding-top: 51%;
+            @include bgimage-cover;
+        }
+
+        position: relative;
+        z-index: 1;
+    }
+
+    &__form {
+        @include layer(2);
+        display: flex;
+        align-items: center;
+
+        & .container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.circle-form {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    border: 1px solid #FFFFFF;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrp {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    &__title {
+        font-family: Muller;
+        font-style: normal;
+        font-weight: bold;
+        font-size: rem(40);
+        line-height: 115%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0C0C0D;
+
+        padding-bottom: rem(25);
+
+    }
+
+    &__desc {
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 129%;
+        text-align: center;
+        color: #0C0C0D;
+
+        padding-bottom: rem(25);
+    }
+
+    &__form {
+
+
+
+        & input {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #FFFFFF;
+            box-sizing: border-box;
+            color: #000;
+
+            font-size: rem(22);
+            color: #1E1E1E;
+            text-align: center;
+
+            &:focus {
+                border: 1px solid $main;
+            }
+        }
+
+        & button {
+            width: 100%;
+        }
+
+        & .form__item {
+            margin-bottom: rem(15);
+            max-width: rem(410);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}

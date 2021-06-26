@@ -1,5 +1,5 @@
 mixin minicard(data)
-  .minicard 
+  .minicard
 
     .minicard__top
       .minicard__type Квартира
@@ -22,5 +22,6 @@ mixin minicard(data)
       .minicard__price
         .minicard__rub  250 000 000 ₽
 
-    .minicard__btn: button.btn.btn-green(data-fancybox="catalog" data-type="ajax" data-src="_popup-card.html") Подробнее
+    .minicard__link
+      a(href='/page-apartment.html'): button.btn.btn-line Подробнее
 

@@ -1,17 +1,40 @@
-.header-top
-  .header-top__logo: a(href='/'): +bgimage('/img/common/logo.svg')
-  .header-top__msgr
-    ul
-      li: a(href='#'): +icons('#ic_wa')
-      li: a(href='#'): +icons('#ic_tg')
-  .header-top__phone
-    a(href='tel:+7 (495) 085-16-64') +7 (495) 085-16-64
+mixin header-top-main
+  .header-top
+    .header-top__logo: a(href='/'): +bgimage('/img/common/logo.svg')
+    .header-top__msgr
+      ul
+        li: a(href='#'): +icons('#ic_wa')
+        li: a(href='#'): +icons('#ic_tg')
+    .header-top__phone
+      a(href='tel:+7 (495) 085-16-64') +7 (495) 085-16-64
 
-  .header-top__menu
-    .burger
-      i
-      i
-      i
+    .header-top__menu
+      .burger
+        i
+        i
+        i
+
+mixin header-top-jk
+  .header-top.header-top--jk
+    .header-top__jk: a(href='')
+      img(src="/img/common/logo-jk.png")
+      span ЖК Allegoria Mosca 
+
+    .header-top__logo: a(href='/'): +bgimage('/img/common/logo.svg')
+    .header-top__menu
+      .burger
+        i
+        i
+        i
+
+mixin header-top-search
+  .header-top.header-top--search
+    .header-top__logo: a(href='/'): +bgimage('/img/common/logo.svg')
+    .header-top__menu
+      .burger
+        i
+        i
+        i
 
 
 

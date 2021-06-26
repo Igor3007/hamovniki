@@ -1,10 +1,12 @@
 extends ../layouts/index
 include ../../blocks/modules/search-result/search-result
+include ../../blocks/modules/header/header.pug
 
 block variables
   include ../../data/data.pug
 
-
+block header
+  +header-top-search()
 
 block content
   +search-result(searchresult)

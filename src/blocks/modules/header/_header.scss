@@ -17,15 +17,7 @@ header {
         box-shadow: none;
         background: transparent;
 
-        & .header-top__logo {
-            opacity: 0;
-        }
-
-        & .header-top__msgr {
-            opacity: 0;
-        }
-
-        & .header-top__phone {
+        & .header-top>div:not(.header-top__menu) {
             opacity: 0;
         }
 
@@ -191,5 +183,47 @@ header {
         @media screen and (max-width: $w940) {
             display: none;
         }
+    }
+
+    &__jk {
+        & a {
+            display: flex;
+            align-items: center;
+
+            & img {
+                height: rem(40);
+                width: auto;
+            }
+
+            & span {
+                font-size: 14px;
+                line-height: 130%;
+                letter-spacing: 0.6em;
+                text-transform: uppercase;
+                color: #888888;
+                margin-left: rem(20);
+            }
+        }
+    }
+}
+
+.header-top--search {
+    & .header-top__logo {
+        flex-grow: 0;
+        margin-left: auto;
+    }
+}
+
+.header-top--jk {
+
+    max-width: 1600px;
+
+    & .header-top__jk {
+        margin-right: auto;
+    }
+
+    & .header-top__logo {
+        flex-grow: 0;
+        margin-left: auto;
     }
 }

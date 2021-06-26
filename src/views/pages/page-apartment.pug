@@ -1,0 +1,50 @@
+extends ../layouts/index
+
+include ../../blocks/modules/header/header.pug
+include ../../blocks/modules/ap-first-block/ap-first-block
+include ../../blocks/modules/ap-about/ap-about
+include ../../blocks/modules/jk-gallery/jk-gallery
+include ../../blocks/modules/jk-presentation/jk-presentation
+include ../../blocks/modules/question-five/question-five
+
+include ../../blocks/modules/ap-similar/ap-similar
+include ../../blocks/modules/ap-mortgage/ap-mortgage
+include ../../blocks/modules/ap-contacts/ap-contacts
+include ../../blocks/modules/jk-map/jk-map
+include ../../blocks/modules/main-menu/main-menu.pug
+
+block variables
+  include ../../data/data.pug 
+
+block header
+  +header-top-jk()
+
+block content
+  +ap-first-block() 
+  +ap-about()
+  +jk-gallery()
+  +jk-presentation()
+  +question-five()
+  +ap-similar()
+  +ap-mortgage()
+  +ap-contacts()
+  +jk-map()
+
+  +main-menu-jk([
+    'Описание квартиры',
+    'Галерея',
+    'Скачать презентацию ',
+    'Запишитесь на экскурсию',
+    'Похожие объекты',
+    'Ипотека',
+    'Контакты'
+  ])
+
+
+
+
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")

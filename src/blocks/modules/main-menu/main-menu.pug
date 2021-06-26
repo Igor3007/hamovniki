@@ -12,3 +12,22 @@ mixin main-menu(data)
         a(href='tel:+7(495)085-16-64') +7 (495) 085-16-64
       .main-menu__callback
         button.btn.btn-line Заказать звонок
+
+mixin main-menu-jk(data)
+  .main-menu
+    .main-menu__wrp
+      .main-menu__close
+      .main-menu__logo
+        a(href='')
+          img(src="/img/common/logo-jk.png")
+          span ЖК Allegoria Mosca
+      .main-menu__nav
+        nav
+          ul
+            each item in data
+              li: a(href='#')= item
+      .main-menu__address
+        address Москва, 4-6, улица Остоженка 
+        a(href='tel:+7(495)085-16-64') +7 (495) 085-16-64
+      .main-menu__callback
+        button.btn.btn-line Заказать звонок

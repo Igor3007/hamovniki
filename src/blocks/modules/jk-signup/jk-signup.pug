@@ -1,2 +1,24 @@
+mixin circle-form(data)
+  .circle-form
+    .circle-form__wrp
+      .circle-form__title= data.title
+      .circle-form__desc= data.desc
+      .circle-form__form
+        form(action='#' method='POST' data-type="ajax")
+          .form
+            .form__item: .form__subitem: input(class="required" type="text" placeholder="Имя")
+            .form__item: .form__subitem: input(class="required" type="tel" placeholder="Телефон")
+            .form__item: .form__subitem: button.btn.btn-green(type="submit") Записаться
+
+
 mixin jk-signup()
-  .jk-signup  jk-signup
+  section.section-jk-signup
+    .jk-signup
+      .jk-signup__wrp
+        .jk-signup__bg: +bgimage('/img/common/jk-backgroung-signup.jpg')
+        .jk-signup__form
+          .container
+            +circle-form({
+              title: 'Запишитесь на экскурсию',
+              desc: 'Укажите свои контакты и менеджер свяжется с вами для уточнения удобного времени экскурсии.',
+            })

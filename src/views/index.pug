@@ -10,11 +10,14 @@ include ../blocks/modules/question-five/question-five
 include ../blocks/modules/history/history
 include ../blocks/modules/catalog/catalog/catalog
 include ../blocks/modules/catalog/select-jk/select-jk
+include ../blocks/modules/main-menu/main-menu.pug
+include ../blocks/modules/header/header.pug
 
 block variables
   include ../data/data.pug
 
-
+block header
+  +header-top-main()
 
 block content
   +first-block()
@@ -30,6 +33,14 @@ block content
   +history()
   +slider-region(slider_region)
 
+  +main-menu([
+    'Карта с Жилыми Комплексами',
+    'Квартиры',
+    'О недвижимости в Хамовниках',
+    'Инфраструктура',
+    'Наши специалисты',
+    'История района Хамовники',
+  ])
 
 block scripts
   script(src="js/main.js?v=1.52")

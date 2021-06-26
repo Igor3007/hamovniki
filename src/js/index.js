@@ -290,4 +290,23 @@ $('.select-jk__wrp').overlayScrollbars({
   className: 'jk-scrollbar os-theme-dark'
 });
 
+
+//===================
+
+const defaultText = $('[data-filter="toggleMoreParams"]').text()
+const activeText = $('[data-filter="toggleMoreParams"]').data('active')
+
+$(document).on('click', '[data-filter="toggleMoreParams"]', function(event){
+  
+  $('.catalog-filter__more').slideToggle(300)
+  $(this).toggleClass('open')
+
+  if($(this).hasClass('open')){
+    $('[data-filter="toggleMoreParams"]').text(activeText)
+  }else {
+    $('[data-filter="toggleMoreParams"]').text(defaultText)
+  }
+  
+})
+
 }); //ready

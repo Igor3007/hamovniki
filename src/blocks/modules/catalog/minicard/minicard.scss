@@ -266,11 +266,58 @@
         }
     }
 
+    &__link {
+        @include layer(2);
+        background: rgba(52, 52, 52, 0.5);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition: opacity 0.4s ease;
+
+        & a {
+            display: block;
+            width: 100%;
+        }
+
+        & button.btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid #FFFFFF;
+            color: #fff;
+            width: calc(100% - 40px);
+            transform: translateY(7px);
+            margin: 0 auto;
+
+            transition: transform 0.3s ease;
+        }
+    }
+
     &:hover {
         & .minicard__image {
             & .bgimage {
                 filter: grayscale(0);
             }
         }
+
+        & .minicard__link {
+            visibility: visible;
+            opacity: 1;
+
+            & button.btn {
+                transform: translateY(0);
+            }
+        }
+
+        & .minicard__top,
+        & .minicard__image,
+        & .minicard__desc {
+            filter: blur(3px);
+        }
+
+
     }
 }

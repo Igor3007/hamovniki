@@ -2,7 +2,7 @@ include ../../catalog/minicard/minicard.pug
 include ../../catalog/catalog-filter/catalog-filter.pug
 
 mixin catalog(catalog)
-  section.section-catalog
+  section.section-catalog(style="background-image: url(/img/common/search-result.jpg)")
     .catalog
       .catalog__wrp
         .catalog__filter: +catalog-filter()

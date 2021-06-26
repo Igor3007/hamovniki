@@ -1,4 +1,6 @@
 extends ../layouts/index
+
+include ../../blocks/modules/header/header.pug
 include ../../blocks/modules/jk-first-block/jk-first-block
 include ../../blocks/modules/jk-about/jk-about
 include ../../blocks/modules/jk-gallery/jk-gallery
@@ -11,11 +13,13 @@ include ../../blocks/modules/jk-map/jk-map
 include ../../blocks/modules/specialists/specialists
 include ../../blocks/modules/question-five/question-five
 include ../../blocks/modules/slider-region/slider-region.pug
+include ../../blocks/modules/main-menu/main-menu.pug
 
 block variables
   include ../../data/data.pug 
 
-
+block header
+  +header-top-jk()
 
 block content
   +jk-first-block()
@@ -30,6 +34,23 @@ block content
   +jk-developer()
   +slider-region(slider_region)
   +jk-map()
+
+  +main-menu-jk([
+
+    'О Жилом комплексе',
+    'Галерея',
+    'Квартиры',
+    'Презентация',
+    'Преимущества',
+    'Сотрудники',
+    'Как мы работаем',
+    'О застройщике',
+    'Похожие предложения ',
+    'Контакты',
+
+  ])
+
+
 
 
 block scripts

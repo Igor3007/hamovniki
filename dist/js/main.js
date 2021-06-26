@@ -3014,6 +3014,19 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_5___default()('.select-jk__wrp').overlayScrollbars({
     className: 'jk-scrollbar os-theme-dark'
+  }); //===================
+
+  var defaultText = jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-filter="toggleMoreParams"]').text();
+  var activeText = jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-filter="toggleMoreParams"]').data('active');
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).on('click', '[data-filter="toggleMoreParams"]', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('.catalog-filter__more').slideToggle(300);
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).toggleClass('open');
+
+    if (jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).hasClass('open')) {
+      jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-filter="toggleMoreParams"]').text(activeText);
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-filter="toggleMoreParams"]').text(defaultText);
+    }
   });
 }); //ready
 

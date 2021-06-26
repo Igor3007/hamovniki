@@ -1,5 +1,15 @@
-.catalog {
+.section-catalog {
+    @include jk-padding;
     background-color: #242424;
+    background-repeat: repeat-x;
+    background-position: top center;
+
+    padding-top: rem(145);
+
+}
+
+
+.catalog {
     color: #FFF;
 }
 
@@ -61,13 +71,7 @@
                 font-size: rem(18);
                 border-radius: rem(25);
 
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                cursor: pointer;
+                @include user-select-none;
 
                 &:hover {
                     border: 1px solid #777;

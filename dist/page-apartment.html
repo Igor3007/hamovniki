@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&amp;display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1-dev/?lang=ru_RU"></script>
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css?v=1.52">
+  </head>
+  <body>
+    <header>
+      <div class="header-top header-top--jk">
+        <div class="header-top__jk"><a href=""><img src="/img/common/logo-jk.png"/><span>ЖК Allegoria Mosca </span></a></div>
+        <div class="header-top__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.svg)"></span></a></div>
+        <div class="header-top__menu">
+          <div class="burger"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="ap-first-block">ap-first-block</div>
+      <div class="ap-about">ap-about</div>
+      <section class="section-jk-gallery">
+        <div class="jk-gallery">
+          <div class="jk-gallery__img-column"><span class="bgimage" style="background-image: url(/img/common/digits-title.png)"></span>
+          </div>
+          <div class="jk-gallery__wrp">
+            <div class="jk-gallery__title">Галлерея</div>
+            <div class="jk-gallery__slider">
+              <div class="swiper-container" data-swiper="gallery">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a data-fancybox="" href="/img/common/gallery-1.jpg"><span class="bgimage" style="background-image: url(/img/common/gallery-1.jpg)"></span></a></div>
+                  <div class="swiper-slide"><a data-fancybox="" href="/img/common/jk-backgroung-firstbloc.jpg"><span class="bgimage" style="background-image: url(/img/common/jk-backgroung-firstbloc.jpg)"></span></a></div>
+                  <div class="swiper-slide"><a data-fancybox="" href="/img/common/gallery-1.jpg"><span class="bgimage" style="background-image: url(/img/common/gallery-1.jpg)"></span></a></div>
+                  <div class="swiper-slide"><a data-fancybox="" href="/img/common/jk-backgroung-firstbloc.jpg"><span class="bgimage" style="background-image: url(/img/common/jk-backgroung-firstbloc.jpg)"></span></a></div>
+                </div>
+                <div class="swiper-gallery-nav">
+                  <div class="swiper-gallery-nav__prev" data-swiper-prev="gallery">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_swiper-arrow-left"></use>
+                    </svg>
+                  </div>
+                  <div class="swiper-gallery-nav__next" data-swiper-next="gallery">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_swiper-arrow-right"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-jk-presentation">
+        <div class="jk-presentation">
+          <div class="jk-presentation__wrp">
+            <div class="presentation-block">
+              <div class="presentation-block__center"><span class="bgimage" style="background-image: url(/img/common/present-img.png)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="jk-presentation__form">
+            <form action="#" method="POST" data-type="ajax">
+              <div class="form">
+                <div class="form__title">Презентация жилого комплекса Allegoria Mosca</div>
+                <div class="form__desc">Планировки, расположение, отзывы, ход строительства и цены на апартаменты в жилом комплексе Allegoria Mosca в нашей PDF презентации</div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <input class="required" type="text" placeholder="Имя"/>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <input class="required" type="tel" placeholder="Телефон"/>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <button class="btn btn-green">Скачать презентацию</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <div class="section-question-five" style="background-image: url('/img/common/bg-five.png')">
+        <div class="question-five">
+          <div class="container">
+            <div class="question-five__wrp">
+              <div class="question-five__text">Ответьте на 5 коротких вопросов. Мы подберем предложения, максимально близко подходящие критериям запроса. С вами свяжется наш специалист, обладающей многолетней экспертизой в вопросе.</div>
+              <div class="question-five__btn">
+                <button class="btn btn-gold btn-full" data-quiz="open">Подобрать предложение</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ap-similar">ap-similar</div>
+      <div class="ap-mortgage">ap-mortgage</div>
+      <div class="ap-contacts">ap-contacts</div>
+      <div class="section-jk-map">
+        <script>
+          const mapsParams = {
+            params: {
+              center: [55.74481370529173, 37.67514980332959],
+              zoom: 12,
+              controls: ['zoomControl', 'fullscreenControl']
+            },
+            points: [
+            {
+              'pin': [55.74481370529173, 37.67514980332959],
+              'icon': '/img/svg/ic_pin-map-jk.svg',
+              'balloonContent': 'Allegoria Mosca',
+              'draggable': false,
+              'zoom': 13
+            }
+          ]
+          };
+        </script>
+        <div class="jk-map__container" id="jk-map-container"> </div>
+      </div>
+      <div class="main-menu">
+        <div class="main-menu__wrp">
+          <div class="main-menu__close"></div>
+          <div class="main-menu__logo"><a href=""><img src="/img/common/logo-jk.png"/><span>ЖК Allegoria Mosca</span></a></div>
+          <div class="main-menu__nav">
+            <nav>
+              <ul>
+                <li><a href="#">Описание квартиры</a></li>
+                <li><a href="#">Галерея</a></li>
+                <li><a href="#">Скачать презентацию </a></li>
+                <li><a href="#">Запишитесь на экскурсию</a></li>
+                <li><a href="#">Похожие объекты</a></li>
+                <li><a href="#">Ипотека</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="main-menu__address">
+            <address>Москва, 4-6, улица Остоженка </address><a href="tel:+7(495)085-16-64">+7 (495) 085-16-64</a>
+          </div>
+          <div class="main-menu__callback">
+            <button class="btn btn-line">Заказать звонок</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer" style="background-image: url('/img/common/footer-bg.jpg');"> 
+        <div class="container">
+          <div class="footer__wrp">
+            <div class="footer__address">
+              <address>Москва, 4-6, улица Остоженка </address><a href="#">+7 (495) 085-16-64</a>
+            </div>
+            <div class="footer__callback">
+              <button class="btn btn-green"> Заказать звонок</button>
+            </div>
+          </div>
+          <div class="footer__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.svg)"></span></a></div>
+        </div>
+      </div>
+            <div class="quiz">
+              <form action="/index.html" method="POST" data-type="ajax">
+                <div class="quiz__wrp"> 
+                  <div class="quiz__close">
+                    <svg width="60" height="60">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_close-quiz"></use>
+                    </svg>
+                  </div>
+                  <div class="quiz__list">
+                    <div class="quiz__slide active">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какой тип объекта вас <br> интересует?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Выберите тип и класс жилья, <br> Вашего будущего дома:</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Новостройки">
+                                      <div><span>Новостройки</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Вторичное жильё">
+                                      <div><span>Вторичное жильё</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Premium">
+                                      <div><span>Premium</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="De Luxe">
+                                      <div><span>De Luxe</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Elite">
+                                      <div><span>Elite</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Ultra Luxury">
+                                      <div><span>Ultra Luxury</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какие особенности должен <br> учитывать объект?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Какую сумму вы планируете <br> инвестировать в недвижимость на Остоженке?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                            <div class="quiz-slide">
+                              <div class="quiz-slide__title">Укажите, когда Вы планируете <br> приобрести недвижимость?</div>
+                              <div class="quiz-slide__answer">
+                                <ul>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Квартира">
+                                      <div><span>Квартира</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Резиденция">
+                                      <div><span>Резиденция</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Апартаменты">
+                                      <div><span>Апартаменты</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Таунхаус">
+                                      <div><span>Таунхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Особняк">
+                                      <div><span>Особняк</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Пентхаус">
+                                      <div><span>Пентхаус</span></div>
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label class="qz-checkbox">
+                                      <input type="checkbox" value="Рассмотрю все">
+                                      <div><span>Рассмотрю все</span></div>
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                    <div class="quiz__slide">
+                      <div class="quiz-slide">
+                        <div class="quiz-slide__title">По вашим параметрам <br> найдено 5 объектов</div>
+                        <div class="quiz-slide__subtitle">зАПОЛНИТЕ ПОЛЯ НИЖЕ ДЛЯ ПОЛУЧЕНИЯ АКТУАЛЬНЫХ ОБЪЕКТОВ В ТЕЧЕНИЕ 15 МИНУТ</div>
+                        <div class="quiz-slide__form"> 
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <input class="required" type="text" placeholder="Имя">
+                              </div>
+                              <div class="form__subitem">
+                                <input class="required" type="email" placeholder="e-mail">
+                              </div>
+                              <div class="form__subitem">
+                                <input class="required" type="tel" placeholder="Телефон">
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <label>
+                                  <input class="required" type="checkbox" placeholder="rules"><span class="checkbox-elem"> </span><span class="checkbox-text">Я принимаю условия политики конфиденциальности и соглашения пользования </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quiz__action">
+                    <div class="quiz__nav">
+                      <div class="quiz__nav-prev" data-quiz-nav="prev">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_swiper-arrow-left"></use>
+                        </svg>
+                      </div>
+                      <div class="quiz__nav-next">
+                        <button class="btn btn-green" data-quiz-nav="next">Следующий вопрос</button>
+                      </div>
+                      <div class="quiz__nav-next">
+                        <button class="btn btn-green" data-quiz="send">Получить результаты</button>
+                      </div>
+                    </div>
+                    <div class="quiz__dots">
+                      <div class="quiz__page"><span data-quiz-count="current">01</span>/<span data-quiz-count="total">05</span></div>
+                      <div class="quiz__mark"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="select-jk">
+              <div class="select-jk__close" data-select-jk="close">
+                <svg width="60" height="60">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_close-quiz"></use>
+                </svg>
+              </div>
+              <div class="select-jk__wrp">
+                <div class="select-jk__list">
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">1</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>1-й Зачатьевский переулок, 19</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>1-й Зачатьевский переулок, 6с2</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>1-й Тружеников переулок, 17</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">2</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 13</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">2</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 13</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>2-й Зачатьевский переулок, 1А</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">A</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Allegoria Mosca</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">B</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Barkli Plaza</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">L</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>La Defense</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Light House</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">M</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Magnum</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">N</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Noble Row</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">O</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Opera House</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">R</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>RozaRossa</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">S</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Savvin River Residence</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">V</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Villa Grace</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">W</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>White</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">Д</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом на Бурденко</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом на Девичьем поле</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом на Плющихе</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом на Трубецкой</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом с французскими окнами</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Дом у Пречистенских ворот</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">Е</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Еропкинский, 16</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Еропкинский, 4</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol">К</div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Камелот</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-jk__item">
+                    <div class="select-jk-item">
+                      <div class="select-jk-item__symbol"></div>
+                      <div class="select-jk-item__checkbox">
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Палаты Муравьёвых</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пироговская, 14</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пожарский переулок, 9</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пожарский, 11</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пречистенка, 13</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пречистенка, 2</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пречистенка, 27</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пречистенка, 40/2</span></div>
+                              </label>
+                              <label>
+                                <input type="checkbox">
+                                <div><span>Пречистенка, 4</span></div>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="select-jk__btn">
+                <button class="btn btn-green" data-select-jk="select">Показать <span></span> объектов</button>
+              </div>
+            </div>
+    </footer>
+    <script src="js/main.js?v=1.52"></script>
+    <script src="js/vendor.js"></script>
+  </body>
+</html>

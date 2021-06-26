@@ -1,5 +1,64 @@
+include ../../modules/catalog/minicard/minicard.pug
 
-
+mixin catalog-filter()
+  .catalog-filter
+    .catalog-filter__wrp
+      .catalog-filter__rooms
+        .container
+          .catalog-filter__col
+            .catalog-filter__title комнат
+            ul
+              each state in ['1','2','3','4+','Свободная планировка']
+                li
+                  label.cf-radio
+                    input(type="checkbox")
+                    span= state
+          .catalog-filter__col.catalog-filter__badroom
+            .catalog-filter__title Cпален
+            ul
+              li: input(type="text" placeholder="от 1")
+              li: input(type="text" placeholder="до 5")
+      .catalog-filter__price
+        .container
+          .catalog-filter__col
+            .catalog-filter__title Цена
+            ul
+              li: input(type="text" placeholder="от 0")
+              li: input(type="text" placeholder="до 552 233 588")
+          .catalog-filter__col
+            ul
+              each state in ['₽','$','€']
+                li
+                  label.cf-radio
+                    input(type="checkbox")
+                    span= state
+          .catalog-filter__col.catalog-filter__area
+            .catalog-filter__title Площадь М2
+            ul.select-area
+              li: input(type="text" placeholder="от 0")
+              li: input(type="text" placeholder="до 400")
+      .catalog-filter__clear
+        .container
+          .clear-filter
+            span Сбросить фильтр
+            +icons('#ic_clear-filter', 40)
 
 mixin jk-catalog()
-  .jk-catalog  jk-catalog
+  .section-jk-catalog
+    .jk-catalog
+      .jk-gallery__img-column: +bgimage('/img/common/digits-title.png')
+      .jk-catalog__wrp
+        .jk-catalog__title Квартиры в жилом комплексе Allegoria Mosca
+        .jk-catalog__filter: +catalog-filter()
+        .container
+          .jk-catalog__sort
+            .jk-catalog__sort-count 35 предложений
+            .jk-catalog__sort-select
+              span По умолчанию 
+              +icons('#ic_sort')
+          .jk-catalog__list
+            each item in [1,2,3,4,5,6,7,8,5]
+              .jk-catalog__item: +minicard('1') 
+          .jk-catalog__more
+            button.btn Показать еще 
+

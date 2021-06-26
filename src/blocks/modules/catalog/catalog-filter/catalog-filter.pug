@@ -71,7 +71,7 @@ mixin catalog-filter()
             ul.select-area
               li: input(type="text" placeholder="от 0")
               li: input(type="text" placeholder="до 400")
-      .catalog-filter__more
+      .catalog-filter__more(style="display: none;")
         .container
           .catalog-filter__title Дополнительные параметры
           ul
@@ -80,3 +80,9 @@ mixin catalog-filter()
                 label.cf-checkbox-custom
                   input(type="checkbox")
                   span= state
+      .catalog-filter__clear
+        .container
+          .more-params(data-filter="toggleMoreParams" data-active="Закрыть дополнительные парамтеры") Дополнительные параметры
+          .clear-filter
+            span Сбросить фильтр
+            +icons('#ic_clear-filter', 40)

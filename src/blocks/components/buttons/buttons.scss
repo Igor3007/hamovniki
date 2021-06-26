@@ -70,16 +70,16 @@
     }
 
     &.btn-line {
-        border: 1px solid #bcbcbc;
+        border: 1px solid #242424;
         background: none;
-        text-transform: uppercase;
+        text-transform: none;
         font-weight: bold;
-        color: $gray;
+        color: #242424;
 
         &:hover {
-            background-color: $grayBlue;
+            background-color: $main;
             color: #fff !important;
-            border-color: $grayBlue
+            border-color: $main
         }
     }
 
