@@ -1,0 +1,244 @@
+.ap-first-block {
+
+    position: relative;
+
+    & .container {
+        max-width: rem(1270);
+    }
+
+    &__bg {
+
+        position: relative;
+
+
+        & .bgimage {
+            display: block;
+            padding-top: 50%;
+            @include bgimage-cover;
+
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: $w940) {
+            @include layer(1);
+            padding-top: 0%;
+        }
+
+
+    }
+
+    &__bgimage1 {
+        @include layer(2);
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+
+
+        & .bgimage {
+            padding-top: 35%;
+            @include bgimage-contain;
+            background-repeat: repeat-x;
+            width: 100%;
+            opacity: 0.9;
+
+            @media screen and (max-width: $w940) {
+                height: 100%;
+            }
+        }
+    }
+
+
+
+    &__content {
+        padding-top: 60px;
+        @include layer(3);
+        background: rgba(0, 0, 0, 0.7);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (max-width: $w940) {
+            position: relative;
+            z-index: 2;
+
+        }
+
+    }
+
+    &__desc {
+        padding: rem(30) rem(35);
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+
+        margin-top: rem(20);
+
+        &::before {
+            position: absolute;
+            @include layer(1);
+            content: '';
+
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    &__price {
+        position: relative;
+        z-index: 2;
+        flex-grow: 1;
+
+        &-usd {
+            font-family: Circe;
+            font-weight: 800;
+            font-size: rem(33);
+            line-height: 105.51%;
+            letter-spacing: 0.05em;
+            color: #A3D39C;
+        }
+
+        &-eu,
+        &-rub {
+            font-size: rem(24);
+            line-height: 134.5%;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.05em;
+            color: #FFFFFF;
+        }
+
+
+    }
+
+    &__id {
+        font-family: Circe;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 134.5%;
+
+        /* or 32px */
+        display: flex;
+        align-items: center;
+        text-align: right;
+        text-decoration-line: underline;
+
+        color: #FFFFFF;
+    }
+
+    &__id {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+
+        position: relative;
+        z-index: 4;
+        max-width: rem(910);
+
+        & h1 {
+            font-family: Muller;
+            font-weight: 800;
+            font-size: rem(52);
+            line-height: 138%;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+
+        }
+    }
+
+    &__properties {
+        font-size: rem(21);
+        line-height: 130%;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        & ul {
+            display: table;
+            padding-top: rem(35);
+            padding-left: rem(32);
+
+            & li {
+                display: table-row;
+
+                & span {
+                    display: table-cell;
+                    padding: 5px;
+
+                    &:first-child {
+                        font-weight: 300;
+                        padding-right: rem(30);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__wrp {
+        max-width: rem(1290);
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__btn {
+        max-width: rem(400);
+        margin: 0 auto;
+        padding-top: rem(50);
+
+    }
+
+    &__download {}
+
+
+
+
+
+}
+
+.ap-prop {
+    @include row-flex();
+    align-items: center;
+
+    & .ap-prop__left {
+        @include col();
+        @include size(7);
+    }
+
+    & .ap-prop__right {
+        @include col();
+        @include size(5);
+    }
+}
+
+
+
+.presentation-block.presentation-block--room {
+    border: 2px solid $main;
+    width: 35.5vw;
+    position: relative;
+    height: 35.5vw;
+    border-radius: 50%;
+
+
+}
+
+.presentation-block.presentation-block--room button {
+    width: auto;
+    margin: auto;
+}
+
+.presentation-block .presentation-block__dl {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}

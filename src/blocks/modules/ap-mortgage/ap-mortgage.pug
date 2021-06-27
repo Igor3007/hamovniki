@@ -1,2 +1,29 @@
+include ../../modules/jk-signup/jk-signup.pug
+
 mixin ap-mortgage()
-  .ap-mortgage ap-mortgage
+  section.section-ap-about(style="background-image: url('/img/common/ap-backgroung-mortgage.jpg')")
+    .container
+      .ap-mortgage
+        .ap-mortgage__wrp
+          .ap-mortgage__title Ипотека
+          .ap-mortgage__desc
+            .ap-mortgage__left
+              .ap-mortgage-manager
+                .ap-mortgage-manager__text
+                  .ap-mortgage-manager__percent: span Ставка от 5.99%
+                  .ap-mortgage-manager__time: span Решение за 72 часа
+                  .ap-mortgage-manager__name
+                    span Имя Фамилия
+                    span специалист по кредитованию
+
+                .ap-mortgage-manager__photo: +bgimage('/img/common/manager.png')
+
+            .ap-mortgage__right
+              +circle-form({
+                title: 'Подать заявку на ипотеку',
+                desc: 'Подайте заявку на ипотеку и получите решение сразу из нескольких банков партнёров.',
+              })
+
+
+
+

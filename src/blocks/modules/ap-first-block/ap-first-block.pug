@@ -1,2 +1,58 @@
+mixin presentation-block-2()
+  .presentation-block.presentation-block--room
+    .presentation-block__center: +bgimage('/img/common/present-img.png')
+    .presentation-block__dl
+      button.btn.btn-green Скачать презентацию
+
 mixin ap-first-block()
-  .ap-first-block ap-first-block
+  section.section-ap-first-block
+    .ap-first-block
+      .ap-first-block__layers
+        .ap-first-block__bg
+          .ap-first-block__bgimage1
+          .ap-first-block__bgimage2:  +bgimage('/img/common/ap-backgroung-firstblock.jpg')
+        .ap-first-block__content
+          .ap-first-block__wrp
+            .ap-prop
+              .ap-prop__left
+                .ap-first-block__title: h1 4-комн. Квартира в ЖК Allegoria Mosca  
+                .ap-first-block__desc
+                  .ap-first-block__price
+                    .ap-first-block__price-usd 2 629 879 $
+                    .ap-first-block__price-rub 184 091 513 ₽
+                    .ap-first-block__price-eu 184 091 €
+                  .ap-first-block__id
+                    span ID 184091
+
+                .ap-first-block__properties
+                  ul
+                    li 
+                      span Жилой комплекс: 
+                      span Allegoria Mosca
+                    li 
+                      span Площадь:  
+                      span 89,3 м2
+                    li 
+                      span Этаж: 
+                      span 3
+                    li 
+                      span Комнат: 
+                      span 4
+                    li 
+                      span Парковка: 
+                      span Подземная, гостевая
+                    li 
+                      span Отделка: 
+                      span Чистовая
+                    li 
+                      span Метро: 
+                      span Фрунзенская
+                    li 
+                      span Высота потолков: 
+                      span до 3,1 м
+              .ap-prop__right
+                .ap-first-block__download
+                  +presentation-block-2()
+
+
+

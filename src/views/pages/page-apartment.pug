@@ -11,6 +11,7 @@ include ../../blocks/modules/ap-similar/ap-similar
 include ../../blocks/modules/ap-mortgage/ap-mortgage
 include ../../blocks/modules/ap-contacts/ap-contacts
 include ../../blocks/modules/jk-map/jk-map
+include ../../blocks/modules/jk-signup/jk-signup
 include ../../blocks/modules/main-menu/main-menu.pug
 
 block variables
@@ -25,19 +26,22 @@ block content
   +jk-gallery()
   +jk-presentation()
   +question-five()
+  +jk-signup()
   +ap-similar()
   +ap-mortgage()
   +ap-contacts()
   +jk-map()
 
   +main-menu-jk([
+
     'Описание квартиры',
     'Галерея',
     'Скачать презентацию ',
     'Запишитесь на экскурсию',
     'Похожие объекты',
     'Ипотека',
-    'Контакты'
+    'Контакты',
+
   ])
 
 

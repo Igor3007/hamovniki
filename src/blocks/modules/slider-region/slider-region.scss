@@ -3,6 +3,10 @@
     padding-bottom: rem(65);
     background-color: #242424;
 
+    & .minicard {
+        opacity: 0.5;
+    }
+
     & .swiper-slide.swiper-slide-prev,
     & .swiper-slide.swiper-slide-next,
     & .swiper-slide.swiper-slide-active {
@@ -11,10 +15,17 @@
             opacity: 1;
         }
 
+        & .minicard {
+            opacity: 1;
+        }
+
     }
 }
 
 .slider-region-item {
+
+
+
     &__image {
 
         opacity: 0.5;

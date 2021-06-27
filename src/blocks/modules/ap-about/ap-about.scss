@@ -1,0 +1,88 @@
+.section-ap-about {
+    @include jk-padding;
+
+    position: relative;
+}
+
+.ap-about {
+    &__title {
+        @include section-title;
+
+        max-width: rem(910);
+        margin: 0 auto;
+        padding-bottom: rem(100);
+        justify-content: center;
+
+        @media screen and (max-width: $w940) {
+            padding-bottom: rem(60);
+
+        }
+    }
+
+    &__img {
+
+        @include jk-column-img;
+
+    }
+
+    &__text {
+
+        font-weight: 300;
+        font-size: rem(18);
+        line-height: 146%;
+        color: #000000;
+        padding-top: rem(80);
+
+        @media screen and (max-width: $w940) {
+            padding-top: rem(45);
+        }
+
+        & p {
+            margin-top: rem(15);
+        }
+    }
+
+    &__tag {
+
+        padding-top: rem(80);
+
+        @media screen and (max-width: $w940) {
+            padding-top: rem(50);
+
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            max-width: rem(1050);
+            margin-right: auto;
+
+            & li {
+
+                margin-right: rem(18);
+                margin-top: rem(9);
+                margin-bottom: rem(9);
+
+                & a {
+                    height: rem(70);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: rem(70);
+                    background: rgba(163, 211, 156, 0.3);
+                    padding: 0 3em;
+
+                    font-size: rem(14);
+                    line-height: 157%;
+                    letter-spacing: 0.03em;
+                    text-transform: uppercase;
+                    color: #0C0C0D;
+                }
+            }
+        }
+
+    }
+}

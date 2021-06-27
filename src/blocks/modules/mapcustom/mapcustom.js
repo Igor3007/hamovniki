@@ -88,29 +88,29 @@ $(document).ready(function () {
         }
     }
 
-    const cm = new customMap();
-    cm.init();
+    // const cm = new customMap();
+    // cm.init();
 
-    $(document).on('click', '.placemark-item', function(){
+    // $(document).on('click', '.placemark-item', function(){
 
-        let pointY = $(this).position().top
-        let pointX = $(this).position().left
+    //     let pointY = $(this).position().top
+    //     let pointX = $(this).position().left
 
-        //console.log(pointY+', '+pointX, 'placemark')
+    //     //console.log(pointY+', '+pointX, 'placemark')
          
 
-    })
+    // })
 
-    $(document).on('mousedown', '.mapcustom__placemark', function(e){
+    // $(document).on('mousedown', '.mapcustom__placemark', function(e){
 
-        let pointY = (e.originalEvent.pageY - $(this).offset().top)
-        let pointX = (e.originalEvent.pageX - $(this).offset().left)
+    //     let pointY = (e.originalEvent.pageY - $(this).offset().top)
+    //     let pointX = (e.originalEvent.pageX - $(this).offset().left)
 
-        console.log( pointY.toFixed(0)+', '+pointX.toFixed(0))
+    //     console.log( pointY.toFixed(0)+', '+pointX.toFixed(0))
 
          
 
-    })
+    // })
 
 });
 

@@ -485,9 +485,8 @@
 
 /* WEBPACK VAR INJECTION */(function($) {ymaps.ready(function () {
   try {
-    var icon = '/img/svg/ic_pin-map-jk.svg'; // Создание экземпляра карты и его привязка к созданному контейнеру.
-
-    var myMap = new ymaps.Map('jk-map-container', mapsParams.params, {
+    // Создание экземпляра карты и его привязка к созданному контейнеру.
+    var myMap = new ymaps.Map('' + mapsParams.container + '', mapsParams.params, {
       suppressMapOpenBlock: true
     }),
         // Создание макета балуна на основе Twitter Bootstrap.
@@ -646,14 +645,15 @@
       });
       PlacemarkArr[i].events.add('balloonopen', function (e) {
         PlacemarkArr[i].properties.set('balloonContent', mapsParams.points[i].balloonContent);
+        PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map-open.svg');
       });
       PlacemarkArr[i].events.add('balloonclose', function (e) {
-        $('.maps-home-button__bottom-bar').fadeIn(300);
-        $('.maps-home-button__top-bar').fadeIn(300);
+        PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map.svg');
       });
-      myMap.geoObjects.add(PlacemarkArr[i]); //autoscale
+      myMap.geoObjects.add(PlacemarkArr[i]);
+      myMap.behaviors.disable('scrollZoom'); //autoscale
 
-      if (mapsParams.points.length > 1) {
+      if (mapsParams.autoscale) {
         myMap.setBounds(myMap.geoObjects.getBounds(), {
           checkZoomRange: true,
           zoomMargin: 15
@@ -834,19 +834,19 @@
       var template = '<div class="placemark-item" style="top: ' + pointY + 'px; left: ' + pointX + 'px;" title="' + data.title + '" ></div>';
       return template;
     };
-  }
+  } // const cm = new customMap();
+  // cm.init();
+  // $(document).on('click', '.placemark-item', function(){
+  //     let pointY = $(this).position().top
+  //     let pointX = $(this).position().left
+  //     //console.log(pointY+', '+pointX, 'placemark')
+  // })
+  // $(document).on('mousedown', '.mapcustom__placemark', function(e){
+  //     let pointY = (e.originalEvent.pageY - $(this).offset().top)
+  //     let pointX = (e.originalEvent.pageX - $(this).offset().left)
+  //     console.log( pointY.toFixed(0)+', '+pointX.toFixed(0))
+  // })
 
-  var cm = new customMap();
-  cm.init();
-  $(document).on('click', '.placemark-item', function () {
-    var pointY = $(this).position().top;
-    var pointX = $(this).position().left; //console.log(pointY+', '+pointX, 'placemark')
-  });
-  $(document).on('mousedown', '.mapcustom__placemark', function (e) {
-    var pointY = e.originalEvent.pageY - $(this).offset().top;
-    var pointX = e.originalEvent.pageX - $(this).offset().left;
-    console.log(pointY.toFixed(0) + ', ' + pointX.toFixed(0));
-  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

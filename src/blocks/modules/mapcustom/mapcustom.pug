@@ -1,10 +1,43 @@
 mixin mapcustom()
   section.section-mapcustom
+    script.
+      const mapsParams = {
+        container: 'mapcustom-container',
+        params: {
+          center: [55.727727111871616,37.57915014824222],
+          zoom: 14,
+          controls: ['zoomControl', 'fullscreenControl']
+        },
+        points: [
+        {
+          'pin': [55.73857369743243,37.59628303700001],
+          'icon': '/img/svg/ic_pin-map.svg',
+          'balloonContent': 'Allegoria Mosca',
+          'draggable': false,
+          'zoom': 13
+        },
+        {
+          'pin': [55.71863620817899,37.57161282006831],
+          'icon': '/img/svg/ic_pin-map.svg',
+          'balloonContent': 'Allegoria Mosca',
+          'draggable': false,
+          'zoom': 13
+        },
+        {
+          'pin': [55.72234231372521,37.55148552362054],
+          'icon': '/img/svg/ic_pin-map.svg',
+          'balloonContent': 'Allegoria Mosca',
+          'draggable': false,
+          'zoom': 13
+        },
+
+      ]
+      };
     .mapcustom
       .mapcustom__wrp
         .mapcustom__container
-          .mapcustom__maps(style="background-image: url('/img/common/custommap-bg.png')")
-            .mapcustom__placemark
+          .mapcustom__maps
+            .mapcustom__placemark(id="mapcustom-container")
 
           .mapcustom__badges
             .container

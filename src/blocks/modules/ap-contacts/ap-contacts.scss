@@ -1,0 +1,17 @@
+.section-ap-contacts {
+    @include jk-padding;
+
+    .ap-contacts {
+        &__title {
+            @include section-title;
+
+            max-width: rem(910);
+            margin: 0 auto;
+
+            justify-content: center;
+
+            @media screen and (max-width: $w940) {}
+        }
+    }
+
+}

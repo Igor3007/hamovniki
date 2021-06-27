@@ -1,0 +1,27 @@
+.slider-region {
+    &__wrp {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        @include section-title;
+
+        max-width: rem(1200);
+        margin: auto;
+        color: #fff;
+        padding-bottom: rem(80)
+    }
+
+    &__img {
+        @include jk-column-img;
+
+        &-column {
+            opacity: 0.3;
+        }
+    }
+}
+
+.section-slider-region {
+    position: relative;
+}

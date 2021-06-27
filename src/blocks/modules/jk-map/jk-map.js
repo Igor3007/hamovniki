@@ -3,10 +3,8 @@ ymaps.ready(function () {
 
     try {
 
-        var icon = '/img/svg/ic_pin-map-jk.svg';
-
         // Создание экземпляра карты и его привязка к созданному контейнеру.
-        var myMap = new ymaps.Map('jk-map-container',  mapsParams.params , {
+        var myMap = new ymaps.Map(''+mapsParams.container+'',  mapsParams.params , {
                 suppressMapOpenBlock: true,
             }),
 
@@ -199,18 +197,19 @@ ymaps.ready(function () {
             PlacemarkArr[i].events.add('balloonopen', function (e) {
                 
                 PlacemarkArr[i].properties.set('balloonContent', mapsParams.points[i].balloonContent);
-
+                PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map-open.svg');
+                
             });
 
             PlacemarkArr[i].events.add('balloonclose', function (e) {
-                $('.maps-home-button__bottom-bar').fadeIn(300)
-                $('.maps-home-button__top-bar').fadeIn(300)
+                PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map.svg');
             })
 
             myMap.geoObjects.add(PlacemarkArr[i]);
+            myMap.behaviors.disable('scrollZoom'); 
             //autoscale
 
-            if(mapsParams.points.length > 1){
+            if(mapsParams.autoscale){
                  myMap.setBounds(myMap.geoObjects.getBounds(), { checkZoomRange: true, zoomMargin: 15 });
             }
 

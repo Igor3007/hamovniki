@@ -4455,9 +4455,19 @@ header.open .header-top > div:not(.header-top__menu) {
   background-color: #242424;
 }
 
+.section-slider-region .minicard {
+  opacity: 0.5;
+}
+
 .section-slider-region .swiper-slide.swiper-slide-prev .slider-region-item__image,
 .section-slider-region .swiper-slide.swiper-slide-next .slider-region-item__image,
 .section-slider-region .swiper-slide.swiper-slide-active .slider-region-item__image {
+  opacity: 1;
+}
+
+.section-slider-region .swiper-slide.swiper-slide-prev .minicard,
+.section-slider-region .swiper-slide.swiper-slide-next .minicard,
+.section-slider-region .swiper-slide.swiper-slide-active .minicard {
   opacity: 1;
 }
 
@@ -7308,6 +7318,502 @@ header.open .header-top > div:not(.header-top__menu) {
 
 /* ap page */
 
+.ap-first-block {
+  position: relative;
+}
+
+.ap-first-block .container {
+  max-width: 79.375rem;
+}
+
+.ap-first-block__bg {
+  position: relative;
+}
+
+.ap-first-block__bg .bgimage {
+  display: block;
+  padding-top: 50%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.ap-first-block__bgimage1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.ap-first-block__bgimage1 .bgimage {
+  padding-top: 35%;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  background-repeat: repeat-x;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.ap-first-block__content {
+  padding-top: 60px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ap-first-block__desc {
+  padding: 1.875rem 2.1875rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.25rem;
+}
+
+.ap-first-block__desc::before {
+  position: absolute;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  content: '';
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ap-first-block__price {
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+.ap-first-block__price-usd {
+  font-family: Circe;
+  font-weight: 800;
+  font-size: 2.0625rem;
+  line-height: 105.51%;
+  letter-spacing: 0.05em;
+  color: #A3D39C;
+}
+
+.ap-first-block__price-eu,
+.ap-first-block__price-rub {
+  font-size: 1.5rem;
+  line-height: 134.5%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.ap-first-block__id {
+  font-family: Circe;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 134.5%;
+  /* or 32px */
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+
+.ap-first-block__id {
+  position: relative;
+  z-index: 2;
+}
+
+.ap-first-block__title {
+  position: relative;
+  z-index: 4;
+  max-width: 56.875rem;
+}
+
+.ap-first-block__title h1 {
+  font-family: Muller;
+  font-weight: 800;
+  font-size: 3.25rem;
+  line-height: 138%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.ap-first-block__properties {
+  font-size: 1.3125rem;
+  line-height: 130%;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.ap-first-block__properties ul {
+  display: table;
+  padding-top: 2.1875rem;
+  padding-left: 2rem;
+}
+
+.ap-first-block__properties ul li {
+  display: table-row;
+}
+
+.ap-first-block__properties ul li span {
+  display: table-cell;
+  padding: 5px;
+}
+
+.ap-first-block__properties ul li span:first-child {
+  font-weight: 300;
+  padding-right: 1.875rem;
+}
+
+.ap-first-block__wrp {
+  max-width: 80.625rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ap-first-block__btn {
+  max-width: 25rem;
+  margin: 0 auto;
+  padding-top: 3.125rem;
+}
+
+.ap-prop {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: center;
+}
+
+.ap-prop .ap-prop__left {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(58.33333% - 30px);
+}
+
+.ap-prop .ap-prop__right {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(41.66667% - 30px);
+}
+
+.presentation-block.presentation-block--room {
+  border: 2px solid #A3D39C;
+  width: 35.5vw;
+  position: relative;
+  height: 35.5vw;
+  border-radius: 50%;
+}
+
+.presentation-block.presentation-block--room button {
+  width: auto;
+  margin: auto;
+}
+
+.presentation-block .presentation-block__dl {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.section-ap-about {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  position: relative;
+}
+
+.ap-about__title {
+  /* Заголовок */
+  font-family: EB Garamond;
+  font-size: 2.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #323232;
+  max-width: 56.875rem;
+  margin: 0 auto;
+  padding-bottom: 6.25rem;
+  justify-content: center;
+}
+
+.ap-about__img-column {
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.ap-about__img-column .bgimage {
+  padding-top: 70%;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ap-about__text {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 146%;
+  color: #000000;
+  padding-top: 5rem;
+}
+
+.ap-about__text p {
+  margin-top: 0.9375rem;
+}
+
+.ap-about__tag {
+  padding-top: 5rem;
+}
+
+.ap-about__tag ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 65.625rem;
+  margin-right: auto;
+}
+
+.ap-about__tag ul li {
+  margin-right: 1.125rem;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+}
+
+.ap-about__tag ul li a {
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4.375rem;
+  background: rgba(163, 211, 156, 0.3);
+  padding: 0 3em;
+  font-size: 0.875rem;
+  line-height: 157%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0C0C0D;
+}
+
+.slider-region__wrp {
+  position: relative;
+  z-index: 2;
+}
+
+.slider-region__title {
+  /* Заголовок */
+  font-family: EB Garamond;
+  font-size: 2.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #323232;
+  max-width: 75rem;
+  margin: auto;
+  color: #fff;
+  padding-bottom: 5rem;
+}
+
+.slider-region__img-column {
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.slider-region__img-column .bgimage {
+  padding-top: 70%;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slider-region__img-column {
+  opacity: 0.3;
+}
+
+.section-slider-region {
+  position: relative;
+}
+
+.section-ap-mortgage {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  position: relative;
+}
+
+.ap-mortgage-manager {
+  display: flex;
+}
+
+.ap-mortgage-manager__text {
+  width: 30%;
+}
+
+.ap-mortgage-manager__photo {
+  width: 70%;
+}
+
+.ap-mortgage__title {
+  /* Заголовок */
+  font-family: EB Garamond;
+  font-size: 2.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #323232;
+  max-width: 56.875rem;
+  margin: 0 auto;
+  padding-bottom: 6.25rem;
+  justify-content: center;
+}
+
+.ap-mortgage__desc {
+  display: flex;
+  align-items: center;
+}
+
+.ap-mortgage__left {
+  width: 60%;
+}
+
+.ap-mortgage__right {
+  width: 40%;
+  margin-left: -13%;
+}
+
+.ap-mortgage__img-column {
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.ap-mortgage__img-column .bgimage {
+  padding-top: 70%;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ap-mortgage__text {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 146%;
+  color: #000000;
+  padding-top: 5rem;
+}
+
+.ap-mortgage__text p {
+  margin-top: 0.9375rem;
+}
+
+.ap-mortgage__tag {
+  padding-top: 5rem;
+}
+
+.ap-mortgage__tag ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 65.625rem;
+  margin-right: auto;
+}
+
+.ap-mortgage__tag ul li {
+  margin-right: 1.125rem;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+}
+
+.ap-mortgage__tag ul li a {
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4.375rem;
+  background: rgba(163, 211, 156, 0.3);
+  padding: 0 3em;
+  font-size: 0.875rem;
+  line-height: 157%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0C0C0D;
+}
+
+.section-ap-contacts {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+
+.section-ap-contacts .ap-contacts__title {
+  /* Заголовок */
+  font-family: EB Garamond;
+  font-size: 2.25rem;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #323232;
+  max-width: 56.875rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
 /* page */
 
 @media screen and (min-width: 580px) {
@@ -7386,6 +7892,21 @@ header.open .header-top > div:not(.header-top__menu) {
   }
 
   .section-jk-developer {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+
+  .section-ap-about {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+
+  .section-ap-mortgage {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+
+  .section-ap-contacts {
     padding-top: 4.375rem;
     padding-bottom: 4.375rem;
   }
@@ -7592,6 +8113,53 @@ header.open .header-top > div:not(.header-top__menu) {
   .jk-developer__digits {
     padding-top: 2.5rem;
   }
+
+  .ap-first-block__bg .bgimage {
+    height: 100%;
+  }
+
+  .ap-first-block__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 0%;
+  }
+
+  .ap-first-block__bgimage1 .bgimage {
+    height: 100%;
+  }
+
+  .ap-first-block__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ap-about__title {
+    padding-bottom: 3.75rem;
+  }
+
+  .ap-about__text {
+    padding-top: 2.8125rem;
+  }
+
+  .ap-about__tag {
+    padding-top: 3.125rem;
+  }
+
+  .ap-mortgage__title {
+    padding-bottom: 3.75rem;
+  }
+
+  .ap-mortgage__text {
+    padding-top: 2.8125rem;
+  }
+
+  .ap-mortgage__tag {
+    padding-top: 3.125rem;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -7658,6 +8226,21 @@ header.open .header-top > div:not(.header-top__menu) {
   }
 
   .section-jk-developer {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .section-ap-about {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .section-ap-mortgage {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .section-ap-contacts {
     padding-top: 3.125rem;
     padding-bottom: 3.125rem;
   }
