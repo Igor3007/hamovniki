@@ -24,6 +24,8 @@
         margin: rem(-40) 0;
         position: relative;
         z-index: 1;
+
+        @include container-padding;
     }
 
     &__item {
@@ -39,11 +41,17 @@
         position: relative;
         z-index: 2;
 
+
+
         &-top,
         &-bottom {
 
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: $w1024) {
+                display: none;
+            }
 
             &::before,
             &::after {
@@ -142,7 +150,16 @@
     &__left,
     &__right {
         @include col();
-        @include size(6);
+        @include size-w1024(6);
+
+    }
+
+    &__left {
+        @include size-w760(4);
+    }
+
+    &__right {
+        @include size-w760(8);
     }
 
     &__title {
@@ -150,6 +167,21 @@
         font-size: rem(58);
         line-height: 110%;
         color: #fff;
+
+        @media screen and (max-width: $w1024) {
+            font-family: Muller;
+            font-style: normal;
+            font-weight: bold;
+            font-size: rem(27);
+            line-height: 89%;
+            color: #FFFFFF;
+        }
+
+        @media screen and (max-width: $w580) {
+            padding-bottom: rem(15);
+        }
+
+
     }
 
     &__subtitle {
@@ -158,12 +190,22 @@
         line-height: rem(36);
         text-transform: lowercase;
         color: #000000;
+
+        @media screen and (max-width: $w1024) {
+            padding-bottom: rem(10);
+            font-size: rem(27);
+
+        }
     }
 
     &__desc {
         font-size: rem(24);
         line-height: rem(35);
         color: #242424;
+
+        @media screen and (max-width: $w1024) {
+            font-size: rem(20);
+        }
 
         & a {
             font-weight: bold;

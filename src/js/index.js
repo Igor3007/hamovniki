@@ -29,7 +29,7 @@ var region = new Swiper('[data-swiper="region"]', {
   observer: true,
   centeredSlides: 'auto',
   loop: true,
-  observeParents: true,
+  //observeParents: true,
   navigation: {
     nextEl: '.slider-slider-nav__next',
     prevEl: '.slider-slider-nav__prev',
@@ -37,24 +37,35 @@ var region = new Swiper('[data-swiper="region"]', {
 
   breakpoints: {
     0: {
-      spaceBetween: 5,
+      spaceBetween: 10,
       slidesPerView: 1,
+      slidesPerView: 1.2,
+      centeredSlides: false,
     },
     480: {
-      spaceBetween: 5,
+      spaceBetween: 10,
+      centeredSlides: 'auto',
+      
     },
     
     580: {
-      spaceBetween: 15,
+      spaceBetween: 20,
+      slidesPerView: 1.8,
+      centeredSlides: 'auto',
     },
     767: {
-      spaceBetween: 15,
+      spaceBetween: 20,
+      slidesPerView: 2.5,
+      centeredSlides: 'auto',
     },
     1024: {
-      spaceBetween: 15,
+      spaceBetween: 20,
+      slidesPerView: 3.5,
+      centeredSlides: 'auto',
     },
     1280: {
       spaceBetween: 27,
+      centeredSlides: 'auto',
     },
   },
 
@@ -78,24 +89,29 @@ var curroff = new Swiper('[data-swiper="current-offers"]', {
 
   breakpoints: {
     0: {
-      spaceBetween: 5,
+      spaceBetween: 15,
       slidesPerView: 1,
     },
     480: {
-      spaceBetween: 5,
+      spaceBetween: 15,
+      slidesPerView: 1,
     },
     
     580: {
-      spaceBetween: 15,
+      spaceBetween: 25,
+      slidesPerView: 1,
     },
     767: {
-      spaceBetween: 15,
+      spaceBetween: 25,
+      slidesPerView: 1,
     },
     1024: {
-      spaceBetween: 15,
+      spaceBetween: 30,
+      slidesPerView: 1.48,
     },
     1280: {
-      spaceBetween: 27,
+      spaceBetween: 30,
+      slidesPerView: 1.48,
     },
   },
 
@@ -135,19 +151,6 @@ var specialist = new Swiper('[data-swiper="specialists"]', {
     0: {
       spaceBetween: 5,
       slidesPerView: 1,
-    },
-    480: {
-      spaceBetween: 5,
-    },
-    
-    580: {
-      spaceBetween: 15,
-    },
-    767: {
-      spaceBetween: 15,
-    },
-    1024: {
-      spaceBetween: 15,
     },
     1280: {
       spaceBetween: 27,
@@ -306,6 +309,45 @@ $(document).on('click', '[data-filter="toggleMoreParams"]', function(event){
   }else {
     $('[data-filter="toggleMoreParams"]').text(defaultText)
   }
+  
+})
+
+/* =============== */
+
+
+
+var minicard = new Swiper('[data-swiper="minicard"]', {
+
+  slidesPerView: 1,
+  spaceBetween: 5,
+  observer: true,
+  loop: true,
+  observeParents: true,
+  pagination: {
+    el: '[data-swiper-dots="minicard"]',
+    dynamicBullets: true,
+  },
+
+});
+
+// ===========================
+
+$(document).on('mouseenter', '.minicard__desc', function(event){
+  
+  $(this).parents('.minicard').addClass('hover')
+  
+})
+
+$(document).on('mouseleave', '.minicard', function(event){
+  
+  $(this).removeClass('hover')
+  
+})
+
+$(document).on('click', '[data-toggle]', function(event){
+  var elem = $(this).attr('data-toggle')
+  $('[data-toggle-elem="'+elem+'"]').toggleClass('active')
+  $(this).toggleClass('active')
   
 })
 

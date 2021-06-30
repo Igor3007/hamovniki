@@ -79,18 +79,24 @@ section {
 }
 
 .container {
-    max-width: 1275px;
+    max-width: 1355px;
     width: 100%;
     margin: 0 auto;
     padding: 0 rem(30);
-    box-sizing: content-box;
+    box-sizing: border-box;
 
     @media screen and (max-width: $w1280) {
-        padding: 0 rem(35);
+        padding: 0 rem(25);
     }
 
     @media screen and (max-width: $w1024) {
         padding: 0 rem(25);
+        max-width: 885px;
+    }
+
+    @media screen and (max-width: $w760) {
+        padding: 0 rem(15);
+        max-width: 595px;
     }
 
     @media screen and (max-width: $w580) {
@@ -117,6 +123,15 @@ section {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #323232;
+
+    @media screen and (max-width: $w940) {
+        font-size: rem(27);
+    }
+
+    @media screen and (max-width: $w580) {
+        font-size: rem(20);
+
+    }
 }
 
 @mixin jk-padding {
@@ -155,5 +170,85 @@ section {
 
     }
 }
+
+@mixin container-padding {
+    @media screen and (max-width: $w1024) {
+        padding-left: rem(25);
+        padding-right: rem(25);
+        max-width: 885px;
+        margin: auto;
+    }
+
+    @media screen and (max-width: $w760) {
+        padding-left: rem(15);
+        padding-right: rem(15);
+        max-width: 595px;
+    }
+
+    @media screen and (max-width: $w580) {
+        padding-left: rem(15);
+        padding-right: rem(15);
+    }
+}
+
+
+.callback-popup {
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+        transform: translateY(100%);
+
+        & svg {
+            cursor: pointer;
+
+            @media screen and (max-width: $w760) {
+                width: rem(50);
+            }
+        }
+    }
+
+    &__content {
+        &>.circle-form {
+            min-width: 600px;
+            min-height: 600px;
+
+            @media screen and (max-width: $w760) {
+                min-width: 490px;
+                min-height: 490px;
+            }
+
+            @media screen and (max-width: $w580) {
+                min-width: 400px;
+                min-height: 400px;
+            }
+
+            @media screen and (max-width: $w480) {
+                min-width: 350px;
+                min-height: 350px;
+            }
+        }
+    }
+
+    & .fancybox-close-small {
+        display: none
+    }
+
+    &.fancybox-content {
+        background: transparent;
+
+        @media screen and (max-width: $w580) {
+            padding: 30px;
+        }
+
+        @media screen and (max-width: $w480) {
+            padding: 10px;
+        }
+
+        @media screen and (max-width: $w360) {
+            padding: 5px;
+        }
+    }
+}
+
 
 /* ================== */

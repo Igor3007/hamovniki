@@ -3,6 +3,10 @@
     padding-bottom: rem(65);
     background-color: #242424;
 
+    @media screen and (max-width: $w760) {
+        padding-top: 60px;
+    }
+
     & .minicard {
         opacity: 0.5;
     }
@@ -40,19 +44,25 @@
 
     &__text {
         padding-top: rem(15);
-
-
-
+        display: flex;
+        justify-content: flex-end;
 
         & a {
             color: #fff;
             text-transform: uppercase;
             font-weight: 350;
-            font-size: 22px;
+            font-size: rem(22);
             line-height: 114%;
             text-align: right;
             letter-spacing: 0.03em;
             text-transform: uppercase;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            @media screen and (max-width: $w940) {
+                font-size: rem(18);
+            }
         }
     }
 }
@@ -62,6 +72,22 @@
     display: flex;
     justify-content: flex-end;
     padding-top: rem(50);
+
+
+
+    &__all {
+        margin-right: auto;
+
+        @media screen and (max-width: $w1024) {
+            margin-left: auto;
+        }
+
+        & .btn {
+            border-color: #fff;
+            color: #fff;
+            height: rem(60);
+        }
+    }
 
 
     &__prev,
@@ -74,6 +100,10 @@
         align-items: center;
         margin: 0 rem(40);
         cursor: pointer;
+
+        @media screen and (max-width: $w1024) {
+            display: none;
+        }
 
         &:last-child {
             margin-right: 0;

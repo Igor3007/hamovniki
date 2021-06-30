@@ -6,6 +6,10 @@ mixin infrastructure()
           .infrastructure__title Инфраструктура
           .infrastructure__desc <strong>Хамовники</strong> — одна из самых престижных локаций Москвы. В ее окрестностях несколько парковых зон: Нескучный сад, Парк Мандельштама, Новодевичьи пруды, Лужники. Рядом Москва-река с прекрасными набережными и целых шесть станций метро. Лучшие школы и студии, изысканные рестораны, гастробары, фитнес-студии и набережные для пробежек не позволят скучать жителям.
           .infrastructure__list 
-            ul
+            ul(data-toggle-elem="infr")
               each item in infrastructure
                 li= item
+          .infrastructure__more(data-toggle="infr")
+            span больше преимуществ
+            span.active-text свернуть
+            +icons('#ic_more', 40)

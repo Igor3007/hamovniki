@@ -2,7 +2,7 @@ mixin presentation-block-2()
   .presentation-block.presentation-block--room
     .presentation-block__center: +bgimage('/img/common/present-img.png')
     .presentation-block__dl
-      button.btn.btn-green Скачать презентацию
+      button.btn.btn-green(data-fancybox="" data-type="ajax" data-src="/dl-popup.html") Скачать презентацию
 
 mixin ap-first-block()
   section.section-ap-first-block

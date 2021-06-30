@@ -27,6 +27,12 @@ $(document).ready(function () {
 
     initInputMask();
 
+    $('[data-fancybox]').fancybox({
+        afterShow: function(){
+            initInputMask();
+        }
+    })
+
     function validateEmail(email) {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -258,7 +264,7 @@ $(document).ready(function () {
     };
 
      
-    $('[data-type="ajax"]').on('submit', function(e){
+    $(document).on('submit', '[data-type="ajax"]', function(e){
         e.preventDefault();
         var _form = $(this);
         if (!myValidateForm(_form)) {

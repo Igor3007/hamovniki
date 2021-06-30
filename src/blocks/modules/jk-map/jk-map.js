@@ -1,6 +1,10 @@
 
 ymaps.ready(function () {
 
+    var sizeIcons = [35, 35];
+
+    if($(window).width() < 769) sizeIcons = [25, 25]; 
+
     try {
 
         // Создание экземпляра карты и его привязка к созданному контейнеру.
@@ -189,7 +193,7 @@ ymaps.ready(function () {
                 // balloonContentLayout: LayoutActivatePoint,
                 iconLayout: 'default#image',
                 iconImageHref: mapsParams.points[i].icon,
-                iconImageSize: [35, 35],
+                iconImageSize: sizeIcons,
                 pane: 'balloon',
                 draggable: (mapsParams.points[i].draggable ? true : false)
             });
@@ -210,7 +214,7 @@ ymaps.ready(function () {
             //autoscale
 
             if(mapsParams.autoscale){
-                 myMap.setBounds(myMap.geoObjects.getBounds(), { checkZoomRange: true, zoomMargin: 15 });
+                 myMap.setBounds(myMap.geoObjects.getBounds(), { checkZoomRange: true, zoomMargin: 50 });
             }
 
             PlacemarkArr[0].balloon.open();

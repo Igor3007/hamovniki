@@ -11,12 +11,11 @@ include ../../modules/catalog/select-jk/select-jk
         address Москва, 4-6, улица Остоженка 
         a(href='#') +7 (495) 085-16-64
       .footer__callback
-        button.btn.btn-green  Заказать звонок
+        button.btn.btn-green(data-fancybox="" data-type="ajax" data-src="/callback-popup.html")  Заказать звонок
     .footer__logo: a(href='/'): +bgimage('/img/common/logo.svg')
 
 
-+quiz(quizarr)
-
++quiz(quizarr) 
 
 +select-jk(jk)
 

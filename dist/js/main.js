@@ -186,6 +186,11 @@
   }
 
   initInputMask();
+  $('[data-fancybox]').fancybox({
+    afterShow: function afterShow() {
+      initInputMask();
+    }
+  });
 
   function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -416,7 +421,7 @@
     return json;
   };
 
-  $('[data-type="ajax"]').on('submit', function (e) {
+  $(document).on('submit', '[data-type="ajax"]', function (e) {
     e.preventDefault();
 
     var _form = $(this);
@@ -484,6 +489,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {ymaps.ready(function () {
+  var sizeIcons = [35, 35];
+  if ($(window).width() < 769) sizeIcons = [25, 25];
+
   try {
     // Создание экземпляра карты и его привязка к созданному контейнеру.
     var myMap = new ymaps.Map('' + mapsParams.container + '', mapsParams.params, {
@@ -639,7 +647,7 @@
         // balloonContentLayout: LayoutActivatePoint,
         iconLayout: 'default#image',
         iconImageHref: mapsParams.points[i].icon,
-        iconImageSize: [35, 35],
+        iconImageSize: sizeIcons,
         pane: 'balloon',
         draggable: mapsParams.points[i].draggable ? true : false
       });
@@ -656,7 +664,7 @@
       if (mapsParams.autoscale) {
         myMap.setBounds(myMap.geoObjects.getBounds(), {
           checkZoomRange: true,
-          zoomMargin: 15
+          zoomMargin: 50
         });
       }
 
@@ -897,11 +905,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
-  $(document).on('click', '.quiz__close', function (event) {
-    $(this).parents('.quiz').removeClass('open');
-  }); //===========================
-
+  //===========================
   function historyMain() {
+    this.block = '.quiz';
     this.container = '.quiz__list';
     this.item = '.quiz__slide';
     this.dotsContainer = '.quiz__mark';
@@ -912,6 +918,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
       this.changeStage();
       this.nav();
       this.renderDots(this.slideActive);
+      this.changeBg(this.slideActive);
     };
 
     this.changeStage = function () {
@@ -925,6 +932,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
       this.changeStage();
       this.nav();
       this.renderDots(this.slideActive);
+      this.changeBg(index);
     };
 
     this.nextSlide = function () {
@@ -950,22 +958,27 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
       }
     };
 
+    this.changeBg = function (index) {
+      var link = $(this.item).eq(index - 1).find('.quiz-slide').attr('data-slide-bg');
+      $(this.block).attr({
+        style: 'background-image: url(' + link + ');'
+      });
+    };
+
     this.nav = function () {
       // говно какоето
-      if ($(window).width() > 580) {
-        if (this.slideActive == 1) {
-          $('[data-quiz-nav="prev"]').hide();
-        } else {
-          $('[data-quiz-nav="prev"]').show();
-        }
+      if (this.slideActive == 1) {
+        $('[data-quiz-nav="prev"]').hide();
+      } else {
+        $('[data-quiz-nav="prev"]').show();
+      }
 
-        if (this.slideActive == this.countSlide) {
-          $('[data-quiz-nav="next"]').hide();
-          $('[data-quiz="send"]').show();
-        } else {
-          $('[data-quiz-nav="next"]').show();
-          $('[data-quiz="send"]').hide();
-        }
+      if (this.slideActive == this.countSlide) {
+        $('[data-quiz-nav="next"]').hide();
+        $('[data-quiz="send"]').attr('style', 'display: flex');
+      } else {
+        $('[data-quiz-nav="next"]').show();
+        $('[data-quiz="send"]').hide();
       }
     };
   }
@@ -991,6 +1004,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', function (e)
 
   $(document).on('click', '[data-quiz="open"]', function (event) {
     $('.quiz').toggleClass('open');
+    $('html').toggleClass('hidden');
+  });
+  /* =========================================== */
+
+  /* =========================================== */
+
+  $(document).on('click', '.quiz__close', function (event) {
+    $(this).parents('.quiz').removeClass('open');
+    $('html').removeClass('hidden');
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
@@ -2802,6 +2824,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_import_jquery_fancybox_min__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! overlayscrollbars/js/jquery.overlayScrollbars */ "./node_modules/overlayscrollbars/js/jquery.overlayScrollbars.js");
 /* harmony import */ var overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(overlayscrollbars_js_jquery_overlayScrollbars__WEBPACK_IMPORTED_MODULE_7__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2813,6 +2837,8 @@ __webpack_require__.r(__webpack_exports__);
 _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2___default()();
 swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_3__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_3__["Navigation"]]);
 jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
+  var _;
+
   // .swiper-container
   var region = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="region"]', {
     slidesPerView: 4,
@@ -2820,30 +2846,38 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
     observer: true,
     centeredSlides: 'auto',
     loop: true,
-    observeParents: true,
+    //observeParents: true,
     navigation: {
       nextEl: '.slider-slider-nav__next',
       prevEl: '.slider-slider-nav__prev'
     },
     breakpoints: {
-      0: {
-        spaceBetween: 5,
+      0: (_ = {
+        spaceBetween: 10,
         slidesPerView: 1
-      },
+      }, _defineProperty(_, "slidesPerView", 1.2), _defineProperty(_, "centeredSlides", false), _),
       480: {
-        spaceBetween: 5
+        spaceBetween: 10,
+        centeredSlides: 'auto'
       },
       580: {
-        spaceBetween: 15
+        spaceBetween: 20,
+        slidesPerView: 1.8,
+        centeredSlides: 'auto'
       },
       767: {
-        spaceBetween: 15
+        spaceBetween: 20,
+        slidesPerView: 2.5,
+        centeredSlides: 'auto'
       },
       1024: {
-        spaceBetween: 15
+        spaceBetween: 20,
+        slidesPerView: 3.5,
+        centeredSlides: 'auto'
       },
       1280: {
-        spaceBetween: 27
+        spaceBetween: 27,
+        centeredSlides: 'auto'
       }
     }
   }); // .swiper-container current-offers
@@ -2861,23 +2895,28 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
     },
     breakpoints: {
       0: {
-        spaceBetween: 5,
+        spaceBetween: 15,
         slidesPerView: 1
       },
       480: {
-        spaceBetween: 5
+        spaceBetween: 15,
+        slidesPerView: 1
       },
       580: {
-        spaceBetween: 15
+        spaceBetween: 25,
+        slidesPerView: 1
       },
       767: {
-        spaceBetween: 15
+        spaceBetween: 25,
+        slidesPerView: 1
       },
       1024: {
-        spaceBetween: 15
+        spaceBetween: 30,
+        slidesPerView: 1.48
       },
       1280: {
-        spaceBetween: 27
+        spaceBetween: 30,
+        slidesPerView: 1.48
       }
     },
     on: {
@@ -2906,18 +2945,6 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
       0: {
         spaceBetween: 5,
         slidesPerView: 1
-      },
-      480: {
-        spaceBetween: 5
-      },
-      580: {
-        spaceBetween: 15
-      },
-      767: {
-        spaceBetween: 15
-      },
-      1024: {
-        spaceBetween: 15
       },
       1280: {
         spaceBetween: 27
@@ -3027,6 +3054,31 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).ready(function () {
     } else {
       jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-filter="toggleMoreParams"]').text(defaultText);
     }
+  });
+  /* =============== */
+
+  var minicard = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="minicard"]', {
+    slidesPerView: 1,
+    spaceBetween: 5,
+    observer: true,
+    loop: true,
+    observeParents: true,
+    pagination: {
+      el: '[data-swiper-dots="minicard"]',
+      dynamicBullets: true
+    }
+  }); // ===========================
+
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).on('mouseenter', '.minicard__desc', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).parents('.minicard').addClass('hover');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).on('mouseleave', '.minicard', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).removeClass('hover');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_5___default()(document).on('click', '[data-toggle]', function (event) {
+    var elem = jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).attr('data-toggle');
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()('[data-toggle-elem="' + elem + '"]').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_5___default()(this).toggleClass('active');
   });
 }); //ready
 

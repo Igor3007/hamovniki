@@ -6,7 +6,13 @@ mixin minicard(data)
       .minicard__id ID: 2589
 
     .minicard__image
-      +bgimage('/img/catalog/'+data+'.jpg')
+      .swiper-container(data-swiper="minicard")
+        .swiper-wrapper
+          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+        .swiper-dots(data-swiper-dots="minicard")
 
     .minicard__desc
       .minicard__title

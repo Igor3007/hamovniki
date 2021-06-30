@@ -22,6 +22,23 @@
     overflow: hidden;
     color: #fff;
 
+    animation: slide-left 0.5s ease forwards;
+
+    @media screen and (max-width: $w580) {
+        width: 50%;
+        left: 4vw !important;
+        bottom: 4vw !important;
+    }
+
+    @media screen and (max-width: $w480) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: $w360) {
+        width: 70%;
+
+    }
+
     &__content {
 
         font-weight: 350;
@@ -29,8 +46,17 @@
         line-height: 25px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-
+        overflow: hidden;
+        text-overflow: ellipsis;
         color: #FFFFFF;
+
+        @media screen and (max-width: $w580) {
+            font-size: rem(19);
+        }
+
+        @media screen and (max-width: $w360) {
+            font-size: rem(16);
+        }
     }
 
     &__close {

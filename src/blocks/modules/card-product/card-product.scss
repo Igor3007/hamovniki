@@ -327,7 +327,7 @@
 
     &__title {
         font-weight: bold;
-        font-size: 26px;
+        font-size: rem(26);
         text-transform: uppercase;
         color: #242424;
         margin-bottom: 25px;
@@ -368,7 +368,7 @@
         }
 
         @media screen and (max-width: $w580) {
-            font-size: 22px;
+            font-size: rem(22);
         }
 
 

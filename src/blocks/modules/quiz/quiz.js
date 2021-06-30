@@ -1,14 +1,11 @@
 $(document).ready(function () {
-    $(document).on('click', '.quiz__close', function(event){
-        
-        $(this).parents('.quiz').removeClass('open')
-        
-    })
+   
 
     //===========================
 
     function historyMain (){
       
+        this.block = '.quiz';
         this.container = '.quiz__list';
         this.item = '.quiz__slide';
         this.dotsContainer = '.quiz__mark';
@@ -21,6 +18,7 @@ $(document).ready(function () {
           this.changeStage()
           this.nav()
           this.renderDots(this.slideActive)
+          this.changeBg(this.slideActive)
         }
   
         this.changeStage = function(){
@@ -37,6 +35,7 @@ $(document).ready(function () {
           this.changeStage()
           this.nav()
           this.renderDots(this.slideActive)
+          this.changeBg(index)
         }
   
         this.nextSlide = function(){
@@ -69,12 +68,20 @@ $(document).ready(function () {
           }
 
         }
+
+        this.changeBg = function(index){
+
+          let link = $(this.item).eq((index-1)).find('.quiz-slide').attr('data-slide-bg');
+          $(this.block).attr({
+            style: 'background-image: url('+link+');'
+          })
+
+        }
   
   
         this.nav = function(){
   
           // говно какоето
-          if($(window).width() > 580){
             if(this.slideActive == 1){
               $('[data-quiz-nav="prev"]').hide()
             }else{
@@ -83,13 +90,12 @@ $(document).ready(function () {
     
             if(this.slideActive == this.countSlide){
               $('[data-quiz-nav="next"]').hide()
-              $('[data-quiz="send"]').show()
+              $('[data-quiz="send"]').attr('style', 'display: flex')
 
             }else{
               $('[data-quiz-nav="next"]').show()
               $('[data-quiz="send"]').hide()
             }
-          }
         }
   
   
@@ -118,6 +124,17 @@ $(document).ready(function () {
 
       $(document).on('click', '[data-quiz="open"]', function(event){
         $('.quiz').toggleClass('open')
+        $('html').toggleClass('hidden')
       })
+
+            
+      /* =========================================== */
+      /* =========================================== */
+
+      $(document).on('click', '.quiz__close', function(event){
+        $(this).parents('.quiz').removeClass('open')
+        $('html').removeClass('hidden')
+      })
+       
 
 });

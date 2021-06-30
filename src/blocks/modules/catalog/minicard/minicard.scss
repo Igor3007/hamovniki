@@ -39,7 +39,7 @@
             justify-content: center;
 
             @media screen and (max-width: $w1024) {
-                font-size: 22px;
+                font-size: rem(22);
             }
 
         }
@@ -296,7 +296,7 @@
         }
     }
 
-    &:hover {
+    &.hover {
         & .minicard__image {
             & .bgimage {
                 filter: grayscale(0);
@@ -320,4 +320,22 @@
 
 
     }
+}
+
+.swiper-dots {
+    bottom: 2px !important;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+    background-color: $main;
+}
+
+.swiper-pagination-bullet {
+    background-color: #343434;
+    opacity: 1;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
 }

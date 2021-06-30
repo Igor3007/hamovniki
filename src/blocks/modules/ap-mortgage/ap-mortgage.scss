@@ -1,6 +1,7 @@
 .section-ap-mortgage {
     @include jk-padding;
 
+    padding-bottom: 0 !important;
     position: relative;
 }
 
@@ -8,11 +9,87 @@
     display: flex;
 
     &__text {
-        width: 30%
+        width: 35%
     }
 
     &__photo {
-        width: 70%;
+        width: 65%;
+
+
+        & .bgimage {
+            @include layer(1);
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+
+            margin-left: -9vw;
+        }
+    }
+
+    &__percent {
+        font-size: rem(39);
+        line-height: 113%;
+        display: flex;
+        justify-content: center;
+        color: #343434;
+        padding-bottom: rem(30);
+
+        & span {
+            min-width: rem(270);
+            width: rem(270);
+            height: rem(270);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+
+    &__time {
+        font-size: rem(39);
+        line-height: 113%;
+        display: flex;
+        justify-content: center;
+        color: #343434;
+
+        & span {
+            width: rem(180);
+            min-width: rem(180);
+            height: rem(180);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+
+    &__name {
+
+        display: flex;
+        flex-direction: column;
+        padding-top: 5vw;
+
+        & span:first-child {
+
+            font-weight: bold;
+            font-size: rem(26);
+            line-height: 160.9%;
+            text-align: right;
+            color: #343434;
+
+        }
+
+        & span:last-child {
+            font-size: rem(18);
+            line-height: 160.9%;
+            text-align: right;
+            color: #343434;
+        }
     }
 
 
@@ -36,6 +113,8 @@
     &__desc {
         display: flex;
         align-items: center;
+        position: relative;
+
     }
 
     &__left {
@@ -44,7 +123,12 @@
 
     &__right {
         width: 40%;
-        margin-left: -13%
+        margin-left: -13%;
+
+        @include jk-padding;
+
+        padding-top: 0 !important;
+        z-index: 2;
     }
 
     &__img {
@@ -70,47 +154,7 @@
         }
     }
 
-    &__tag {
 
-        padding-top: rem(80);
 
-        @media screen and (max-width: $w940) {
-            padding-top: rem(50);
 
-        }
-
-        & ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            max-width: rem(1050);
-            margin-right: auto;
-
-            & li {
-
-                margin-right: rem(18);
-                margin-top: rem(9);
-                margin-bottom: rem(9);
-
-                & a {
-                    height: rem(70);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: rem(70);
-                    background: rgba(163, 211, 156, 0.3);
-                    padding: 0 3em;
-
-                    font-size: rem(14);
-                    line-height: 157%;
-                    letter-spacing: 0.03em;
-                    text-transform: uppercase;
-                    color: #0C0C0D;
-                }
-            }
-        }
-
-    }
 }

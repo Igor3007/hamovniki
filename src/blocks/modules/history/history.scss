@@ -1,6 +1,5 @@
 .section-history {
-    padding-top: rem(80);
-    padding-bottom: rem(80);
+    @include jk-padding;
 
     background-size: contain;
     background-position: bottom center;
@@ -15,16 +14,62 @@
     &__desc {
         padding-top: rem(80);
 
+        @media screen and (max-width: $w1024) {
+            padding-top: rem(60);
+        }
+
+        @media screen and (max-width: $w480) {
+            padding-top: rem(30);
+
+        }
+
+        &.active {
+            & p {
+                display: block;
+            }
+        }
+
         & p {
             font-weight: 350;
             font-size: rem(30);
             line-height: 120%;
             color: #242424;
+
+            display: none;
+
+            &:nth-child(-n+3) {
+                display: block;
+            }
+
+            @media screen and (max-width: $w480) {
+                font-size: rem(20);
+
+            }
         }
 
         & h2 {
             font-size: rem(30);
             font-weight: 400;
+        }
+    }
+
+    &__more {
+
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-top: rem(25);
+        cursor: pointer;
+
+
+        & span {
+            font-size: 15px;
+            line-height: 187%;
+            letter-spacing: 0.1em;
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            margin-right: rem(15);
         }
     }
 }

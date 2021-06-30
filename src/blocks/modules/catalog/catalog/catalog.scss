@@ -15,12 +15,23 @@
 
 .catalog-list {
     &__wrp {
-        @include row-flex()
+        @include row-flex();
+
+        @media screen and (max-width: $w580) {
+            max-width: 410px;
+            margin: auto;
+        }
     }
 
     &__items {
         @include col();
-        @include size(4);
+
+        @include size-w760(4);
+        @include size-w580(6);
+        @include size(12);
+
+
+
 
         margin-bottom: 30px;
     }

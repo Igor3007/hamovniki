@@ -10,10 +10,24 @@
     display: none;
     animation: fade-in 0.9s ease forwards;
 
+
+    &::before {
+        background: rgba(0, 0, 0, 0.9);
+        content: '';
+        @include layer(1);
+    }
+
     &.open {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    &__overlay {
+        overflow-y: auto;
+        height: 100vh;
+        display: flex;
+        align-items: center;
     }
 
 
@@ -27,12 +41,13 @@
 
     }
 
-    & [data-quiz="send"] {
+    & [data-quiz=send] {
         display: none;
     }
 
     & form {
         width: 100%;
+        margin: auto;
     }
 
     &__wrp {
@@ -40,19 +55,39 @@
         margin: auto;
         width: 100%;
         padding: 30px;
+        z-index: 2;
+        position: relative;
+
+        @include container-padding;
     }
 
     &__close {
-        position: absolute;
-        right: rem(100);
-        top: rem(50);
         cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: rem(-50);
+        padding-bottom: rem(50);
+
+        @include container-padding;
+
+        @media screen and (max-width: $w1280) {
+            & svg {
+                width: rem(51);
+                height: rem(51);
+            }
+        }
     }
 
     &__action {
         display: flex;
         justify-content: space-between;
         padding-top: rem(45);
+
+        @media screen and (max-width: $w760) {
+            flex-direction: column;
+
+        }
+
     }
 
     &__page {
@@ -63,13 +98,19 @@
         text-transform: uppercase;
         font-weight: 300;
 
+        @media screen and (max-width: $w760) {
+            text-align: center;
+            font-size: rem(36);
+
+        }
+
         & span {
             width: rem(50);
             display: inline-block;
             text-align: center;
         }
 
-        & [data-quiz-count="current"] {
+        & [data-quiz-count=current] {
             font-weight: bold;
         }
 
@@ -81,7 +122,11 @@
         justify-content: center;
         flex-grow: 1;
 
-
+        & .btn {
+            @media screen and (max-width: $w360) {
+                font-size: 14px;
+            }
+        }
 
 
         &-prev {
@@ -93,6 +138,13 @@
             align-items: center;
             margin: 0 rem(40) 0 rem(0);
             cursor: pointer;
+
+            @media screen and (max-width: $w580) {
+                width: rem(50);
+                height: rem(50);
+            }
+
+
 
             &:last-child {
                 margin-right: 0;
@@ -127,6 +179,14 @@
         }
     }
 
+    &__dots {
+        @media screen and (max-width: $w760) {
+            padding-top: rem(80);
+            width: 50%;
+            margin: auto;
+        }
+    }
+
 
 }
 
@@ -134,7 +194,6 @@
     &__title {
 
         padding-bottom: rem(90);
-
         font-family: EB Garamond;
         font-style: normal;
         font-weight: bold;
@@ -146,9 +205,27 @@
 
         color: #FFFFFF;
 
+        @media screen and (max-width: $w1280) {
+            font-size: rem(36);
+        }
+
         @media screen and (max-width: $w940) {
-            padding-bottom: rem(45);
+            padding-bottom: rem(80);
             min-height: rem(100);
+            font-size: rem(32);
+        }
+
+        @media screen and (max-width: $w580) {
+            font-size: rem(28);
+            line-height: 150%;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: rem(24);
+
+            & br {
+                display: none;
+            }
         }
     }
 
@@ -165,6 +242,21 @@
         margin: 0 auto;
 
         padding-bottom: rem(45);
+        margin-top: -30px;
+
+        @media screen and (max-width: $w940) {
+            font-size: rem(24);
+        }
+
+        @media screen and (max-width: $w760) {
+            font-size: rem(22);
+
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: rem(18);
+
+        }
     }
 
     &__form {
@@ -177,6 +269,24 @@
             height: rem(70);
             padding: 0 rem(25);
             font-size: rem(18);
+
+            @media screen and (max-width: $w1376) {
+                font-size: rem(20);
+                height: 60px;
+            }
+
+            @media screen and (max-width: $w1024) {
+                height: 50px;
+            }
+
+
+
+            @media screen and (max-width: $w360) {
+                font-size: 18px;
+                height: 40px;
+            }
+
+
 
             &:focus {
                 border: 1px solid #fff;
@@ -199,7 +309,7 @@
 
                 &[area-valid="false"]~ {
                     & .checkbox-text {
-                        color: #f00;
+                        color: $red;
                     }
 
                     & .checkbox-elem {
@@ -277,6 +387,20 @@
             font-weight: 300;
             line-height: 120%;
 
+            @media screen and (max-width: $w760) {
+                font-size: rem(20);
+            }
+
+            @media screen and (max-width: $w480) {
+                font-size: rem(18);
+
+            }
+
+            @media screen and (max-width: $w360) {
+                font-size: rem(16);
+
+            }
+
 
 
             &::before {
@@ -293,6 +417,26 @@
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
                 border: 2px solid #A3D39C;
+
+                @media screen and (max-width: $w760) {
+                    width: rem(25);
+                    min-width: rem(25);
+                    height: rem(25);
+                }
+
+                @media screen and (max-width: $w480) {
+                    width: rem(22);
+                    min-width: rem(22);
+                    height: rem(22);
+                    margin-right: rem(15);
+                }
+
+                @media screen and (max-width: $w360) {
+                    width: rem(18);
+                    min-width: rem(18);
+                    height: rem(18);
+                    margin-right: rem(10);
+                }
             }
 
             -webkit-touch-callout: none;
@@ -307,6 +451,21 @@
     }
 
     &__answer {
+
+        @media screen and (max-width: $w940) {
+            max-width: 80%;
+            margin: auto;
+        }
+
+        @media screen and (max-width: $w480) {
+            max-width: 90%;
+        }
+
+        @media screen and (max-width: $w360) {
+            max-width: 95%;
+
+        }
+
         & ul {
 
             @include row-flex();
@@ -318,6 +477,14 @@
                 @include size(6);
 
                 min-height: rem(100);
+
+                @media screen and (max-width: $w1280) {
+                    min-height: rem(80);
+                }
+
+                @media screen and (max-width: $w760) {
+                    min-height: rem(60);
+                }
 
                 & label span {
                     @include line-clamp(2);

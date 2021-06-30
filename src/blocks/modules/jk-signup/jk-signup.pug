@@ -1,8 +1,8 @@
 mixin circle-form(data)
   .circle-form
     .circle-form__wrp
-      .circle-form__title= data.title
-      .circle-form__desc= data.desc
+      .circle-form__title!= data.title
+      .circle-form__desc!= data.desc
       .circle-form__form
         form(action='#' method='POST' data-type="ajax")
           .form

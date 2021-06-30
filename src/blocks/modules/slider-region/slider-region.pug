@@ -1,7 +1,7 @@
 mixin item-slide(data)
   .slider-region-item
-    .slider-region-item__image: a(href='/all-offers.html'): +bgimage(data.image)
-    .slider-region-item__text: a(href='/all-offers.html')= data.title
+    .slider-region-item__image: a(href='/page-jk.html'): +bgimage(data.image)
+    .slider-region-item__text: a(href='/page-jk.html')= data.title
 
 mixin slider-region(slider_region)
   section.section-slider-region
@@ -13,6 +13,7 @@ mixin slider-region(slider_region)
               .swiper-slide:  +item-slide(item)
         .container
           .slider-slider-nav
+            .slider-slider-nav__all: a(href='/all-offers.html'): button.btn.btn-line Все комплексы
             .slider-slider-nav__prev: +icons('#ic_swiper-arrow-left')
             .slider-slider-nav__next: +icons('#ic_swiper-arrow-right')
 

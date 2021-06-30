@@ -24,6 +24,10 @@
             width: 9.3vw;
             min-width: rem(130);
 
+            @media screen and (max-width: $w1024) {
+                display: none;
+            }
+
             & .bgimage {
                 padding-top: 220%;
                 @include bgimage-contain;
@@ -36,6 +40,16 @@
             width: 13.5vw;
             min-width: rem(180);
 
+            @media screen and (max-width: $w1024) {
+                width: 130px;
+                min-width: 130px;
+            }
+
+            @media screen and (max-width: $w580) {
+                width: 80px;
+                min-width: 80px;
+            }
+
             & .bgimage {
                 padding-top: 100%;
                 @include bgimage-contain;
@@ -47,13 +61,30 @@
         padding-top: 63%;
         background-color: #eee;
         position: relative;
+
+        @media screen and (max-width: $w1024) {
+            padding-top: 78%;
+        }
+
+        @media screen and (max-width: $w580) {
+            padding-top: 95%;
+        }
+
+        @media screen and (max-width: $w480) {
+            padding-top: 130%;
+
+        }
     }
 
     &__desc {
-        padding: 90px 0;
+        padding: rem(90) 0;
         background: #BCCEBA;
         position: relative;
 
+
+        @media screen and (max-width: $w480) {
+            padding: rem(55) 0;
+        }
 
         & .container {
             display: flex;
@@ -68,11 +99,24 @@
         width: 50%;
         font-size: rem(24);
         line-height: 164%;
+
+        @media screen and (max-width: $w1024) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: 18px;
+        }
     }
 
     &__image {
         max-width: 50%;
         width: 50%;
+
+        @media screen and (max-width: $w1024) {
+            width: 0;
+        }
 
 
         & .bgimage {
@@ -86,6 +130,12 @@
             max-width: 850px;
             background-position-y: bottom;
             z-index: 3;
+
+            @media screen and (max-width: $w1024) {
+                right: -68px;
+                bottom: 100%;
+                width: 46vw;
+            }
         }
     }
 

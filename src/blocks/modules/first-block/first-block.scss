@@ -16,15 +16,26 @@
             padding-top: 50%;
             @include bgimage-cover;
 
+            @media screen and (max-width: $w1100) {
+                padding-top: 60%;
+            }
 
-            @media screen and (max-width: $w940) {
-                height: 100%;
+            @media screen and (max-width: $w760) {
+                padding-top: 120%;
+            }
+
+            @media screen and (max-width: $w580) {
+                padding-top: 140%;
+            }
+
+            @media screen and (max-width: $w480) {
+                padding-top: 160%;
             }
         }
 
         @media screen and (max-width: $w940) {
-            @include layer(1);
-            padding-top: 0%;
+            // @include layer(1);
+            // padding-top: 0%;
         }
 
 
@@ -41,8 +52,13 @@
             padding-top: 35%;
             @include bgimage-contain;
             background-repeat: repeat-x;
+            background-position: bottom center;
             width: 100%;
             opacity: 0.9;
+
+            @media screen and (max-width: $w1100) {
+                padding-top: 41%;
+            }
 
             @media screen and (max-width: $w940) {
                 height: 100%;
@@ -53,8 +69,6 @@
     &__bgimage2 {
         position: relative;
         z-index: 1;
-
-
     }
 
     &__content {
@@ -67,8 +81,8 @@
         justify-content: center;
 
         @media screen and (max-width: $w940) {
-            position: relative;
-            z-index: 2;
+            // position: relative;
+            // z-index: 2;
 
         }
 
@@ -80,13 +94,25 @@
             font-weight: 800;
         }
 
-        font-size: 24px;
-        line-height: 35px;
+        font-size: rem(24);
+        line-height: rem(35);
         letter-spacing: 0.07em;
         text-transform: uppercase;
         color: #FFFFFF;
         max-width: rem(760);
         margin-right: auto;
+
+        @media screen and (max-width: $w1440) {
+            font-size: rem(24);
+        }
+
+        @media screen and (max-width: $w940) {
+            font-size: rem(19);
+        }
+
+        @media screen and (max-width: $w580) {
+            font-size: rem(14);
+        }
     }
 
     &__title {
@@ -102,13 +128,46 @@
 
         padding-top: rem(50);
 
+        @media screen and (max-width: 1680px) {
+            font-size: rem(140);
+        }
+
+        @media screen and (max-width: $w1440) {
+            font-size: rem(92);
+        }
+
+        @media screen and (max-width: $w1376) {
+            text-align: left;
+        }
+
+        @media screen and (max-width: $w580) {
+            font-size: rem(41);
+            padding-top: 0;
+            padding-bottom: rem(0);
+            margin-bottom: rem(20);
+
+            @include line-clamp(4);
+        }
+
+        @media screen and (max-width: $w360) {
+            @include line-clamp(2);
+        }
+
     }
 
     &__wrp {
         max-width: rem(1290);
         margin: 0 auto;
 
+        @media screen and (max-width: $w1376) {
+            margin-left: rem(30);
+        }
 
+        @media screen and (max-width: $w580) {
+            padding-bottom: 47%;
+            flex-direction: column-reverse;
+            display: flex;
+        }
 
     }
 
@@ -117,12 +176,34 @@
         margin: 0 auto;
         padding-top: rem(50);
 
+        @media screen and (max-width: $w1024) {
+            display: none;
+        }
+
     }
 
     &__play {
         position: absolute;
         right: -8vw;
         top: rem(-153);
+
+        @media screen and (max-width: $w1100) {
+            position: absolute;
+            right: -11vw;
+            top: 4.438rem;
+        }
+
+        @media screen and (max-width: $w760) {
+            top: rem(-80);
+        }
+
+        @media screen and (max-width: $w580) {
+            top: auto;
+            bottom: -15%;
+            right: -18vw;
+        }
+
+
 
         & a {
             width: 48vw;
@@ -132,6 +213,14 @@
             border-radius: 50%;
             border: 2px solid #A3D39C;
             box-sizing: border-box;
+
+            @media screen and (max-width: $w760) {
+                width: 75vw;
+            }
+
+            @media screen and (max-width: $w480) {
+                width: 110vw;
+            }
 
 
             & svg {
@@ -143,6 +232,11 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
+
+                @media screen and (max-width: $w480) {
+                    width: 50%;
+                    height: 50%;
+                }
             }
         }
     }

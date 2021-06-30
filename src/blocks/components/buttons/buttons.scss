@@ -19,15 +19,26 @@
 
     white-space: nowrap;
 
+    @media screen and (max-width: $w1376) {
+        font-size: rem(20);
+        height: 60px;
+    }
+
+    @media screen and (max-width: $w1024) {
+        height: 50px;
+    }
+
     @media screen and (max-width: $w580) {
-        font-size: 13px;
+        font-size: 18px;
         height: 45px;
     }
 
-    @media screen and (max-width: $w480) {
-        font-size: 13px;
+    @media screen and (max-width: $w360) {
+        font-size: 18px;
         height: 40px;
     }
+
+
 
 
     &:hover {

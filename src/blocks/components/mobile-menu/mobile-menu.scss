@@ -54,7 +54,7 @@
 
                 font-style: normal;
                 font-weight: normal;
-                font-size: 22px;
+                font-size: rem(22);
                 line-height: 190%;
                 text-align: center;
                 color: #FFFFFF;
@@ -122,8 +122,8 @@
 
         & a {
             font-weight: normal;
-            font-size: 22px;
-            line-height: 22px;
+            font-size: rem(22);
+            line-height: rem(22);
             text-align: right;
             display: block;
             color: #FFFFFF;

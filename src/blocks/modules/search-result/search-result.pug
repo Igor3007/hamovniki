@@ -16,7 +16,9 @@ mixin sr-checkbox (state)
 mixin search-result(data)
   .search-result(style="background-image: url(/img/common/search-result.jpg)")
     .search-result__wrp
-      .search-result__breadcrumbs: +breadcrumb(['Главная', 'Все предложения'])
+      .search-result__breadcrumbs
+        .container
+          +breadcrumb(['Главная', 'Все предложения'])
       .search-result__filter
         .container
           .search-result-filter

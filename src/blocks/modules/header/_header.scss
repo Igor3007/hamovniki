@@ -39,7 +39,7 @@ header {
         margin-right: rem(40);
 
         @media screen and (max-width: $w580) {
-            margin-right: rem(20);
+            margin-right: rem(0);
         }
 
         &:last-child {
@@ -54,11 +54,23 @@ header {
             line-height: rem(26);
             color: #535353;
             white-space: nowrap;
+
+            @media screen and (max-width: $w760) {
+                font-size: rem(20);
+            }
+
+            @media screen and (max-width: $w480) {
+                font-size: rem(16);
+            }
+
         }
 
-        @media screen and (max-width: $w580) {
-            display: none;
+        @media screen and (max-width: $w1280) {
+            font-size: rem(19);
         }
+
+
+
     }
 
     &__logo {
@@ -77,6 +89,18 @@ header {
                 height: rem(34);
                 width: rem(162);
                 @include bgimage-contain;
+
+                @media screen and (max-width: $w480) {
+                    width: rem(140);
+                }
+
+                @media screen and (max-width: $w360) {
+                    width: rem(120);
+                }
+
+                @media screen and (max-width: rem(330)) {
+                    width: rem(100);
+                }
             }
 
             @media screen and (max-width: $w1024) {
@@ -124,11 +148,26 @@ header {
     }
 
     &__msgr {
+
+        @media screen and (max-width: $w580) {
+            margin: 0;
+        }
+
+        @media screen and (max-width: rem(400)) {
+            display: none;
+        }
+
+
+
         & ul {
 
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media screen and (max-width: $w480) {
+                margin-right: rem(10);
+            }
 
             & li {
 
@@ -164,6 +203,12 @@ header {
                             min-width: rem(18);
                             height: rem(18);
                         }
+                    }
+
+                    @media screen and (max-width: $w480) {
+                        width: rem(30);
+                        min-width: rem(30);
+                        height: rem(30);
                     }
                 }
 

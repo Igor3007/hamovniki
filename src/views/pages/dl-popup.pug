@@ -1,0 +1,11 @@
+include ../../blocks/modules/jk-signup/jk-signup.pug
+include ../../views/helpers/mixins.pug
+
+.callback-popup
+  .callback-popup__close(data-fancybox-close=""): +icons('#ic_close-quiz', 60) 
+  .callback-popup__content
+
+    +circle-form({
+      title: 'Скачать презентацию',
+      desc: 'Планировки, расположение, отзывы, ход строительства и цены на апартаменты ',
+})
