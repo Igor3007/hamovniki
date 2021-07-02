@@ -163,7 +163,7 @@ var specialist = new Swiper('[data-swiper="specialists"]', {
 
 // .swiper-container gallery
 
-var specialist = new Swiper('[data-swiper="gallery"]', {
+var gallery = new Swiper('[data-swiper="gallery"]', {
 
   slidesPerView: 1.6,
   spaceBetween: 40,
@@ -182,29 +182,23 @@ var specialist = new Swiper('[data-swiper="gallery"]', {
       spaceBetween: 5,
       slidesPerView: 1,
     },
-    480: {
-      spaceBetween: 5,
+    360: {
+      spaceBetween: 10,
+      slidesPerView: 1.3,
     },
-    
-    580: {
-      spaceBetween: 15,
+
+    768: {
+      spaceBetween: 25,
     },
-    767: {
-      spaceBetween: 15,
-    },
-    1024: {
-      spaceBetween: 15,
-    },
+
     1280: {
-      spaceBetween: 27,
+      spaceBetween: 30,
     },
   },
 
   on: {
     resize: function (event) {
-
       $('.swiper-gallery-nav').width(((event.height/0.65) + 220))
-      
     },
   },
 

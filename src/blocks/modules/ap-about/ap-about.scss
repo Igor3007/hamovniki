@@ -37,6 +37,10 @@
             padding-top: rem(45);
         }
 
+        @media screen and (max-width: $w580) {
+            padding-top: rem(0);
+        }
+
         & p {
             margin-top: rem(15);
         }
@@ -80,6 +84,10 @@
                     letter-spacing: 0.03em;
                     text-transform: uppercase;
                     color: #0C0C0D;
+
+                    & span {
+                        @include line-clamp(2);
+                    }
                 }
             }
         }

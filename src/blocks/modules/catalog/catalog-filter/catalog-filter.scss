@@ -7,6 +7,11 @@
             background-color: #323232;
             margin-bottom: rem(15);
 
+            @media screen and (max-width: $w1024) {
+                background-color: transparent;
+                margin-bottom: rem(0);
+            }
+
 
             & .container {
 
@@ -14,6 +19,14 @@
                 align-items: center;
                 padding-top: rem(15);
                 padding-bottom: rem(15);
+
+                @media screen and (max-width: $w1024) {
+                    max-width: none;
+                    padding-top: rem(0);
+                    padding-bottom: rem(0);
+                    flex-wrap: wrap;
+
+                }
 
                 & ul {
                     display: flex;
@@ -34,6 +47,15 @@
                             padding: 0 rem(15);
                             max-width: rem(190);
 
+                            @media screen and (max-width: $w760) {
+                                max-width: rem(150);
+                                width: 100%;
+                            }
+
+                            @media screen and (max-width: $w580) {
+                                height: rem(35);
+                            }
+
                             &:focus {
                                 border: 1px solid #fff;
                             }
@@ -44,11 +66,138 @@
         }
     }
 
+    &__rooms,
+    &__price,
+    &__more,
+    &__type,
+    &__class,
+    &__state {
+        .container {
+            @media screen and (max-width: $w1024) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+
+
+            & ul {
+                @media screen and (max-width: $w760) {
+                    flex-wrap: wrap;
+
+                    margin-top: rem(-4);
+                    margin-bottom: rem(-4);
+
+                    & li {
+                        margin-top: rem(4);
+                        margin-bottom: rem(4);
+                        margin-right: rem(8);
+                    }
+                }
+
+                @media screen and (max-width: $w360) {
+
+
+                    & li {
+                        & label span {
+                            padding-left: rem(10);
+                            padding-right: rem(10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__rooms {
+
+        @media screen and (min-width: $w360) and (max-width: $w580) {
+            & .container ul li input[type="text"] {
+                width: 30vw !important;
+            }
+        }
+
+        @media screen and (max-width: $w480) {
+            & ul {
+                justify-content: flex-end;
+                margin-left: auto;
+
+                & li {
+                    margin-left: rem(8);
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+
+    &__price {
+        @media screen and (min-width: $w360) and (max-width: $w580) {
+            & .container ul li input[type="text"] {
+                width: 30vw !important;
+            }
+        }
+    }
+
+    &__area {
+        @media screen and (max-width: $w480) {
+            & ul {
+                justify-content: flex-end;
+                margin-left: auto;
+            }
+        }
+    }
+
+
     &__title {
         margin-right: rem(20);
         font-size: rem(18);
         text-transform: uppercase;
         min-width: rem(120);
+
+        @media screen and (max-width: $w760) {
+            font-size: rem(14);
+            min-width: rem(90);
+        }
+    }
+
+    &__inner {
+        display: flex;
+
+        @media screen and (max-width: $w760) {
+
+            flex-wrap: wrap;
+            margin-top: rem(-4);
+            margin-bottom: rem(-4);
+
+            & ul {
+                padding-top: rem(4);
+                padding-bottom: rem(4);
+            }
+        }
+
+        @media screen and (max-width: $w480) {
+            justify-content: flex-end;
+
+            & ul {
+                flex-wrap: nowrap !important;
+            }
+        }
+
+        @media screen and (max-width: $w360) {
+
+            justify-content: flex-end;
+
+            & ul {
+                flex-wrap: wrap !important;
+                margin-left: auto;
+                justify-content: flex-end;
+
+                & li {
+                    margin-right: 0 !important;
+                    margin-left: rem(8) !important;
+                }
+
+            }
+        }
     }
 
     &__col {
@@ -57,11 +206,46 @@
         align-items: center;
         margin-right: rem(25);
 
+        @media screen and (max-width: $w1024) {
+            background: #323232;
+            padding: 0.9rem 2rem;
+            margin: 0;
+            margin-bottom: rem(15);
+            width: 100%;
+        }
+
+        @media screen and (max-width: $w760) {
+            padding: 0.8rem rem(20);
+        }
+
+        @media screen and (max-width: $w480) {
+            margin-bottom: rem(10);
+        }
+
+        @media screen and (max-width: $w360) {
+            display: flex;
+            flex-direction: column;
+
+            & ul {
+                margin-left: auto;
+
+            }
+
+            & .catalog-filter__title {
+                margin-right: auto;
+                padding-bottom: rem(10);
+            }
+        }
+
+
         &:last-child {
             margin-right: 0;
         }
 
+
+
     }
+
 
     &__clear {
         background: transparent !important;
@@ -83,12 +267,15 @@
 
             & svg {
                 margin-left: rem(15);
+
+                @media screen and (max-width: $w940) {
+                    width: 30px;
+                }
             }
         }
 
         & .more-params {
             border: 1px solid #535353;
-            height: rem(30);
             padding: 0 rem(25);
             display: flex;
             align-items: center;
@@ -97,6 +284,11 @@
             font-size: rem(18);
             cursor: pointer;
             margin-right: auto;
+
+            @media screen and (max-width: $w580) {
+                height: rem(40);
+                font-size: rem(16);
+            }
 
             &:hover {
                 border: 1px solid #777;
@@ -115,11 +307,46 @@
             align-items: center;
             margin-left: rem(40);
 
+            @media screen and (max-width: $w1024) {
+                padding: rem(12) 0 rem(12) 0;
+                margin-left: rem(0);
+            }
+
+            @media screen and (max-width: $w580) {
+                padding: rem(6) 0 rem(6) 0;
+            }
+
+            @media screen and (max-width: $w360) {
+                display: flex;
+                flex-direction: column;
+
+                & ul {
+                    margin-left: rem(-8);
+                    margin-right: rem(-8);
+                }
+            }
+
             & ul {
+
+                display: flex;
+                flex-wrap: wrap;
 
                 & li {
                     margin-left: rem(35);
                     line-height: 100%;
+
+
+                    @media screen and (max-width: $w760) {
+                        margin-left: rem(20);
+
+                    }
+
+                    @media screen and (max-width: $w580) {
+                        margin-left: rem(0);
+                        width: calc(50% - 10px);
+                        margin-top: rem(5);
+                        margin-bottom: rem(5);
+                    }
                 }
             }
         }
@@ -128,16 +355,70 @@
     &__more {
         & .catalog-filter__title {
             max-width: rem(240);
+
+            @media screen and (max-width: $w580) {
+                min-width: 120px;
+                margin-bottom: rem(15);
+                margin-right: auto;
+            }
+        }
+
+        @media screen and (max-width: $w1024) {
+            & ul {
+
+                flex-wrap: wrap;
+
+                & li {
+                    width: calc(33.33% - 10px);
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: rem(8);
+                    margin-bottom: rem(8);
+                }
+            }
+        }
+
+        @media screen and (max-width: $w760) {
+            & ul {
+                padding-left: rem(20);
+
+                & li {
+                    width: calc(50% - 10px);
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: rem(8);
+                    margin-bottom: rem(8);
+                }
+            }
+
+        }
+
+        @media screen and (max-width: $w480) {
+
+            & ul {
+                padding-left: rem(0);
+            }
+
+            & .catalog-filter__col {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
         }
     }
 
     &__badroom {
         & .catalog-filter__title {
-            min-width: auto;
+            @media screen and (min-width: $w1024) {
+                width: auto;
+            }
         }
 
         & input[type=text] {
-            max-width: rem(100) !important;
+
+            @media screen and (min-width: $w760) {
+                max-width: rem(100) !important;
+            }
         }
     }
 
@@ -164,13 +445,19 @@
 
         & span {
             border: 1px solid #535353;
-            height: rem(30);
+
             padding: 0 rem(25);
             display: flex;
             align-items: center;
             justify-content: center;
             height: rem(50);
             font-size: rem(18);
+
+            @media screen and (max-width: $w580) {
+                height: rem(35);
+                padding: 0 rem(20);
+                font-size: rem(16);
+            }
 
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -214,6 +501,11 @@
             display: flex;
             align-items: center;
 
+            @media screen and (max-width: $w580) {
+                font-size: rem(16);
+
+            }
+
             &::before {
                 content: '';
                 width: rem(18);
@@ -241,7 +533,9 @@
     & .select-area,
     & .select-rooms {
         & input[type=text] {
-            max-width: rem(100) !important;
+            @media screen and (min-width: $w760) {
+                max-width: rem(100) !important;
+            }
         }
     }
 
@@ -257,9 +551,23 @@
         margin-left: rem(10);
         cursor: pointer;
 
+        @media screen and (max-width: $w1024) {
+            width: 90%;
+            margin: auto;
+        }
+
+        @media screen and (max-width: $w580) {
+            height: rem(35);
+            font-size: rem(16);
+        }
+
         &:hover {
             border: 1px solid #777;
         }
 
+    }
+
+    & .price-currency {
+        margin-left: rem(10);
     }
 }

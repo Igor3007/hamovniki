@@ -3,13 +3,39 @@
 
     padding-bottom: 0 !important;
     position: relative;
+
+    & .container {
+        @media screen and (max-width: $w760) {
+            max-width: none;
+        }
+    }
 }
 
 .ap-mortgage-manager {
     display: flex;
 
+    @media screen and (max-width: $w480) {
+        width: 100%;
+    }
+
     &__text {
-        width: 35%
+        width: 35%;
+
+        @media screen and (max-width: $w760) {
+            width: 100%;
+            flex-direction: row-reverse;
+            display: flex;
+            margin-bottom: -100px;
+        }
+
+        @media screen and (max-width: $w580) {
+            flex-direction: row;
+        }
+
+        @media screen and (max-width: $w480) {
+            flex-direction: column;
+            margin-bottom: 0;
+        }
     }
 
     &__photo {
@@ -24,6 +50,32 @@
             background-position: bottom center;
 
             margin-left: -9vw;
+
+            @media screen and (min-width: $w760) and (max-width: $w1024) {
+                transform: scale(-1, 1);
+                margin-left: -7vw;
+                bottom: -42%;
+                top: 0%;
+            }
+
+            @media screen and (max-width: $w760) {
+                margin-left: 0;
+                background-position: bottom right;
+                left: 60vw;
+                right: -10vw;
+            }
+
+            @media screen and (max-width: $w580) {
+                transform: scale(-1, 1);
+                right: 0vw;
+                left: 50vw;
+            }
+
+            @media screen and (max-width: $w480) {
+                margin: 0;
+                transform: none;
+                right: -15vw;
+            }
         }
     }
 
@@ -35,6 +87,11 @@
         color: #343434;
         padding-bottom: rem(30);
 
+        @media screen and (max-width: $w480) {
+            order: 2
+        }
+
+
         & span {
             min-width: rem(270);
             width: rem(270);
@@ -45,6 +102,26 @@
             justify-content: center;
             border-radius: 50%;
             background-color: #fff;
+
+            @media screen and (max-width: $w760) {
+                margin-left: rem(60);
+            }
+
+            @media screen and (max-width: $w580) {
+                min-width: rem(212);
+                width: rem(212);
+                height: rem(212);
+            }
+
+            @media screen and (max-width: $w480) {
+                min-width: rem(185);
+                width: rem(185);
+                height: rem(185);
+                font-size: rem(29);
+                line-height: 120%;
+                margin-left: rem(0);
+
+            }
         }
     }
 
@@ -55,16 +132,44 @@
         justify-content: center;
         color: #343434;
 
+        @media screen and (max-width: $w480) {
+            order: 1;
+            margin-bottom: 10px;
+            margin-right: -50%;
+        }
+
         & span {
-            width: rem(180);
-            min-width: rem(180);
-            height: rem(180);
+
             display: flex;
             align-items: center;
             text-align: center;
             justify-content: center;
             border-radius: 50%;
             background-color: #fff;
+
+
+            @media screen and (min-width: $w480) and (max-width: $w580) {
+                width: rem(130);
+                min-width: rem(130);
+                height: rem(130);
+                font-size: 26px;
+                line-height: 110%;
+
+                position: absolute;
+                right: 0;
+                top: 20vw;
+
+            }
+
+            @media screen and (max-width: $w480) {
+                width: rem(130);
+                min-width: rem(130);
+                height: rem(130);
+                font-size: rem(26);
+                line-height: 110%;
+
+
+            }
         }
     }
 
@@ -74,6 +179,27 @@
         flex-direction: column;
         padding-top: 5vw;
 
+        @media screen and (max-width: $w1024) {
+            position: absolute;
+            right: 0;
+            padding: 0;
+            bottom: 30px;
+        }
+
+        @media screen and (max-width: $w760) {
+            right: auto;
+            left: 17vw;
+        }
+
+        @media screen and (max-width: $w480) {
+            position: relative;
+            left: auto;
+            padding-top: 60px;
+            width: 45vw;
+
+            order: 3;
+        }
+
         & span:first-child {
 
             font-weight: bold;
@@ -82,6 +208,18 @@
             text-align: right;
             color: #343434;
 
+            @media screen and (max-width: $w1024) {
+                text-align: left;
+                line-height: 110.9%;
+                text-align: right;
+            }
+
+            @media screen and (max-width: $w760) {}
+
+            @media screen and (max-width: $w480) {
+                font-size: 20px;
+            }
+
         }
 
         & span:last-child {
@@ -89,8 +227,23 @@
             line-height: 160.9%;
             text-align: right;
             color: #343434;
+
+            @media screen and (max-width: $w1024) {
+                text-align: left;
+                line-height: 110.9%;
+                text-align: right;
+
+            }
+
+            @media screen and (max-width: $w760) {}
+
+            @media screen and (max-width: $w480) {
+                font-size: 16px;
+            }
         }
     }
+
+
 
 
 }
@@ -104,9 +257,8 @@
         padding-bottom: rem(100);
         justify-content: center;
 
-        @media screen and (max-width: $w940) {
+        @media screen and (max-width: $w1024) {
             padding-bottom: rem(60);
-
         }
     }
 
@@ -115,10 +267,24 @@
         align-items: center;
         position: relative;
 
+        @media screen and (max-width: $w760) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: $w480) {
+            flex-direction: column-reverse;
+        }
+
     }
 
     &__left {
-        width: 60%
+        width: 60%;
+
+        @media screen and (max-width: $w760) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__right {
@@ -129,6 +295,23 @@
 
         padding-top: 0 !important;
         z-index: 2;
+
+        @media screen and (max-width: $w760) {
+            margin-left: -50%;
+
+        }
+
+        @media screen and (max-width: $w580) {
+            padding-bottom: 5rem;
+        }
+
+        @media screen and (max-width: $w480) {
+            margin-left: 100%;
+            margin: 0;
+            width: 100%;
+            padding-bottom: 0;
+            margin-bottom: 5rem;
+        }
     }
 
     &__img {
@@ -149,12 +332,100 @@
             padding-top: rem(45);
         }
 
+
+
         & p {
             margin-top: rem(15);
         }
     }
 
+    & .circle-form {
+        @media screen and (max-width: $w1024) {
+            background: none;
+            border: none;
 
+            min-height: 450px;
+        }
+
+        @media screen and (max-width: $w940) {
+            min-width: 550px;
+        }
+
+        @media screen and (max-width: $w760) {
+            min-width: 350px;
+        }
+
+        @media screen and (max-width: $w480) {
+            min-height: 300px;
+        }
+    }
+
+    & .circle-form__wrp {
+        @media screen and (max-width: $w940) {
+            width: 300px;
+            margin-left: 14vw;
+        }
+
+        @media screen and (max-width: $w760) {
+            margin-left: 0;
+            margin-top: 0;
+
+        }
+
+        @media screen and (max-width: $w480) {
+            width: auto;
+        }
+
+        @media screen and (max-width: $w360) {
+            width: 93vw;
+        }
+    }
+
+    & .circle-form__form {
+        @media screen and (max-width: $w580) {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: $w480) {
+            max-width: none;
+        }
+
+        @media screen and (max-width: $w360) {
+            width: 100%;
+            max-width: none;
+        }
+
+    }
+
+    & .circle-form__title {
+        @media screen and (max-width: $w1024) {
+            text-align: left;
+            max-width: 350px;
+        }
+
+        @media screen and (max-width: $w580) {
+            font-size: 35px;
+
+            & br {
+                display: none;
+            }
+        }
+    }
+
+    & .circle-form__desc {
+        @media screen and (max-width: $w1024) {
+            text-align: left;
+            max-width: 350px;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: 18px;
+        }
+    }
+
+    & .form__item {
+        margin-bottom: 0;
+    }
 
 
 }

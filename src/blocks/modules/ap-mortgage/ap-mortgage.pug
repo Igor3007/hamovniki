@@ -1,4 +1,15 @@
-include ../../modules/jk-signup/jk-signup.pug
+mixin circle-form-2(data)
+  .circle-form
+    .circle-form__wrp
+      .circle-form__title!= data.title
+      .circle-form__desc!= data.desc
+      .circle-form__form
+        form(action='#' method='POST' data-type="ajax")
+          .form
+            .form__item: .form__subitem: input(class="required" type="text" placeholder="Имя")
+            .form__item: .form__subitem: input(class="required" type="tel" placeholder="Телефон")
+            .form__item: .form__subitem: button.btn.btn-green(type="submit") Отправить
+
 
 mixin ap-mortgage()
   section.section-ap-mortgage(style="background-image: url('/img/common/ap-backgroung-mortgage.jpg')")
@@ -19,8 +30,8 @@ mixin ap-mortgage()
                 .ap-mortgage-manager__photo: +bgimage('/img/common/manager.png')
 
             .ap-mortgage__right
-              +circle-form({
-                title: 'Подать заявку на ипотеку',
+              +circle-form-2({
+                title: 'Подать заявку <br> на ипотеку',
                 desc: 'Подайте заявку на ипотеку и получите решение сразу из нескольких банков партнёров.',
               })
 

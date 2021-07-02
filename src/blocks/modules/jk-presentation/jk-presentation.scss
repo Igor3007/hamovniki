@@ -2,27 +2,99 @@
     background-color: #323232;
     position: relative;
     overflow: hidden;
+
+    @media screen and (max-width: $w760) {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+    }
 }
 
 .jk-presentation {
 
     padding-top: 50%;
 
+    @media screen and (max-width: $w1024) {
+        padding-top: 60%;
+    }
+
+    @media screen and (max-width: $w940) {
+        padding-top: 70%;
+    }
+
+    @media screen and (max-width: $w760) {
+        padding-top: 0%;
+    }
+
     &__wrp {
         position: absolute;
         left: -28%;
         top: -73%;
         bottom: -10%;
+
+        @media screen and (max-width: $w1024) {
+            top: -30%;
+        }
+
+        @media screen and (max-width: $w940) {
+            top: -18%;
+
+        }
+
+        @media screen and (max-width: $w760) {
+            position: relative;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            top: auto;
+            padding-top: 0;
+            padding-bottom: 40px;
+        }
     }
 
     & .presentation-block {
         width: 122vw;
         height: 122vw;
+
+        @media screen and (max-width: $w1024) {
+            width: 95vw;
+            height: 95vw;
+            border: transparent;
+        }
+
+        @media screen and (max-width: $w760) {
+            width: 60vw;
+            height: 60vw;
+            border: transparent;
+            margin: auto;
+        }
+
+        @media screen and (max-width: $w480) {
+            width: 75vw;
+            height: 75vw;
+        }
     }
 
     & .presentation-block__center {
         width: 35%;
         height: 35%;
+
+        @media screen and (max-width: $w1024) {
+            width: 50%;
+            height: 50%;
+        }
+
+        @media screen and (max-width: $w760) {
+            width: 90%;
+            height: 90%;
+            border: transparent;
+        }
+
+        @media screen and (max-width: $w480) {
+            width: 100%;
+            height: 100%;
+            border: transparent;
+        }
+
     }
 
     & .presentation-block__center .bgimage {
@@ -39,6 +111,36 @@
         margin-bottom: auto;
         transform: translateY(-50%);
 
+        @media screen and (max-width: $w1024) {
+            right: 8vw;
+            width: 35%;
+        }
+
+        @media screen and (max-width: $w940) {
+            right: 4vw;
+            width: 46%;
+        }
+
+        @media screen and (max-width: $w760) {
+            position: relative;
+            right: auto;
+            width: auto;
+            top: auto;
+            transform: none;
+
+        }
+
+        & .form {
+            max-width: 400px;
+            margin: auto;
+
+            @media screen and (max-width: $w480) {
+                padding: 0 rem(15);
+            }
+        }
+
+        @include container-padding;
+
         & .btn {
             width: 100%;
         }
@@ -46,12 +148,26 @@
         & .form__item {
             margin-bottom: rem(20);
 
+            @media screen and (max-width: $w1440) {
+                margin-bottom: rem(10);
+
+            }
+
             & input {
                 background: #535353;
                 border: 1px solid #FFFFFF;
                 border-radius: 100px;
                 text-align: center;
                 font-size: rem(22);
+
+                @media screen and (max-width: $w1440) {
+                    height: rem(60);
+                    font-size: rem(18);
+                }
+
+                @media screen and (max-width: $w580) {
+                    height: rem(50);
+                }
 
                 &:focus {
                     border: 1px solid $main;
@@ -69,6 +185,10 @@
             text-transform: uppercase;
             color: #E5E5E5;
             padding-bottom: rem(30);
+
+            @media screen and (max-width: $w1440) {
+                font-size: rem(22);
+            }
         }
 
         & .form__desc {
@@ -77,8 +197,27 @@
             line-height: 120%;
             color: #E5E5E5;
             padding-bottom: rem(40);
+
+            @media screen and (max-width: $w1440) {
+                font-size: rem(20);
+            }
         }
 
 
+    }
+}
+
+.jk-branch {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30vw;
+    height: 30vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    @media screen and (max-width: $w760) {
+        display: none;
     }
 }

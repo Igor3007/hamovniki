@@ -86,14 +86,16 @@
         }
 
         & .slider-slider-nav {
-            justify-content: space-between;
-            top: 55%;
-            position: absolute;
-            left: 30px;
-            right: 30px;
-            max-width: 85%;
-            margin: auto;
-            z-index: 2;
+            @media screen and (max-width: $w1024) {
+                justify-content: space-between;
+                top: 55%;
+                position: absolute;
+                left: 30px;
+                right: 30px;
+                max-width: 85%;
+                margin: auto;
+                z-index: 2;
+            }
 
             @media screen and (max-width: $w940) {
                 top: 50%;
@@ -111,8 +113,10 @@
 
         & .slider-slider-nav__next,
         & .slider-slider-nav__prev {
-            display: flex;
-            margin: 0;
+            @media screen and (max-width: $w1024) {
+                display: flex;
+                margin: 0;
+            }
         }
     }
 

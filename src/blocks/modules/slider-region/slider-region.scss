@@ -35,6 +35,17 @@
         opacity: 0.5;
         transition: 0.4s ease;
 
+        & a {
+            display: block;
+            overflow: hidden;
+
+            &:hover {
+                & .bgimage {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
         & .bgimage {
             padding-top: 65%;
             @include bgimage-cover;
@@ -114,15 +125,37 @@
         & svg {
             width: 100%;
         }
+
+
     }
 
-    &__prev svg {
-        position: relative;
-        left: 20px;
+    &__prev {
+
+        &:hover {
+            & svg {
+                width: 100%;
+                animation: slideRightLeft 1s linear infinite;
+            }
+        }
+
+        & svg {
+            position: relative;
+            left: 20px;
+        }
     }
 
-    &__next svg {
-        position: relative;
-        left: -20px;
+    &__next {
+
+        &:hover {
+            & svg {
+                width: 100%;
+                animation: slideLeftRight 1s linear infinite;
+            }
+        }
+
+        & svg {
+            position: relative;
+            left: -20px;
+        }
     }
 }

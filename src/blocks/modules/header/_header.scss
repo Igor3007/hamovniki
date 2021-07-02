@@ -231,6 +231,11 @@ header {
     }
 
     &__jk {
+
+        @media screen and (max-width: $w940) {
+            display: none;
+        }
+
         & a {
             display: flex;
             align-items: center;
@@ -263,8 +268,21 @@ header {
 
     max-width: 1600px;
 
+    & .header-top__logo {
+        @media screen and (max-width: $w940) {
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+
     & .header-top__jk {
         margin-right: auto;
+    }
+
+    & .header-top__phone {
+        @media screen and (min-width: $w940) {
+            display: none;
+        }
     }
 
     & .header-top__logo {

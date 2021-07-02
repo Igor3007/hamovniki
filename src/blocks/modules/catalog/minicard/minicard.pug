@@ -1,4 +1,4 @@
-mixin minicard(data)
+mixin minicard(data, slider)
   .minicard
 
     .minicard__top
@@ -6,13 +6,16 @@ mixin minicard(data)
       .minicard__id ID: 2589
 
     .minicard__image
-      .swiper-container(data-swiper="minicard")
-        .swiper-wrapper
-          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
-          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
-          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
-          .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
-        .swiper-dots(data-swiper-dots="minicard")
+      if slider
+        .swiper-container(data-swiper="minicard")
+          .swiper-wrapper
+            .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+            .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+            .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+            .swiper-slide: +bgimage('/img/catalog/r'+data+'.jpg')
+          .swiper-dots(data-swiper-dots="minicard")
+      else
+        +bgimage('/img/catalog/r'+data+'.jpg')
 
     .minicard__desc
       .minicard__title

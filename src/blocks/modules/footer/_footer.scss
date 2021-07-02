@@ -74,7 +74,7 @@
         justify-content: flex-end;
         display: flex;
         padding-top: rem(75);
-        justify-content: center;
+
 
         @media screen and (max-width: $w1024) {
             padding-top: rem(55);
@@ -82,7 +82,7 @@
 
         @media screen and (max-width: $w580) {
             padding-top: rem(40);
-
+            justify-content: center;
         }
 
         & a {

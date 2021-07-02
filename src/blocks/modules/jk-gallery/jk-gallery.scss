@@ -32,6 +32,11 @@
 
         padding-top: rem(100);
 
+        @media screen and (max-width: $w940) {
+            padding-top: rem(60);
+
+        }
+
         & .bgimage {
             padding-top: 65%;
             @include bgimage-cover;
@@ -52,6 +57,12 @@
             & .swiper-gallery-nav__next {
                 opacity: 1;
                 transform: translateX(0) translateY(-50%);
+            }
+        }
+
+        & .swiper-gallery-nav {
+            @media screen and (max-width: $w760) {
+                display: none;
             }
         }
     }

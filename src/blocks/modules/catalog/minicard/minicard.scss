@@ -56,9 +56,7 @@
             box-sizing: border-box;
             background-color: #464646;
 
-            @media screen and (max-width: $w580) {
-                padding-top: 50%;
-            }
+
         }
 
         & .id-catalog {
@@ -236,21 +234,26 @@
         line-height: rem(32);
         text-align: right;
         color: #A3D39C;
-        margin-top: -32px;
+        margin-top: rem(-32);
 
 
         @media screen and (max-width: $w1024) {
             font-size: 13px;
         }
 
+        @media screen and (max-width: $w760) {
+            font-size: 15px;
+            margin-top: rem(-30);
+        }
+
 
         @media screen and (max-width: $w580) {
-            font-size: 13px;
-
+            font-size: 18px;
         }
 
         @media screen and (max-width: $w360) {
-            font-size: 13px;
+            font-size: 15px;
+            margin-top: rem(-28);
         }
 
         & span {

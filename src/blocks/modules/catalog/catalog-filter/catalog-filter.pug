@@ -3,40 +3,45 @@ mixin catalog-filter()
     .catalog-filter__wrp
       .catalog-filter__state
         .container
-          .catalog-filter__state-type
+          .catalog-filter__col
+            .catalog-filter__state-type
+              ul
+                each state in ['Новостройка','Вторичка']
+                  li
+                    label.cf-radio
+                      input(type="checkbox")
+                      span= state
+          .catalog-filter__col  
+            .catalog-filter__state-finishing
+              .catalog-filter__title Отделка
+              ul
+                each state in ['С отделкой','Без отделки','White box','С мебелью',]
+                  li
+                    label.cf-checkbox-custom
+                      input(type="checkbox")
+                      span= state
+      .catalog-filter__type
+        .container
+          .catalog-filter__col
+            .catalog-filter__title Тип
             ul
-              each state in ['Новостройка','Вторичка']
+              each state in ['Квартира','Апартаменты','Пентхаус','Таунхаус',]
                 li
                   label.cf-radio
                     input(type="checkbox")
                     span= state
-          .catalog-filter__state-finishing
-            .catalog-filter__title Отделка
-            ul
-              each state in ['С отделкой','Без отделки','White box','С мебелью',]
-                li
-                  label.cf-checkbox-custom
-                    input(type="checkbox")
-                    span= state
-      .catalog-filter__type
-        .container
-          .catalog-filter__title Тип
-          ul
-            each state in ['Квартира','Апартаменты','Пентхаус','Таунхаус',]
-              li
-                label.cf-radio
-                  input(type="checkbox")
-                  span= state
       .catalog-filter__class
         .container
-          .catalog-filter__title Класс
-          ul
-            each state in ['Премиум','De Luxe','Luxury']
-              li
-                label.cf-radio
-                  input(type="checkbox")
-                  span= state
-          span.select-complex Выбрать жилой комплекс
+          .catalog-filter__col
+            .catalog-filter__title Класс
+            ul
+              each state in ['Премиум','De Luxe','Luxury']
+                li
+                  label.cf-radio
+                    input(type="checkbox")
+                    span= state
+          .catalog-filter__col
+            span.select-complex Выбрать жилой комплекс
       .catalog-filter__rooms
         .container
           .catalog-filter__col
@@ -56,16 +61,16 @@ mixin catalog-filter()
         .container
           .catalog-filter__col
             .catalog-filter__title Цена
-            ul
-              li: input(type="text" placeholder="от 0")
-              li: input(type="text" placeholder="до 552 233 588")
-          .catalog-filter__col
-            ul
-              each state in ['₽','$','€']
-                li
-                  label.cf-radio
-                    input(type="checkbox")
-                    span= state
+            .catalog-filter__inner
+              ul
+                li: input(type="text" placeholder="от 0")
+                li: input(type="text" placeholder="до 552 233 588")
+              ul(class="price-currency")
+                each state in ['₽','$','€']
+                  li
+                    label.cf-radio
+                      input(type="checkbox")
+                      span= state
           .catalog-filter__col.catalog-filter__area
             .catalog-filter__title Площадь М2
             ul.select-area
@@ -73,13 +78,14 @@ mixin catalog-filter()
               li: input(type="text" placeholder="до 400")
       .catalog-filter__more(style="display: none;")
         .container
-          .catalog-filter__title Дополнительные параметры
-          ul
-            each state in ['С	 террасой','Двухуровне-вые','Фитнес в доме','Бассейн в	 доме','Гостиничный сервис','Высокие потолки',]
-              li
-                label.cf-checkbox-custom
-                  input(type="checkbox")
-                  span= state
+          .catalog-filter__col
+            .catalog-filter__title Дополнительные параметры
+            ul
+              each state in ['С	 террасой','Двухуровне-вые','Фитнес в доме','Бассейн в	 доме','Гостиничный сервис','Высокие потолки',]
+                li
+                  label.cf-checkbox-custom
+                    input(type="checkbox")
+                    span= state
       .catalog-filter__clear
         .container
           .more-params(data-filter="toggleMoreParams" data-active="Закрыть дополнительные парамтеры") Дополнительные параметры

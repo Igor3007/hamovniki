@@ -1,8 +1,8 @@
-mixin presentation-block()
+mixin presentation-block-3()
   .presentation-block
     .presentation-block__center: +bgimage('/img/common/present-img.png')
     .presentation-block__dl
-      button.btn.btn-green Скачать презентацию
+      button.btn.btn-green(data-fancybox="" data-type="ajax" data-src="/dl-popup.html") Скачать презентацию
 
 mixin jk-first-block()
   section.section-jk-first-block
@@ -13,7 +13,7 @@ mixin jk-first-block()
           .jk-first-block__bgimage2:  +bgimage('/img/common/jk-backgroung-firstbloc.jpg')
         .jk-first-block__content
           .jk-first-block__wrp
-            .jk-first-block__title ЖК Allegoria Mosca 
+            .jk-first-block__title: h1 ЖК Allegoria Mosca 
             .jk-first-block__desc Элитный апарт-комплекс расположен в историческом центре Москвы, на пересечении улиц Пречистенки, Остоженки и площади Пречистенские Ворота
             .jk-first-block__download
-              +presentation-block()
+              +presentation-block-3()

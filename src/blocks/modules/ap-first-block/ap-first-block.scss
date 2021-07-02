@@ -15,6 +15,12 @@
             display: block;
             padding-top: 50%;
             @include bgimage-cover;
+            min-height: 855px;
+
+            @media screen and (max-width: $w1280) {
+                min-height: 760px;
+            }
+
 
 
             @media screen and (max-width: $w940) {
@@ -44,13 +50,16 @@
             width: 100%;
             opacity: 0.9;
 
+
             @media screen and (max-width: $w940) {
                 height: 100%;
             }
         }
     }
 
-
+    &__bgimage2 {
+        height: 100%;
+    }
 
     &__content {
         padding-top: 60px;
@@ -74,14 +83,18 @@
         position: relative;
         display: flex;
         align-items: flex-start;
-
         margin-top: rem(20);
+
+        @media screen and (min-width: $w480) and (max-width: $w580) {
+            flex-direction: column;
+            width: 40%;
+            align-self: flex-start;
+        }
 
         &::before {
             position: absolute;
             @include layer(1);
             content: '';
-
             background: rgba(255, 255, 255, 0.15);
         }
     }
@@ -98,6 +111,10 @@
             line-height: 105.51%;
             letter-spacing: 0.05em;
             color: #A3D39C;
+
+            @media screen and (max-width: $w580) {
+                font-size: rem(25);
+            }
         }
 
         &-eu,
@@ -108,6 +125,10 @@
             align-items: center;
             letter-spacing: 0.05em;
             color: #FFFFFF;
+
+            @media screen and (max-width: $w580) {
+                font-size: rem(20);
+            }
         }
 
 
@@ -117,7 +138,7 @@
         font-family: Circe;
         font-style: normal;
         font-weight: bold;
-        font-size: 24px;
+        font-size: rem(24);
         line-height: 134.5%;
 
         /* or 32px */
@@ -127,6 +148,11 @@
         text-decoration-line: underline;
 
         color: #FFFFFF;
+
+        @media screen and (max-width: $w580) {
+            font-size: rem(20);
+            padding-top: rem(20);
+        }
     }
 
     &__id {
@@ -149,6 +175,15 @@
             text-transform: uppercase;
             color: #FFFFFF;
 
+            @media screen and (max-width: $w1024) {
+                font-size: rem(47);
+            }
+
+            @media screen and (max-width: $w760) {
+                font-size: rem(23);
+
+            }
+
         }
     }
 
@@ -159,10 +194,24 @@
         text-transform: uppercase;
         color: #FFFFFF;
 
+        @media screen and (min-width: $w480) and (max-width: $w580) {
+            font-size: rem(13);
+            width: 60%;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: rem(15);
+
+        }
+
         & ul {
             display: table;
             padding-top: rem(35);
             padding-left: rem(32);
+
+            @media screen and (max-width: $w480) {
+                padding-left: 0;
+            }
 
             & li {
                 display: table-row;
@@ -174,6 +223,10 @@
                     &:first-child {
                         font-weight: 300;
                         padding-right: rem(30);
+
+                        @media screen and (max-width: $w580) {
+                            padding-right: rem(15);
+                        }
                     }
                 }
             }
@@ -185,6 +238,14 @@
         max-width: rem(1290);
         margin: 0 auto;
         width: 100%;
+
+        padding-left: rem(30);
+        padding-right: rem(30);
+
+        @media screen and (max-width: $w940) {
+            padding-top: rem(40);
+            padding-bottom: rem(40);
+        }
     }
 
     &__btn {
@@ -194,10 +255,80 @@
 
     }
 
-    &__download {}
+    &__download {
+
+        @media screen and (max-width: $w580) {
+            padding-top: rem(40);
+        }
+
+        &>div {
+            @media screen and (min-width: $w480) and (max-width: $w940) {
+                margin-left: auto;
+                margin-bottom: -22%;
+            }
+        }
+    }
 
 
+    & .presentation-block__dl {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
 
+        @media screen and (min-width: $w580) and (max-width: $w760) {
+            left: -175%;
+            top: 45%;
+        }
+
+        @media screen and (min-width: $w480) and (max-width: $w580) {
+            left: -140%;
+            top: 45%;
+        }
+
+
+    }
+
+    & .presentation-block__center {
+        @media screen and (max-width: $w480) {
+            width: 65%;
+            height: 65%;
+        }
+    }
+
+    & .presentation-block.presentation-block--room {
+        border: 2px solid $main;
+        width: 35.5vw;
+        position: relative;
+        height: 35.5vw;
+        border-radius: 50%;
+
+        @media screen and (max-width: $w1280) {
+            width: 48vw;
+            height: 48vw;
+        }
+
+        @media screen and (max-width: $w760) {
+            width: 55vw;
+            height: 55vw;
+            margin-right: -4%;
+        }
+
+        @media screen and (max-width: $w480) {
+            width: 87vw;
+            height: 87vw;
+            margin-right: 0;
+        }
+
+
+    }
+
+    & .presentation-block.presentation-block--room button {
+        width: auto;
+        margin: auto;
+    }
 
 
 }
@@ -208,37 +339,26 @@
 
     & .ap-prop__left {
         @include col();
-        @include size(7);
+        @include size-w940(7);
+        @include size(12)
     }
 
     & .ap-prop__right {
         @include col();
-        @include size(5);
+        @include size-w940(5);
+        @include size(12)
     }
-}
+
+    &__left {
+
+        @media screen and (min-width: $w480) and (max-width: $w580) {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+    }
+
+    &__right {}
 
 
-
-.presentation-block.presentation-block--room {
-    border: 2px solid $main;
-    width: 35.5vw;
-    position: relative;
-    height: 35.5vw;
-    border-radius: 50%;
-
-
-}
-
-.presentation-block.presentation-block--room button {
-    width: auto;
-    margin: auto;
-}
-
-.presentation-block .presentation-block__dl {
-    position: absolute;
-    top: 70%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
 }

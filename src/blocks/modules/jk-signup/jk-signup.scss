@@ -8,6 +8,11 @@
         & .bgimage {
             padding-top: 51%;
             @include bgimage-cover;
+            min-height: 760px;
+
+            @media screen and (max-width: $w580) {
+                min-height: 500px;
+            }
         }
 
         position: relative;
@@ -38,6 +43,33 @@
     align-items: center;
     justify-content: center;
 
+    min-width: 650px;
+    min-height: 650px;
+
+    @media screen and (max-width: $w1440) {
+        min-width: 600px;
+        min-height: 600px;
+    }
+
+    @media screen and (max-width: $w1024) {
+        margin: auto;
+    }
+
+    @media screen and (max-width: $w760) {
+        min-width: 490px;
+        min-height: 490px;
+    }
+
+    @media screen and (max-width: $w580) {
+        min-width: 400px;
+        min-height: 400px;
+    }
+
+    @media screen and (max-width: $w480) {
+        min-width: 350px;
+        min-height: 350px;
+    }
+
     &__wrp {
         max-width: 500px;
         margin: auto;
@@ -54,6 +86,10 @@
         color: #0C0C0D;
 
         padding-bottom: rem(25);
+
+        @media screen and (max-width: $w1440) {
+            font-size: rem(32);
+        }
 
         @media screen and (max-width: $w760) {
             font-size: rem(32);
@@ -82,8 +118,12 @@
 
         padding-bottom: rem(25);
 
+        @media screen and (max-width: $w1440) {
+            font-size: rem(22);
+        }
+
         @media screen and (max-width: $w760) {
-            font-size: rem(24);
+            font-size: rem(18);
         }
 
         @media screen and (max-width: $w580) {
@@ -102,9 +142,13 @@
 
     &__form {
 
+        @media screen and (max-width: $w760) {
+            max-width: rem(350);
+            margin: auto;
+        }
+
         @media screen and (max-width: $w580) {
             max-width: rem(300);
-            margin: auto;
         }
 
 
@@ -130,7 +174,7 @@
                 height: 50px;
             }
 
-            @media screen and (max-width: $w580) {
+            @media screen and (max-width: $w760) {
                 height: 45px;
                 font-size: rem(18);
 
@@ -165,6 +209,10 @@
             max-width: rem(410);
             margin-left: auto;
             margin-right: auto;
+
+            @media screen and (max-width: $w940) {
+                margin-bottom: rem(5);
+            }
 
             @media screen and (max-width: $w580) {
                 margin-bottom: rem(0);

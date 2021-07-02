@@ -64,12 +64,16 @@
 
 
         & span {
-            font-size: 15px;
+            font-size: rem(19);
             line-height: 187%;
             letter-spacing: 0.1em;
             text-decoration-line: underline;
             text-transform: uppercase;
             margin-right: rem(15);
+
+            @media screen and (max-width: $w760) {
+                font-size: 15px;
+            }
         }
     }
 }
