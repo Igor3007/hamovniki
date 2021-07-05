@@ -270,20 +270,22 @@
     }
 
     &__subtitle {
-        font-size: rem(26);
-        line-height: 138%;
-        text-decoration-line: underline;
-        color: #343434;
-        padding-top: rem(10);
+        & a {
+            font-size: rem(26);
+            line-height: 138%;
+            text-decoration-line: underline;
+            color: #343434;
+            padding-top: rem(10);
 
-        @media screen and (max-width: $w580) {
-            font-size: rem(22);
-        }
+            @media screen and (max-width: $w580) {
+                font-size: rem(22);
+            }
 
-        @media screen and (max-width: $w360) {
-            font-size: rem(20);
-            padding-top: rem(5);
+            @media screen and (max-width: $w360) {
+                font-size: rem(20);
+                padding-top: rem(5);
 
+            }
         }
     }
 

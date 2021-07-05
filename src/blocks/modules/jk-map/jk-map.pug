@@ -8,10 +8,14 @@ mixin jk-map()
           zoom: 12,
           controls: ['zoomControl', 'fullscreenControl']
         },
+        ballonMobileMode: false,
+        icons: {
+          'default':'/img/svg/ic_pin-map-jk.svg',
+          'active':'/img/svg/ic_pin-map-open.svg',
+        },
         points: [
         {
           'pin': [55.74481370529173, 37.67514980332959],
-          'icon': '/img/svg/ic_pin-map-jk.svg',
           'balloonContent': 'Allegoria Mosca',
           'draggable': false,
           'zoom': 13

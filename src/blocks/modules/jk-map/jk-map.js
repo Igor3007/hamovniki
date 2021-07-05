@@ -83,7 +83,7 @@ ymaps.ready(function () {
                             top: -(this._$element[0].offsetHeight)
                         }
 
-                        if($(window).width() <= 580 ){
+                        if($(window).width() <= 580 && mapsParams.ballonMobileMode){
 
                            var positionDefault = {
                                left: 0,
@@ -126,7 +126,7 @@ ymaps.ready(function () {
                             position.top + this._$element[0].offsetHeight + this._$element.find('.sh-balloon__arrow')[0].offsetHeight
                         ]
 
-                        if($(window).width() <= 580 ){
+                        if($(window).width() <= 580 && mapsParams.ballonMobileMode){
 
                             var heightElem = this._$element.height() + 55
                             var widthElem = (this._$element.width() / 2) - 25
@@ -160,7 +160,7 @@ ymaps.ready(function () {
 
         var PlacemarkArr = [];
 
-        if($(window).width() <= 580 ){
+        if($(window).width() <= 580 && mapsParams.ballonMobileMode ){
 
             var showBaloonMode = false;
             var ballonPane = 'balloon';
@@ -192,7 +192,7 @@ ymaps.ready(function () {
 
                 // balloonContentLayout: LayoutActivatePoint,
                 iconLayout: 'default#image',
-                iconImageHref: mapsParams.points[i].icon,
+                iconImageHref: mapsParams.icons.default,
                 iconImageSize: sizeIcons,
                 pane: 'balloon',
                 draggable: (mapsParams.points[i].draggable ? true : false)
@@ -201,13 +201,19 @@ ymaps.ready(function () {
             PlacemarkArr[i].events.add('balloonopen', function (e) {
                 
                 PlacemarkArr[i].properties.set('balloonContent', mapsParams.points[i].balloonContent);
-                PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map-open.svg');
+                e.get('target').options.set({
+                    iconImageHref: mapsParams.icons.active
+                });
                 
             });
 
             PlacemarkArr[i].events.add('balloonclose', function (e) {
-                PlacemarkArr[i].properties.set('iconImageHref', '/img/svg/ic_pin-map.svg');
-            })
+                e.get('target').options.set({
+                    iconImageHref: mapsParams.icons.default
+                });
+            });
+
+            
 
             myMap.geoObjects.add(PlacemarkArr[i]);
             myMap.behaviors.disable('scrollZoom'); 

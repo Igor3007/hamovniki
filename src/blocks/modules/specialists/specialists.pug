@@ -14,14 +14,14 @@ mixin item-specialists()
           button.btn.btn-green(data-fancybox="" data-type="ajax" data-src="/callback-popup.html") Выбрать
 
 mixin specialists()
-  .section-specialists
+  section.section-specialists(id="specialists")
     .section-specialists__dec
       .section-specialists__dec-left: +bgimage('/img/common/digits-title.png')
       .section-specialists__dec-right: +bgimage('/img/common/digits-title.png')
     .specialists
       .specialists__wrp
         .specialists__title
-          .container Выберите специалиста по домам Остоженки, он свяжется с вами в самое ближайшее время
+          .container Выберите специалиста по домам <br> Остоженки, он свяжется с вами в самое <br> ближайшее время
         .specialists__list
           .swiper-container(data-swiper="specialists")
             .swiper-wrapper

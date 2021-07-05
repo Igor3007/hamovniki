@@ -4,13 +4,17 @@
     background-repeat: repeat-x;
     background-position: top center;
 
-    padding-top: rem(145);
+    padding-top: rem(182);
 
 }
 
 
 .catalog {
     color: #FFF;
+
+    & .container {
+        max-width: 1340px;
+    }
 }
 
 .catalog-list {
@@ -149,6 +153,24 @@
 
 
             }
+        }
+    }
+
+    &__more {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: rem(40);
+
+        & button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #888888;
+            box-sizing: border-box;
+            font-size: rem(18);
+            text-transform: none;
+            width: 100%;
+            max-width: rem(350);
         }
     }
 }

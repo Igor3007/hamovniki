@@ -147,6 +147,10 @@
             border-radius: 50%;
             background-color: #fff;
 
+            width: rem(180);
+            min-width: rem(180);
+            height: rem(180);
+
 
             @media screen and (min-width: $w480) and (max-width: $w580) {
                 width: rem(130);

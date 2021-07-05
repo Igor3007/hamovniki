@@ -1,5 +1,5 @@
 mixin mapcustom()
-  section.section-mapcustom
+  section.section-mapcustom(id="map-jk")
     script.
       const mapsParams = {
         container: 'mapcustom-container',
@@ -9,24 +9,26 @@ mixin mapcustom()
           controls: ['zoomControl', 'fullscreenControl']
         },
         autoscale: true,
+        ballonMobileMode: true,
+        icons: {
+          'default':'/img/svg/ic_pin-map.svg',
+          'active':'/img/svg/ic_pin-map-open.svg',
+        },
         points: [
         {
           'pin': [55.73857369743243,37.59628303700001],
-          'icon': '/img/svg/ic_pin-map.svg',
-          'balloonContent': 'Allegoria Mosca',
+          'balloonContent': '<a href="#link">Allegoria Mosca</a>',
           'draggable': false,
           'zoom': 13
         },
         {
           'pin': [55.71863620817899,37.57161282006831],
-          'icon': '/img/svg/ic_pin-map.svg',
           'balloonContent': 'Knightsbridge PrivatePark',
           'draggable': false,
           'zoom': 13
         },
         {
           'pin': [55.72234231372521,37.55148552362054],
-          'icon': '/img/svg/ic_pin-map.svg',
           'balloonContent': 'Barrin House',
           'draggable': false,
           'zoom': 13

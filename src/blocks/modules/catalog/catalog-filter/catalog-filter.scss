@@ -17,8 +17,9 @@
 
                 display: flex;
                 align-items: center;
-                padding-top: rem(15);
-                padding-bottom: rem(15);
+                padding-top: rem(17);
+                padding-bottom: rem(17);
+                max-width: 1340px;
 
                 @media screen and (max-width: $w1024) {
                     max-width: none;
@@ -467,7 +468,7 @@
             user-select: none;
 
             &:hover {
-                border: 1px solid #777;
+                border: 1px solid #bfbfbf;
             }
         }
 

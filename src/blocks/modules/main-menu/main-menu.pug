@@ -6,7 +6,7 @@ mixin main-menu(data)
         nav
           ul
             each item in data
-              li: a(href='#')= item
+              li: a(href=item.link)= item.text
       .main-menu__address
         address Москва, 4-6, улица Остоженка 
         a(href='tel:+7(495)085-16-64') +7 (495) 085-16-64
@@ -25,7 +25,7 @@ mixin main-menu-jk(data)
         nav
           ul
             each item in data
-              li: a(href='#')= item
+              li: a(href=item.link)= item.text
       .main-menu__address
         address Москва, 4-6, улица Остоженка 
         a(href='tel:+7(495)085-16-64') +7 (495) 085-16-64

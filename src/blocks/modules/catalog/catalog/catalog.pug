@@ -2,7 +2,7 @@ include ../../catalog/minicard/minicard.pug
 include ../../catalog/catalog-filter/catalog-filter.pug
 
 mixin catalog(catalog)
-  section.section-catalog(style="background-image: url(/img/common/search-result.jpg)")
+  section.section-catalog(style="background-image: url(/img/common/search-result.jpg)" id="room")
     .catalog
       .catalog__wrp
         .catalog__filter: +catalog-filter()
@@ -24,4 +24,6 @@ mixin catalog(catalog)
                       span= item
             .catalog-list__wrp
               each item in [1,2,3,45,6,6,8,5,45]
-                .catalog-list__items: +minicard('1', true) 
+                .catalog-list__items: +minicard('1', true)
+            .catalog-list__more
+              button.btn Показать еще 

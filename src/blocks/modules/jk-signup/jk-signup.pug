@@ -8,11 +8,11 @@ mixin circle-form(data)
           .form
             .form__item: .form__subitem: input(class="required" type="text" placeholder="Имя")
             .form__item: .form__subitem: input(class="required" type="tel" placeholder="Телефон")
-            .form__item: .form__subitem: button.btn.btn-green(type="submit") Записаться
+            .form__item: .form__subitem: button.btn.btn-green(type="submit")= (data.btn ? data.btn : 'Записаться')
 
 
 mixin jk-signup()
-  section.section-jk-signup
+  section.section-jk-signup(id="signup-jk")
     .jk-signup
       .jk-signup__wrp
         .jk-signup__bg: +bgimage('/img/common/jk-backgroung-signup.jpg')

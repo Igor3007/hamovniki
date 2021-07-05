@@ -13,7 +13,7 @@
 
         & .bgimage {
             display: block;
-            padding-top: 50%;
+            padding-top: 56.3%;
             @include bgimage-cover;
 
             @media screen and (max-width: $w1100) {
@@ -158,9 +158,11 @@
     &__wrp {
         max-width: rem(1290);
         margin: 0 auto;
+        margin-top: -7%;
 
         @media screen and (max-width: $w1376) {
             margin-left: rem(30);
+            margin-top: 0;
         }
 
         @media screen and (max-width: $w580) {
@@ -184,7 +186,7 @@
 
     &__play {
         position: absolute;
-        right: -8vw;
+        right: -6vw;
         top: rem(-153);
 
         @media screen and (max-width: $w1100) {
