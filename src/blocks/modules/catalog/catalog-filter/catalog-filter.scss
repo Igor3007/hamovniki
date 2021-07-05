@@ -109,6 +109,12 @@
         }
     }
 
+    &__class {
+        & .catalog-filter__col:last-child {
+            flex-grow: 1;
+        }
+    }
+
     &__rooms {
 
         @media screen and (min-width: $w360) and (max-width: $w580) {
@@ -551,6 +557,7 @@
         font-size: rem(18);
         margin-left: rem(10);
         cursor: pointer;
+        width: 100%;
 
         @media screen and (max-width: $w1024) {
             width: 90%;

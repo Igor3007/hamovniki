@@ -1228,7 +1228,7 @@ body.compensate-for-scrollbar {
 /* Styling for Small-Screen Devices */
 
 /**
- * Swiper 6.7.0
+ * Swiper 6.4.15
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1236,7 +1236,7 @@ body.compensate-for-scrollbar {
  *
  * Released under the MIT License
  *
- * Released on: May 31, 2021
+ * Released on: February 18, 2021
  */
 
 @font-face {
@@ -1410,7 +1410,7 @@ body.compensate-for-scrollbar {
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -1552,6 +1552,7 @@ button.swiper-pagination-bullet {
   padding: 0;
   box-shadow: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -1851,6 +1852,7 @@ button.swiper-pagination-bullet {
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-filter: blur(50px);
   filter: blur(50px);
 }
 
@@ -4124,7 +4126,7 @@ header.open .header-top > div:not(.header-top__menu) {
 .search-result__filter {
   display: flex;
   background-color: #323232;
-  padding: 0.9375rem 0;
+  padding: 0.625rem 0;
   margin-bottom: 3.125rem;
 }
 
@@ -4262,6 +4264,13 @@ header.open .header-top > div:not(.header-top__menu) {
   flex-wrap: wrap;
 }
 
+.search-result-filter > div {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 3.125rem;
+  white-space: nowrap;
+}
+
 .search-result-filter__find button {
   border: 1px solid #535353;
   height: 1.875rem;
@@ -4288,7 +4297,6 @@ header.open .header-top > div:not(.header-top__menu) {
 }
 
 .search-result-filter__item {
-  margin-left: 3.125rem;
   white-space: nowrap;
 }
 
@@ -4748,6 +4756,11 @@ header.open .header-top > div:not(.header-top__menu) {
   color: #000000;
 }
 
+.current-offers__quiz-desc span {
+  z-index: 3;
+  position: relative;
+}
+
 .current-offers__quiz-btn .btn {
   width: 90%;
   margin-left: auto;
@@ -4755,6 +4768,14 @@ header.open .header-top > div:not(.header-top__menu) {
 
 .current-offers__list {
   padding: 5rem 0;
+}
+
+.current-offers__list .swiper-slide {
+  opacity: 0.2;
+}
+
+.current-offers__list .swiper-slide.swiper-slide-active {
+  opacity: 1;
 }
 
 .item-offer {
@@ -4858,6 +4879,8 @@ header.open .header-top > div:not(.header-top__menu) {
 .item-offer__id {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  top: 2.625rem;
 }
 
 .item-offer__id span {
@@ -4945,6 +4968,24 @@ header.open .header-top > div:not(.header-top__menu) {
 .item-offer__nav .slider-slider-nav .slider-slider-nav__prev:last-child,
 .item-offer__nav .slider-slider-nav .slider-slider-nav__next:last-child {
   margin-right: 0;
+}
+
+.circle-five-gold {
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-block;
+  background: #c1a653;
+  border-radius: 50%;
+  line-height: 127%;
+  text-align: center;
+  margin-bottom: 0.2em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
+  position: relative;
+  top: 0.1em;
+  font-size: 3.6875rem;
+  color: #000000;
+  z-index: 1 !important;
 }
 
 .mapcustom__maps {
@@ -5248,7 +5289,7 @@ header.open .header-top > div:not(.header-top__menu) {
 }
 
 .minicard__image span.bgimage {
-  padding-top: 65%;
+  padding-top: 60%;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -5497,6 +5538,10 @@ header.open .header-top > div:not(.header-top__menu) {
   border: 1px solid #fff;
 }
 
+.catalog-filter__class .catalog-filter__col:last-child {
+  flex-grow: 1;
+}
+
 .catalog-filter__title {
   margin-right: 1.25rem;
   font-size: 1.125rem;
@@ -5677,6 +5722,7 @@ header.open .header-top > div:not(.header-top__menu) {
   font-size: 1.125rem;
   margin-left: 0.625rem;
   cursor: pointer;
+  width: 100%;
 }
 
 .catalog-filter .select-complex:hover {
@@ -6004,6 +6050,15 @@ header.open .header-top > div:not(.header-top__menu) {
   color: #000000;
 }
 
+.question-five__text span {
+  z-index: 3;
+  position: relative;
+}
+
+.question-five__text span.circle-five-gold {
+  margin-bottom: -10em;
+}
+
 .question-five__btn {
   display: flex;
   align-items: center;
@@ -6116,6 +6171,7 @@ header.open .header-top > div:not(.header-top__menu) {
   height: 100vh;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .quiz__slide {
@@ -8583,8 +8639,8 @@ header.open .header-top > div:not(.header-top__menu) {
     padding-bottom: 6.25rem;
   }
 
-  .search-result-filter__item {
-    margin-left: 1.25rem;
+  .search-result-filter > div {
+    margin-right: 1.25rem;
   }
 
   .minicard__props {
@@ -9524,6 +9580,7 @@ header.open .header-top > div:not(.header-top__menu) {
 
   .item-offer__id {
     justify-content: flex-start;
+    top: 0rem;
   }
 
   .item-offer__id span {
@@ -10129,6 +10186,18 @@ header.open .header-top > div:not(.header-top__menu) {
 
   .search-result__item {
     width: 50%;
+  }
+
+  .search-result__filter label span {
+    height: 2.1875rem;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+  }
+
+  .search-result-filter__find button {
+    height: 2.1875rem;
+    padding: 0 1.25rem;
+    font-size: 1rem;
   }
 
   .estate-in-numbers__title {

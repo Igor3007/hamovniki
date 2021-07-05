@@ -26,6 +26,17 @@
         line-height: 112%;
         color: #000000;
 
+        & span {
+            z-index: 3;
+            position: relative;
+
+            &.circle-five-gold {
+                margin-bottom: -10em;
+            }
+        }
+
+
+
         @media screen and (max-width: $w1024) {
             font-size: rem(26);
             text-align: center;
