@@ -27,7 +27,7 @@
     }
 
     &__filter {
-        padding-top: 5%
+        padding-top: 5%;
     }
 
     &__list {
@@ -79,10 +79,13 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid #888888;
             box-sizing: border-box;
-            font-size: rem(18);
             text-transform: none;
             width: 100%;
             max-width: rem(350);
+
+            @media screen and (max-width: $w940) {
+                font-size: rem(18);
+            }
         }
     }
 }

@@ -1,0 +1,54 @@
+.card-quiz {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+
+    &__image {
+        & .bgimage {
+            padding-top: 55%;
+            @include bgimage-contain;
+
+            @media screen and (max-width: $w580) {
+                max-width: rem(355);
+                margin: auto;
+            }
+        }
+    }
+
+    &__desc {
+        font-weight: 350;
+        font-size: rem(22);
+        line-height: 120%;
+        color: #FFFFFF;
+        text-align: left;
+        max-width: rem(355);
+        margin: auto;
+        padding-left: rem(10);
+        padding-right: rem(10);
+
+        @media screen and (max-width: $w1024) {
+            font-size: 18px;
+        }
+    }
+
+    &__btn {
+        text-align: center;
+        padding-top: rem(30);
+
+
+
+        & button {
+            margin: auto;
+
+            @media screen and (min-width: $w940) and (max-width: $w1024) {
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: $w580) and (max-width: $w760) {
+                font-size: 14px;
+            }
+        }
+    }
+}

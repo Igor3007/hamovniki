@@ -1,0 +1,40 @@
+mixin map-card(data)
+  .map-card
+    .map-card__top
+      .map-card__type Квартира
+      .map-card__id ID: 2589
+    .map-card__image: +bgimage('/img/catalog/r'+data+'.jpg')
+    .map-card__title 
+      a(href='#') 2 комн. кв, 120 м2
+      span: +icons('#ic_heart', 20)
+    .map-card__subtitle Резиденция на Всеволожском
+    .map-card__prop
+      ul
+        li: <span>Комнат:</span> <span>2</span>
+        li: <span>Площадь:</span> <span>209,8 м2</span>
+        li: <span>Отделка:</span> <span>Чистовая</span>
+    .map-card__price
+      span 250 000 000 ₽
+    .map-card__link: a(href='#'): button.btn.btn-line Подробнее
+
+mixin catalog-map(obj)
+  .catalog-map
+    .catalog-map__layouts
+      .catalog-map__ymap(id="catalog-map")
+      .catalog-map__content
+        .container
+          .catalog-map__close
+            button.btn.btn-green Показать на карте
+            +icons('#ic_clear-filter')
+          .catalog-map__main
+            .catalog-map-card
+              .catalog-map-card__slider
+                .swiper-container(data-swiper="catalog-map")
+                  .swiper-wrapper
+                    each item in [1,2,3]
+                      .swiper-slide: +map-card(item)
+              .catalog-map-card__nav
+                .catalog-map-card__prev(data-swiper-prev="catalog-map"): +icons('#ic_arr-left', 30)
+                .catalog-map-card__count <span data-swiper-current="catalog-map" >0</span> из <span data-swiper-total="catalog-map" >0</span> квартир <br> в этом доме
+                .catalog-map-card__next(data-swiper-next="catalog-map"): +icons('#ic_arr-right', 30)
+

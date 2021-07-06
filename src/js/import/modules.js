@@ -35,3 +35,4 @@ import "%modules%/mobile-menu-button/mobile-menu-button";
 import "%modules%/mapcustom/mapcustom.js";
 import "%modules%/quiz/quiz.js";
 import "%modules%/jk-map/jk-map.js";
+import "%modules%/catalog/catalog-map/catalog-map.js";

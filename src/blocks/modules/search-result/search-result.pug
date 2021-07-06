@@ -1,4 +1,5 @@
 include ../../components/breadcrumb/breadcrumb.pug
+include ../card-quiz/card-quiz.pug
 
 mixin sr-item(item)
   .sr-item
@@ -32,7 +33,12 @@ mixin search-result(data)
               +sr-checkbox('Luxury')
 
       .search-result__list
-        each item in data
-          .search-result__item: +sr-item(item) 
+        each item, index in data
+          if index == 3
+            .search-result__item: +card-quiz({
+              desc: 'Ответьте на 5 коротких вопросов. Мы подберем предложения, максимально близко подходящие критериям запроса'
+            }) 
+          else
+            .search-result__item: +sr-item(item) 
       .search-result__more
         button.btn Показать еще 

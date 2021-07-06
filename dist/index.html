@@ -329,10 +329,10 @@
                         <div class="catalog-filter__title">Cпален</div>
                         <ul>
                           <li>
-                            <input type="text" placeholder="от 1"/>
+                            <input type="text" placeholder="от 1" data-type="number"/>
                           </li>
                           <li>
-                            <input type="text" placeholder="до 5"/>
+                            <input type="text" placeholder="до 5" data-type="number"/>
                           </li>
                         </ul>
                       </div>
@@ -345,10 +345,10 @@
                         <div class="catalog-filter__inner">
                           <ul>
                             <li>
-                              <input type="text" placeholder="от 0"/>
+                              <input type="text" placeholder="от 0" data-type="number"/>
                             </li>
                             <li>
-                              <input type="text" placeholder="до 552 233 588"/>
+                              <input type="text" placeholder="до 552 233 588" data-type="number"/>
                             </li>
                           </ul>
                           <ul class="price-currency">
@@ -374,10 +374,10 @@
                         <div class="catalog-filter__title">Площадь М2</div>
                         <ul class="select-area">
                           <li>
-                            <input type="text" placeholder="от 0"/>
+                            <input type="text" placeholder="от 0" data-type="number"/>
                           </li>
                           <li>
-                            <input type="text" placeholder="до 400"/>
+                            <input type="text" placeholder="до 400" data-type="number"/>
                           </li>
                         </ul>
                       </div>
@@ -435,7 +435,121 @@
                 </div>
               </div>
             </div>
-            <div class="catalog__maps"></div>
+            <div class="catalog__map">
+              <div class="catalog-map">
+                <div class="catalog-map__layouts">
+                  <div class="catalog-map__ymap" id="catalog-map"></div>
+                  <div class="catalog-map__content">
+                    <div class="container">
+                      <div class="catalog-map__close">
+                        <button class="btn btn-green">Показать на карте</button>
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_clear-filter"></use>
+                        </svg>
+                      </div>
+                      <div class="catalog-map__main">
+                        <div class="catalog-map-card">
+                          <div class="catalog-map-card__slider">
+                            <div class="swiper-container" data-swiper="catalog-map">
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <div class="map-card">
+                                    <div class="map-card__top">
+                                      <div class="map-card__type">Квартира</div>
+                                      <div class="map-card__id">ID: 2589</div>
+                                    </div>
+                                    <div class="map-card__image"><span class="bgimage" style="background-image: url(/img/catalog/r1.jpg)"></span>
+                                    </div>
+                                    <div class="map-card__title"> <a href="#">2 комн. кв, 120 м2</a><span>
+                                        <svg width="20" height="20">
+                                          <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
+                                        </svg></span></div>
+                                    <div class="map-card__subtitle">Резиденция на Всеволожском</div>
+                                    <div class="map-card__prop">
+                                      <ul>
+                                        <li><span>Комнат:</span> <span>2</span></li>
+                                        <li><span>Площадь:</span> <span>209,8 м2</span></li>
+                                        <li><span>Отделка:</span> <span>Чистовая</span></li>
+                                      </ul>
+                                    </div>
+                                    <div class="map-card__price"><span>250 000 000 ₽</span></div>
+                                    <div class="map-card__link"><a href="#">
+                                        <button class="btn btn-line">Подробнее</button></a></div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="map-card">
+                                    <div class="map-card__top">
+                                      <div class="map-card__type">Квартира</div>
+                                      <div class="map-card__id">ID: 2589</div>
+                                    </div>
+                                    <div class="map-card__image"><span class="bgimage" style="background-image: url(/img/catalog/r2.jpg)"></span>
+                                    </div>
+                                    <div class="map-card__title"> <a href="#">2 комн. кв, 120 м2</a><span>
+                                        <svg width="20" height="20">
+                                          <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
+                                        </svg></span></div>
+                                    <div class="map-card__subtitle">Резиденция на Всеволожском</div>
+                                    <div class="map-card__prop">
+                                      <ul>
+                                        <li><span>Комнат:</span> <span>2</span></li>
+                                        <li><span>Площадь:</span> <span>209,8 м2</span></li>
+                                        <li><span>Отделка:</span> <span>Чистовая</span></li>
+                                      </ul>
+                                    </div>
+                                    <div class="map-card__price"><span>250 000 000 ₽</span></div>
+                                    <div class="map-card__link"><a href="#">
+                                        <button class="btn btn-line">Подробнее</button></a></div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide">
+                                  <div class="map-card">
+                                    <div class="map-card__top">
+                                      <div class="map-card__type">Квартира</div>
+                                      <div class="map-card__id">ID: 2589</div>
+                                    </div>
+                                    <div class="map-card__image"><span class="bgimage" style="background-image: url(/img/catalog/r3.jpg)"></span>
+                                    </div>
+                                    <div class="map-card__title"> <a href="#">2 комн. кв, 120 м2</a><span>
+                                        <svg width="20" height="20">
+                                          <use xlink:href="/img/sprites/sprite.svg#ic_heart"></use>
+                                        </svg></span></div>
+                                    <div class="map-card__subtitle">Резиденция на Всеволожском</div>
+                                    <div class="map-card__prop">
+                                      <ul>
+                                        <li><span>Комнат:</span> <span>2</span></li>
+                                        <li><span>Площадь:</span> <span>209,8 м2</span></li>
+                                        <li><span>Отделка:</span> <span>Чистовая</span></li>
+                                      </ul>
+                                    </div>
+                                    <div class="map-card__price"><span>250 000 000 ₽</span></div>
+                                    <div class="map-card__link"><a href="#">
+                                        <button class="btn btn-line">Подробнее</button></a></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="catalog-map-card__nav">
+                            <div class="catalog-map-card__prev" data-swiper-prev="catalog-map">
+                              <svg width="30" height="30">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-left"></use>
+                              </svg>
+                            </div>
+                            <div class="catalog-map-card__count"><span data-swiper-current="catalog-map" >0</span> из <span data-swiper-total="catalog-map" >0</span> квартир <br> в этом доме</div>
+                            <div class="catalog-map-card__next" data-swiper-next="catalog-map">
+                              <svg width="30" height="30">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_arr-right"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="catalog__list"></div>
             <div class="container">
               <div class="catalog-list">

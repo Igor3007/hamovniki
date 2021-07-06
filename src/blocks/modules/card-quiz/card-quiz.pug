@@ -1,0 +1,7 @@
+mixin card-quiz(data)
+  .card-quiz
+    .card-quiz__wrp
+      .card-quiz__image: +bgimage('/img/common/present-img.png')
+      .card-quiz__desc= data.desc
+      .card-quiz__btn
+        button.btn.btn-green(data-quiz="open") Подобрать предложение

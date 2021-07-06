@@ -23,6 +23,11 @@ $(document).ready(function () {
                 console.log(elem)
             }
         });
+
+        $('input[data-type="number"]').inputmask({
+            mask: '9{1,}',
+            placeholder: ''
+          })
     }
 
     initInputMask();

@@ -102,7 +102,7 @@
           <div class="jk-gallery__img-column"><span class="bgimage" style="background-image: url(/img/common/digits-title.png)"></span>
           </div>
           <div class="jk-gallery__wrp">
-            <div class="jk-gallery__title">Галлерея</div>
+            <div class="jk-gallery__title">Галерея</div>
             <div class="jk-gallery__slider">
               <div class="swiper-container" data-swiper="gallery">
                 <div class="swiper-wrapper">
@@ -173,10 +173,10 @@
                         <div class="catalog-filter__title">Cпален</div>
                         <ul>
                           <li>
-                            <input type="text" placeholder="от 1"/>
+                            <input type="text" placeholder="от 1" data-type="number"/>
                           </li>
                           <li>
-                            <input type="text" placeholder="до 5"/>
+                            <input type="text" placeholder="до 5" data-type="number"/>
                           </li>
                         </ul>
                       </div>
@@ -188,10 +188,10 @@
                         <div class="catalog-filter__title">Цена</div>
                         <ul>
                           <li>
-                            <input type="text" placeholder="от 0"/>
+                            <input type="text" placeholder="от 0" data-type="number"/>
                           </li>
                           <li>
-                            <input type="text" placeholder="до 552 233 588"/>
+                            <input type="text" placeholder="до 552 233 588" data-type="number"/>
                           </li>
                         </ul>
                       </div>
@@ -218,10 +218,10 @@
                         <div class="catalog-filter__title">Площадь М2</div>
                         <ul class="select-area">
                           <li>
-                            <input type="text" placeholder="от 0"/>
+                            <input type="text" placeholder="от 0" data-type="number"/>
                           </li>
                           <li>
-                            <input type="text" placeholder="до 400"/>
+                            <input type="text" placeholder="до 400" data-type="number"/>
                           </li>
                         </ul>
                       </div>
@@ -290,43 +290,15 @@
                   </div>
                 </div>
                 <div class="jk-catalog__item">
-                  <div class="minicard">
-                    <div class="minicard__top">
-                      <div class="minicard__type">Квартира</div>
-                      <div class="minicard__id">ID: 2589</div>
-                    </div>
-                    <div class="minicard__image">
-                      <div class="swiper-container" data-swiper="minicard">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide"><span class="bgimage" style="background-image: url(/img/catalog/r1.jpg)"></span>
-                          </div>
-                          <div class="swiper-slide"><span class="bgimage" style="background-image: url(/img/catalog/r1.jpg)"></span>
-                          </div>
-                          <div class="swiper-slide"><span class="bgimage" style="background-image: url(/img/catalog/r1.jpg)"></span>
-                          </div>
-                          <div class="swiper-slide"><span class="bgimage" style="background-image: url(/img/catalog/r1.jpg)"></span>
-                          </div>
-                        </div>
-                        <div class="swiper-dots" data-swiper-dots="minicard"></div>
+                  <div class="card-quiz">
+                    <div class="card-quiz__wrp">
+                      <div class="card-quiz__image"><span class="bgimage" style="background-image: url(/img/common/present-img.png)"></span>
+                      </div>
+                      <div class="card-quiz__desc">Ответьте на 5 коротких вопросов. Мы подберем предложения, максимально близко подходящие критериям запроса</div>
+                      <div class="card-quiz__btn">
+                        <button class="btn btn-green" data-quiz="open">Подобрать предложение</button>
                       </div>
                     </div>
-                    <div class="minicard__desc">
-                      <div class="minicard__title"><a href="#">2 комн. кв, 120 м2</a><span class="add-favorite"></span></div>
-                      <div class="minicard__subtitle">Резиденция на Всеволожском</div>
-                      <div class="minicard__props">
-                        <ul>
-                          <li>Всеволожский переулок, 5 <span></span></li>
-                          <li>Комнат: <span>2</span></li>
-                          <li>Площадь: <span>775 м2</span></li>
-                          <li>Этаж: <span>3/20</span></li>
-                        </ul>
-                      </div>
-                      <div class="minicard__price">
-                        <div class="minicard__rub"> 250 000 000 ₽</div>
-                      </div>
-                    </div>
-                    <div class="minicard__link"><a href="/page-apartment.html">
-                        <button class="btn btn-line">Подробнее</button></a></div>
                   </div>
                 </div>
                 <div class="jk-catalog__item">

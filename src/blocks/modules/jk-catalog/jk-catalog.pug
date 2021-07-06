@@ -1,4 +1,5 @@
 include ../../modules/catalog/minicard/minicard.pug
+include ../card-quiz/card-quiz.pug
 
 mixin catalog-filter()
   .catalog-filter
@@ -16,15 +17,15 @@ mixin catalog-filter()
           .catalog-filter__col.catalog-filter__badroom
             .catalog-filter__title Cпален
             ul
-              li: input(type="text" placeholder="от 1")
-              li: input(type="text" placeholder="до 5")
+              li: input(type="text" placeholder="от 1" data-type="number")
+              li: input(type="text" placeholder="до 5" data-type="number")
       .catalog-filter__price
         .container
           .catalog-filter__col
             .catalog-filter__title Цена
             ul
-              li: input(type="text" placeholder="от 0")
-              li: input(type="text" placeholder="до 552 233 588")
+              li: input(type="text" placeholder="от 0" data-type="number")
+              li: input(type="text" placeholder="до 552 233 588" data-type="number")
           .catalog-filter__col
             ul
               each state in ['₽','$','€']
@@ -35,8 +36,8 @@ mixin catalog-filter()
           .catalog-filter__col.catalog-filter__area
             .catalog-filter__title Площадь М2
             ul.select-area
-              li: input(type="text" placeholder="от 0")
-              li: input(type="text" placeholder="до 400")
+              li: input(type="text" placeholder="от 0" data-type="number")
+              li: input(type="text" placeholder="до 400" data-type="number")
       .catalog-filter__clear
         .container
           .clear-filter
@@ -58,7 +59,12 @@ mixin jk-catalog()
               +icons('#ic_sort')
           .jk-catalog__list
             each item in [1,2,3,4,5,6,7,8,5]
-              .jk-catalog__item: +minicard('1', true) 
+              if item == 2
+                .jk-catalog__item: +card-quiz({
+                  'desc': 'Ответьте на 5 коротких вопросов. Мы подберем предложения, максимально близко подходящие критериям запроса'
+                })
+              else
+                .jk-catalog__item: +minicard('1', true)
           .jk-catalog__more
             button.btn Показать еще 
 

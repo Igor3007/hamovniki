@@ -133,6 +133,37 @@
             max-width: rem(350);
         }
     }
+
+    & .card-quiz__image {
+
+        order: 2;
+
+        & .bgimage {
+            padding-top: 20%;
+        }
+    }
+
+    & .card-quiz__desc {
+        font-size: rem(16);
+        order: 1;
+        padding-top: 0;
+        padding-bottom: rem(15);
+    }
+
+    & .card-quiz__wrp {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .card-quiz__btn {
+        order: 3;
+        padding-top: rem(15);
+
+        & button {
+            font-size: rem(16);
+            height: rem(50);
+        }
+    }
 }
 
 .sr-item {

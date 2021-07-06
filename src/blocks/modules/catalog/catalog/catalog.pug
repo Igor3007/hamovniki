@@ -1,12 +1,13 @@
 include ../../catalog/minicard/minicard.pug
 include ../../catalog/catalog-filter/catalog-filter.pug
+include ../../catalog/catalog-map/catalog-map.pug
 
 mixin catalog(catalog)
   section.section-catalog(style="background-image: url(/img/common/search-result.jpg)" id="room")
     .catalog
       .catalog__wrp
         .catalog__filter: +catalog-filter()
-        .catalog__maps
+        .catalog__map: +catalog-map()
         .catalog__list
         .container
           .catalog-list

@@ -71,6 +71,37 @@ var region = new Swiper('[data-swiper="region"]', {
 
 });
 
+/* swiper catalog-map */
+
+function updateFraction(slider) {
+
+  const { params, activeIndex } = slider;
+
+  $('[data-swiper-current="catalog-map"]').text(activeIndex + 1)
+  $('[data-swiper-total="catalog-map"]').text(slider.slides.length)
+
+}
+
+var catalogmap = new Swiper('[data-swiper="catalog-map"]', {
+
+  slidesPerView: 1,
+  spaceBetween: 5,
+  //observer: true,
+  //centeredSlides: 'auto',
+  loop: false,
+  //observeParents: true,
+  navigation: {
+    nextEl: '[data-swiper-next="catalog-map"]',
+    prevEl: '[data-swiper-prev="catalog-map"]',
+  },
+  on: {
+    init() {  setTimeout(updateFraction, 0, this); },
+    slideChange(event) { updateFraction(this);  },
+    resize() { updateFraction(this); }
+  },
+
+});
+
 
 // .swiper-container current-offers
 

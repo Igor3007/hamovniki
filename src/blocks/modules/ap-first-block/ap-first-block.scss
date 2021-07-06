@@ -216,6 +216,14 @@
             & li {
                 display: table-row;
 
+                & a {
+                    color: #fff;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
                 & span {
                     display: table-cell;
                     padding: 5px;

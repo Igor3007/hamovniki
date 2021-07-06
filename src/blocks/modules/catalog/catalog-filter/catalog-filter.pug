@@ -55,16 +55,16 @@ mixin catalog-filter()
           .catalog-filter__col.catalog-filter__badroom
             .catalog-filter__title Cпален
             ul
-              li: input(type="text" placeholder="от 1")
-              li: input(type="text" placeholder="до 5")
+              li: input(type="text" placeholder="от 1" data-type="number")
+              li: input(type="text" placeholder="до 5" data-type="number")
       .catalog-filter__price
         .container
           .catalog-filter__col
             .catalog-filter__title Цена
             .catalog-filter__inner
               ul
-                li: input(type="text" placeholder="от 0")
-                li: input(type="text" placeholder="до 552 233 588")
+                li: input(type="text" placeholder="от 0" data-type="number")
+                li: input(type="text" placeholder="до 552 233 588" data-type="number")
               ul(class="price-currency")
                 each state in ['₽','$','€']
                   li
@@ -74,8 +74,8 @@ mixin catalog-filter()
           .catalog-filter__col.catalog-filter__area
             .catalog-filter__title Площадь М2
             ul.select-area
-              li: input(type="text" placeholder="от 0")
-              li: input(type="text" placeholder="до 400")
+              li: input(type="text" placeholder="от 0" data-type="number")
+              li: input(type="text" placeholder="до 400" data-type="number")
       .catalog-filter__more(style="display: none;")
         .container
           .catalog-filter__col
